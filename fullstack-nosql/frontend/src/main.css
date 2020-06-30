@@ -1,0 +1,134 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+.page-wrapper {
+  min-height: 70vh;
+}
+
+.bg-img {
+  background: url('./images/images.jpg') center center/cover no-repeat;
+}
+.p-t-165 {
+  padding-top: 165px;
+}
+.p-b-100 {
+  padding-bottom: 100px;
+}
+.wrapper {
+  margin: 0 auto;
+  max-width: 720px;
+}
+
+#card {
+  background: rgba(50, 68, 136, 0.753);
+  height: 310px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+#titles {
+  font-size: 35px;
+  font-style: Helvetica;
+  margin: 0 auto;
+  color: #fff;
+}
+
+.label {
+  font-size: 12px;
+  color: #555;
+  text-transform: capitalize;
+  display: block;
+  font-weight: 700;
+  text-align: left;
+}
+
+.row {
+  display: flex;
+}
+.col-1 {
+  width: calc(70% / 2);
+  margin-left: 20px;
+}
+.col-2 {
+  width: calc(70% / 2);
+  margin-left: 60px;
+}
+
+button {
+  outline: none;
+  background: none;
+  border: none;
+  font-family: inherit;
+}
+
+.btn-submit {
+  display: block;
+  margin-top: 32px;
+  width: 80%;
+  margin: 0 auto;
+  line-height: 50px;
+  font-family: inherit;
+  background: #00ad5f;
+  border-radius: 10px;
+  text-transform: capitalize;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.btn-submit:hover {
+  background: #00994b;
+}
+
+input,
+textarea {
+  outline: none;
+  margin: 0;
+  border: none;
+  box-shadow: none;
+  width: 100%;
+  font-size: 18px;
+  font-family: inherit;
+}
+.input-group1 {
+  position: relative;
+  width: 71%;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  margin-left: 70px;
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 9px 48px;
+  padding-bottom: 3px;
+  padding-right: 20px;
+}
+.input-group2 {
+  position: relative;
+  width: 80%;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  margin-left: 50px;
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 9px 48px;
+  padding-bottom: 3px;
+  padding-right: 20px;
+}
+.input--style {
+  font-size: 16px;
+  padding: 5px 0;
+  padding-top: 0px;
+  text-transform: uppercase;
+  color: #808080;
+  font-family: 'Poppins', 'Arial', 'Helvetica Neue', sans-serif;
+}
+
+#userList {
+  font-size: 20px;
+  color: #fff;
+  background: rgba(56, 74, 141, 0.719);
+  height: 310px;
+  border-radius: 10px;
+  text-align: center;
+}

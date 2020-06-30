@@ -1,0 +1,24 @@
+{
+  "dependencies": {
+    "@tencent-sdk/capi": "^0.2.15",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1"
+  },
+  "name": "serverless-server",
+  "version": "1.0.0",
+  "description": "Serverless server",
+  "main": "sls.js",
+  "devDependencies": {},
+  "scripts": {
+    "start": "NODE_ENV=development node sls.js"
+  },
+  "keywords": [
+    "serverless",
+    "express",
+    "server"
+  ],
+  "author": "yugasun",
+  "license": "MIT"
+}

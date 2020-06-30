@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello Serverless</title>
+    <link href="main.css" rel="stylesheet" media="all" />
+    <script src="env.js"></script>
+    <script>
+      function users() {
+        console.log();
+        const xmlhttp = window.XMLHttpRequest
+          ? new XMLHttpRequest()
+          : new ActiveXObject('Microsoft.XMLHTTP');
+        xmlhttp.onreadystatechange = function () {
+          if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+            const responseBody = JSON.parse(xmlhttp.responseText);
+            console.log(responseBody);
+            let outputStr = `<h3>已经录入的用户列表：</h3>`;
+            for (let i = 0; i < responseBody.data.length; i++) {
+              outputStr =
+                outputStr +
+                `${responseBody.data[i].username}&nbsp&nbsp` +
+                `${responseBody.data[i].age}&nbsp&nbsp` +
+                `${responseBody.data[i].gender}<br>`;
+            }
+            var obj = document.getElementById('userList');
+            obj.innerHTML = outputStr;
+          }
+          if (obj.style.display == 'none') {
+            obj.style.display = '';
+          }
+        };
+        xmlhttp.open('POST', window.env.apiUrl, true);
+        xmlhttp.setRequestHeader('Content-type', 'application/json');
+        const data = document.getElementById('username')
+          ? {
+              username: document.getElementById('username').value,
+              age: document.getElementById('age').value,
+              gender: document.getElementById('gender').value,
+            }
+          : {};
+        xmlhttp.send(JSON.stringify(data));
+      }
+
+      users();
+    </script>
+  </head>
+  <body>
+    <div class="page-wrapper bg-img p-t-165 p-b-100">
+      <div class="wrapper">
+        <div id="card">
+          <p id="titles">Serverless TCB Demo</p>
+          <form method="GET">
+            <div class="input-group1">
+              <label class="label">请输入用户名：</label>
+              <input
+                class="input--style"
+                type="text"
+                id="username"
+                placeholder="请输入用户名"
+                required="required"
+              />
+            </div>
+            <div class="row row-space">
+              <div class="col-1">
+                <div class="input-group2">
+                  <label class="label">年龄</label>
+                  <input
+                    class="input--style"
+                    type="number"
+                    id="age"
+                    placeholder="请输入年龄"
+                    required="required"
+                  />
+                </div>
+              </div>
+              <div class="col-2">
+                <div class="input-group2">
+                  <label class="label">性别</label>
+                  <input
+                    class="input--style"
+                    type="text"
+                    id="gender"
+                    placeholder="F/M"
+                    required="required"
+                  />
+                </div>
+              </div>
+            </div>
+            <button class="btn-submit" type="submit" onclick="users()">
+              将用户录入数据库
+            </button>
+          </form>
+        </div>
+        <div style="display: none;" id="userList"></div>
+      </div>
+    </div>
+  </body>
+</html>

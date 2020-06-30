@@ -1,0 +1,12 @@
+org: fullstack
+app: fullstack-serverless-db
+stage: dev
+
+component: vpc # (required) name of the component. In that case, it's vpc.
+name: fullstack-vpc # (required) name of your vpc component instance.
+
+inputs:
+  region: ${env:REGION}
+  zone: ${env:ZONE}
+  vpcName: serverless
+  subnetName: serverless

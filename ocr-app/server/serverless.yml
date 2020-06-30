@@ -1,0 +1,25 @@
+org: serverless
+app: ocr-app
+stage: dev
+component: express
+name: ocr-backend
+
+inputs:
+  src: ./
+  functionName: ${name}
+  region: ${env:REGION}
+  runtime: Nodejs10.15
+  functionConf:
+    timeout: 10
+    environment:
+      variables:
+        REGION: ${env:REGION}
+        TENCENT_APP_ID: ${env:TENCENT_APP_ID}
+        TENCENT_SECRET_ID: ${env:TENCENT_SECRET_ID}
+        TENCENT_SECRET_KEY: ${env:TENCENT_SECRET_KEY}
+        BUCKET: ${env:BUCKET}
+  apigatewayConf:
+    enableCORS: true
+    protocols:
+      - http
+      - https

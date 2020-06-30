@@ -1,0 +1,7 @@
+{
+  "name": "mongodbDemo",
+  "version": "1.0.0",
+  "dependencies": {
+    "tcb-admin-node": "^1.22.1"
+  }
+}

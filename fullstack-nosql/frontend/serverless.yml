@@ -1,0 +1,18 @@
+component: website
+name: fullstack-frontend
+org: serverless
+app: fullstack-nosql
+stage: dev
+
+inputs:
+  src:
+    src: ./src
+    hook: npm run build
+    index: index.html
+    error: index.html
+    envPath: ./
+  region: ap-guangzhou
+  bucketName: my-bucket
+  protocol: http
+  env:
+    apiUrl: ${output:${stage}:${app}:fullstack-backend.Triggers.apigw.0}

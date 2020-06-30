@@ -1,0 +1,8 @@
+component: mongodb
+name: fullstack-db
+org: serverless
+app: fullstack-nosql
+stage: dev
+
+inputs:
+  name: Mydemo

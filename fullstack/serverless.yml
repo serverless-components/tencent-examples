@@ -1,0 +1,15 @@
+name: fullstack
+author: Tencent Cloud, Inc.
+org: Tencent Cloud, Inc.
+description: Deploy a full stack application.
+keywords: tencent, serverless, express, website, fullstack
+repo: https://github.com/serverless-components/tencent-examples/tree/master/fullstack
+readme: https://github.com/serverless-components/tencent-examples/tree/master/fullstack/README.md
+license: MIT
+src:
+  src: ./
+  exclude:
+    - .env
+    - serverless.yml
+    - '**/node_modules'
+    - '**/package-lock.json'

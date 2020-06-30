@@ -1,0 +1,32 @@
+{
+  "name": "ocr-app",
+  "version": "0.1.0",
+  "description": "Serverless OCR",
+  "main": "index.js",
+  "scripts": {
+    "bootstrap": "node scripts/bootstrap.js",
+    "deploy": "sls deploy --all",
+    "deploy:server": "sls deploy --target=./server",
+    "deploy:frontend": "sls deploy --target=./frontend",
+    "remove": "sls remove --all",
+    "info": "npm run info:backend && npm run info:frontend",
+    "info:backend": "sls info --target=./backend",
+    "info:frontend": "sls info --target=./frontend"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yugasun/serverless-ai.git"
+  },
+  "keywords": [
+    "serverless",
+    "ocr",
+    "serverless-component",
+    "fullstack"
+  ],
+  "author": "yugasun",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yugasun/serverless-ai/issues"
+  },
+  "homepage": "https://github.com/yugasun/serverless-ai#readme"
+}
