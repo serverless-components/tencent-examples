@@ -1,8 +1,8 @@
 name: fullstack-nosql
 author: Tencent Cloud, Inc.
 org: Tencent Cloud, Inc.
-description: Deploy a serverless OCR application.
-keywords: tencent, serverless, express, website, ocr
+description: Deploy a nosql full stack application.
+keywords: tencent, serverless, express, website, fullstack, nosql
 repo: https://github.com/serverless-components/tencent-examples/tree/master/fullstack-nosql
 readme: https://github.com/serverless-components/tencent-examples/tree/master/fullstack-nosql/README.md
 license: MIT
@@ -10,6 +10,7 @@ src:
   src: ./
   exclude:
     - .env
+    - '.git/**'
     - serverless.yml
     - '**/node_modules'
     - '**/package-lock.json'
