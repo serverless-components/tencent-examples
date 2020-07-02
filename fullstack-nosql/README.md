@@ -28,7 +28,7 @@ $ npm update -g serverless
 
 ### 配置
 
-1. 新建一个本地文件夹，使用 create --template-url 命令，下载相关 template：
+1. 新建一个本地文件夹，使用 `sls init` 命令，下载相关 template：
 
 ```bash
 $ serverless init -t fullstack-nosql
