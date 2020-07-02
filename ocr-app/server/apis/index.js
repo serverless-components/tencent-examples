@@ -20,7 +20,8 @@ class CloudApi {
     this.TENCENT_APP_ID = TENCENT_APP_ID;
     this.TENCENT_SECRET_ID = TENCENT_SECRET_ID;
     this.TENCENT_SECRET_KEY = TENCENT_SECRET_KEY;
-    this.BUCKET = BUCKET;
+
+    this.BUCKET = BUCKET.replace(`-${TENCENT_APP_ID}`, '');
   }
 
   /**
