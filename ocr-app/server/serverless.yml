@@ -7,17 +7,17 @@ name: ocr-backend
 inputs:
   src: ./
   functionName: ${name}
-  region: ${env:REGION}
+  region: ${output:${stage}:${app}:ocr-bucket.region}
   runtime: Nodejs10.15
   functionConf:
     timeout: 10
     environment:
       variables:
-        REGION: ${env:REGION}
+        REGION: ${output:${stage}:${app}:ocr-bucket.region}
         TENCENT_APP_ID: ${env:TENCENT_APP_ID}
         TENCENT_SECRET_ID: ${env:TENCENT_SECRET_ID}
         TENCENT_SECRET_KEY: ${env:TENCENT_SECRET_KEY}
-        BUCKET: ${env:BUCKET}
+        BUCKET: ${output:${stage}:${app}:ocr-bucket.bucket}
   apigatewayConf:
     enableCORS: true
     protocols:

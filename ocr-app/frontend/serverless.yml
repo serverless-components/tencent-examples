@@ -5,7 +5,7 @@ component: website
 name: ocr-frontend
 
 inputs:
-  region: ${env:REGION}
+  region: ${output:${stage}:${app}:ocr-bucket.region}
   bucketName: ocr-app
   protocol: https
   src:

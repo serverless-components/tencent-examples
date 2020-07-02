@@ -1,0 +1,20 @@
+org: serverless
+app: ocr-app
+stage: dev
+name: ocr-bucket
+component: cos
+
+inputs:
+  bucket: ocr-bucket
+  region: ap-guangzhou
+  protocol: https
+  acl:
+    permissions: public-read
+  cors:
+    - maxAgeSeconds: '0'
+      allowedMethods:
+        - GET
+        - PUT
+        - POST
+      allowedOrigins: '*'
+      allowedHeaders: '*'
