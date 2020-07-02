@@ -32,9 +32,9 @@ $ npm install -g serverless
 
 ### 2. 配置
 
-通过如下命令直接下载该例子，目录结构如下：
+通过如下命令直接下载该例子：
 
-```console
+```
 serverless init -t rest-api
 ```
 
