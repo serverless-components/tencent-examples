@@ -46,10 +46,10 @@ Components: 2.30.1
 
 ### 配置
 
-1.新建一个本地文件夹，使用`create --template-url`命令，下载相关 template。
+1.新建一个本地文件夹，使用`sls init`命令，下载相关 template。
 
 ```bash
-serverless create --template-url https://github.com/serverless-components/tencent-fullstack
+sls init -t fullstack
 ```
 
 2.在项目模板中找到.env.example 文件，修改名称为.env，并在其中配置对应的腾讯云
