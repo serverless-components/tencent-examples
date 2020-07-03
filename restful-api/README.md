@@ -35,7 +35,7 @@ $ npm install -g serverless
 通过如下命令直接下载该例子：
 
 ```
-serverless init -t rest-api
+serverless init -t restful-api
 ```
 
 查看 src/index.py 代码，可以看到接口的传参和返回逻辑：

@@ -1,20 +1,3 @@
-<!--
-title: Deploy Serverless python REST API
-description: "Deploy Serverless python REST API with Tencent SCF component"
-date: 2019-12-02
-thumbnail: 'http://url-to-thumbnail.jpg'
-categories:
-  - toturial
-authors:
-  - Tinafang
-authorslink:
-  - https://github.com/tinafangkunding
-translators:
-  - None
-translatorslink:
-  - None
--->
-
 # Build a RESTful API
 
 ## Quick Start
@@ -47,7 +30,7 @@ $ npm install -g serverless
 Create a template in a new folder, with the following command
 
 ```console
-$ serverless init -t rest-api
+$ serverless init -t restful-api
 ```
 
 ```python
