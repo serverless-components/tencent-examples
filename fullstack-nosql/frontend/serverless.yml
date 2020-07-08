@@ -15,4 +15,4 @@ inputs:
   bucketName: my-bucket
   protocol: http
   env:
-    apiUrl: ${output:${stage}:${app}:fullstack-backend.Triggers.apigw.0}
+    apiUrl: ${output:${stage}:${app}:fullstack-backend.triggers.apigw.0}
