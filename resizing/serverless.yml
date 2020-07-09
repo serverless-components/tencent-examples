@@ -1,0 +1,11 @@
+name: resizing-app
+author: Jason Ah Chuen
+org: jason
+description: Resize images uploaded to one COS bucket into a fixed size in another COS bucket
+keywords: tencent, serverless, SCF, COS
+license: MIT
+src:
+  src: ./
+  exclude:
+    - .env
+    - serverless.yml
