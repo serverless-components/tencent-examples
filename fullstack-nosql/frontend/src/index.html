@@ -8,9 +8,10 @@
     <script>
       function users() {
         console.log();
+        var obj = document.getElementById('userList');
         const xmlhttp = window.XMLHttpRequest
-          ? new XMLHttpRequest()
-          : new ActiveXObject('Microsoft.XMLHTTP');
+                ? new XMLHttpRequest()
+                : new ActiveXObject('Microsoft.XMLHTTP');
         xmlhttp.onreadystatechange = function () {
           if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
             const responseBody = JSON.parse(xmlhttp.responseText);
@@ -18,31 +19,33 @@
             let outputStr = `<h3>已经录入的用户列表：</h3>`;
             for (let i = 0; i < responseBody.data.length; i++) {
               outputStr =
-                outputStr +
-                `${responseBody.data[i].username}&nbsp&nbsp` +
-                `${responseBody.data[i].age}&nbsp&nbsp` +
-                `${responseBody.data[i].gender}<br>`;
+                      outputStr +
+                      `${responseBody.data[i].username}&nbsp&nbsp` +
+                      `${responseBody.data[i].age}&nbsp&nbsp` +
+                      `${responseBody.data[i].gender}<br>`;
             }
-            var obj = document.getElementById('userList');
             obj.innerHTML = outputStr;
           }
-          if (obj.style.display == 'none') {
+          if (obj && obj.style.display == 'none') {
             obj.style.display = '';
           }
         };
         xmlhttp.open('POST', window.env.apiUrl, true);
         xmlhttp.setRequestHeader('Content-type', 'application/json');
         const data = document.getElementById('username')
-          ? {
-              username: document.getElementById('username').value,
-              age: document.getElementById('age').value,
-              gender: document.getElementById('gender').value,
-            }
-          : {};
+                ? {
+                  username: document.getElementById('username').value,
+                  age: document.getElementById('age').value,
+                  gender: document.getElementById('gender').value,
+                }
+                : {};
         xmlhttp.send(JSON.stringify(data));
       }
 
-      users();
+
+      window.onload = function(){
+        users();
+      };
     </script>
   </head>
   <body>
