@@ -1,6 +1,6 @@
 component: cos
 name: cos-bucket
-org: jason
+org: jason-tencent
 app: resizing-app
 stage: dev
 

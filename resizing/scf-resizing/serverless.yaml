@@ -1,6 +1,6 @@
 component: scf
 name: resizing-scf
-org: jason
+org: jason-tencent
 app: resizing-app
 stage: dev
 inputs:
