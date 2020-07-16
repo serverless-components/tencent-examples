@@ -2,4 +2,4 @@ This template uses PIL (Python Imaging Library) as dependency. You must first in
 using the CLI command "pip install Pillow".
 
 To use this template, you also need to replace the credentials information in the
-Thumbnail.py file and .env file.
+ .env file.

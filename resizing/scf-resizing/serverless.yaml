@@ -13,7 +13,13 @@ inputs:
   handler: Thumbnail.main_handler
   runtime: Python2.7
   namespace: default
-  region: ap-guangzhou
+  region: ${env:region}
+  env:
+    appid: ${env:appid}
+    secret_id: ${env:TENCENT_SECRET_ID}
+    secret_key: ${env:TENCENT_SECRET_KEY}
+    region: ${env:region}
+    resized_bucket: ${env:resized_bucket}
   memorySize: 128
   timeout: 5
   events:
