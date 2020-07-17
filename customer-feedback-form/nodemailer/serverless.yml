@@ -1,0 +1,59 @@
+name: customer-feedback-form-nodemailer
+org: jason
+app: customer-feedback-form
+component: scf
+stage: dev
+
+inputs:
+  src: ./
+  functionName: ${name}
+  region: ${env:REGION}
+  runtime: Nodejs10.15
+  memorySize: 128
+  timeout: 30
+  functionConf:
+    timeout: 30
+    vpcConfig:
+      vpcId: ${output:${stage}:${app}:customer-feedback-form-vpc.vpcId}
+      subnetId: ${output:${stage}:${app}:customer-feedback-form-vpc.subnetId}
+  handler: index.main_handler
+  apigatewayConf:
+    enableCORS: true
+    protocols:
+      - http
+      - https
+  events:
+    - apigw:
+        name: ${name}
+        parameters:
+          protocols:
+            - http
+            - https
+          serviceName: nodemailer
+          description: the nodemailer service
+          environment: release
+          endpoints:
+            - path: /email/{user_name}/{user_email}/{user_feedback}
+              method: GET
+              description: sending email to merchant API
+              enableCORS: TRUE
+              serviceTimeout: 10
+              param:
+                - name: user_name
+                  position: PATH
+                  required: 'TRUE'
+                  type: string
+                  defaultValue: defaultUser
+                  desc: name of the user giving feedback
+                - name: user_email
+                  position: PATH
+                  required: 'TRUE'
+                  type: string
+                  defaultValue: defaultEmail
+                  desc: email address of the user
+                - name: user_feedback
+                  position: PATH
+                  required: 'TRUE'
+                  type: string
+                  defaultValue: defaultFeedback
+                  desc: feedback of the user
