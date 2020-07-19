@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css">
+    <script type="module" src="index.js"></script>
+    <script src="env.js"></script>
+    <title>Serverless Component - Website</title>
+  </head>
+  <body>
+    <p>This is a simple full-stack website that runs fully on the cloud on a Virtual Private Network.
+      It is a template for a customer feedback form.
+      On submitting, customer feedback is stored in postgresql database and triggers SCF function
+      that sends a copy of the feedback by email to the merchant. <br><br>
+      Frontend: HTML, CSS, JS <br>
+      Backend: Express <br>
+      Database: postgresql <br>
+      Tencent Serverless cloud components: VPC, website, postgresql, express, SCF <br>
+    </p>
+    <form id="feedbackForm">
+      <label for="Name">First name:</label>
+      <input type="text" id="name" name="name"><br>
+      <label for="email">Enter your email:</label>
+      <input type="email" id="email" name="email"><br>
+      <label for="Feedback">Feedback:</label>
+      <input type="text" id="feedback" name="feedback"><br>
+      <input type="submit" id="feedbackButton">
+    </form>
+  </body>
+</html>

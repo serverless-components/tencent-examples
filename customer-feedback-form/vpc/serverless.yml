@@ -1,0 +1,11 @@
+org: jason
+app: customer-feedback-form
+stage: dev
+component: vpc # (required) name of the component. In that case, it's vpc.
+name: customer-feedback-form-vpc # (required) name of your vpc component instance.
+
+inputs:
+  region: ${env:REGION}
+  zone: ${env:ZONE}
+  vpcName: serverless
+  subnetName: serverless

@@ -1,0 +1,14 @@
+org: jason
+app: customer-feedback-form
+stage: dev
+component: postgresql
+name: customer-feedback-form-db
+
+inputs:
+  region: ${env:REGION}
+  zone: ${env:ZONE}
+  dBInstanceName: ${name}
+  vpcConfig:
+    vpcId: ${output:${stage}:${app}:customer-feedback-form-vpc.vpcId}
+    subnetId: ${output:${stage}:${app}:customer-feedback-form-vpc.subnetId}
+  extranetAccess: true
