@@ -1,9 +1,6 @@
 # customer feedback app
 
-This is a template of serverless fullstack application. It aims to be the
-simplest possible way to build a serverless fullstack application, including a
-Vue.js application on the front-end bundled with Parcel and back-end API using
-postgresql.
+This is a template of a typical customer feedback full-stack app coupled with database. When the customer submits the feedback form on the website, the information is stored in a postgresql database and is also sent by email to the merchant via nodemailer module built as a Serverless Cloud Function.
 
 This template includes:
 
