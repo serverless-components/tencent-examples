@@ -1,0 +1,25 @@
+{
+  "name": "tencent-customer-feedback-app",
+  "version": "1.1.0",
+  "description": "Fullstack app with serverless db and nodemailer module",
+  "main": "index.js",
+  "scripts": {
+    "bootstrap": "node bootstrap.js",
+    "deploy": "sls deploy --all",
+    "remove": "sls remove --all",
+    "info": "npm run info:vpc && npm run info:database && npm run info:api && npm run info:feedback-form-website && npm run info:nodemailer",
+    "info:vpc": "sls info --target=./vpc",
+    "info:database": "sls info --target=./database",
+    "info:api": "sls info --target=./api",
+    "info:feedback-form-website": "sls info --target=./feedback-form-website",
+    "info:nodemailer": "sls info --target=./nodemailer"
+  },
+  "keywords": [
+    "fullstack",
+    "serverless",
+    "serverless-db",
+    "nodemailer-module"
+  ],
+  "author": "jahchuen, yugasun",
+  "license": "MIT"
+}

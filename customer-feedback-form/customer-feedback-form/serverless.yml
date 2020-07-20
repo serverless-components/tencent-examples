@@ -1,0 +1,14 @@
+name: customer-feedback-form
+author: Jason Ah Chuen
+org: jason
+description: Deploy a full stack application.
+keywords: tencent, serverless, vpc, express, website, postgresql, fullstack, nodemailer
+license: MIT
+src:
+  src: ./
+  exclude:
+    - .env
+    - '.git/**'
+    - serverless.yml
+    - '**/node_modules'
+    - '**/package-lock.json'

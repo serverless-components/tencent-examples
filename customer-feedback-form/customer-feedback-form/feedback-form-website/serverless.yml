@@ -1,0 +1,29 @@
+name: customer-feedback-form-website
+org: jason
+app: customer-feedback-form
+component: website
+stage: dev
+
+inputs:
+  src:
+    src: ./
+    index: index.html
+    error: index.html
+  region: ${env:REGION}
+  zone: ${env:ZONE}
+  bucketName: customer-feedback-form-website-bucket
+  protocols: https
+  env:
+    # get api url after below api service deployed.
+    apiUrl: ${output:${stage}:${app}:customer-feedback-form-api.apigw.url}
+    nodemailerApiUrl: ${output:${stage}:${app}:customer-feedback-form-nodemailer.triggers.apigw}
+  functionConf:
+    environment:
+      variables:
+        apiUrl: ${output:${stage}:${app}:customer-feedback-form-api.apigw.url}
+        nodemailerApiUrl: ${output:${stage}:${app}:customer-feedback-form-nodemailer.triggers.apigw}
+  apigatewayConf:
+    enableCORS: true
+    protocols:
+      - http
+      - https
