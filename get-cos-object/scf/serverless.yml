@@ -1,0 +1,30 @@
+component: scf # (必选) 组件名称，在该实例中为scf
+name: demo-function # 必选) 组件实例名称.
+org:  Tencent Cloud, Inc. # (可选) 用于记录组织信息，默认值为您的腾讯云账户 appid
+app: GetCosObject # (可选) 用于记录组织信息. 默认与name相同.
+stage: dev # (可选) 用于区分环境信息，默认值是 dev
+
+inputs:
+  name: demo-function
+  src: ./
+  handler: index.main_handler 
+  runtime: Nodejs8.9 
+  region: ap-guangzhou 
+  description: My Serverless Function
+  memorySize: 128 
+
+  timeout: 10
+  environment:
+    variables:
+        Bucket: ${output:${stage}:${app}:cos-bucket.bucket}
+        TENCENT_APP_ID: ${env:TENCENT_APP_ID}
+        TENCENT_SECRET_ID: ${env:TENCENT_SECRET_ID}
+        TENCENT_SECRET_KEY: ${env:TENCENT_SECRET_KEY}
+  
+  events: # 触发器
+    - cos: # cos触发器
+        name: ${output:${stage}:${app}:cos-bucket.cosOrigin}
+        parameters:
+          bucket: ${output:${stage}:${app}:cos-bucket.cosOrigin}
+          events: 'cos:ObjectCreated:*'
+          enable: true

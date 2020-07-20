@@ -1,0 +1,11 @@
+# serverless.yml
+
+org: serverless
+app: mapreduce-demo
+stage: dev
+component: cos
+name: destmr
+
+inputs:
+  bucket: destmr
+  region: ap-guangzhou

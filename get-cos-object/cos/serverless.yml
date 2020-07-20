@@ -1,0 +1,20 @@
+org: Tencent Cloud, Inc.
+app: GetCosObject
+stage: dev
+name: cos-bucket
+component: cos
+
+inputs:
+  bucket: my-bucket
+  region: ap-guangzhou
+  protocol: https
+  acl:
+    permissions: public-read
+  cors:
+    - maxAgeSeconds: '0'
+      allowedMethods:
+        - GET
+        - PUT
+        - POST
+      allowedOrigins: '*'
+      allowedHeaders: '*'

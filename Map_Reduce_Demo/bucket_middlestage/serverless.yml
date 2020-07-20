@@ -1,0 +1,11 @@
+# serverless.yml
+
+org: serverless
+app: mapreduce-demo
+stage: dev
+component: cos
+name: middlestagebucket
+
+inputs:
+  bucket: middlestagebucket
+  region: ap-guangzhou

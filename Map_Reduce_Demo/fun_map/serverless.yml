@@ -1,0 +1,29 @@
+component: scf # (必选) 组件名称，在该实例中为scf
+name: map_function # 必选) 组件实例名称.
+org: serverless # (可选) 用于记录组织信息，默认值为您的腾讯云账户 appid
+app: mapreduce-demo # (可选) 用于记录组织信息. 默认与name相同.
+stage: dev # (可选) 用于区分环境信息，默认值是 dev
+
+inputs:
+  name: map_function
+  src: ./
+  handler: map_function.main_handler 
+  runtime: Python2.7 
+  region: ap-guangzhou 
+  description: This is one of the MapReduce function which is map_function
+  memorySize: 128 
+
+  timeout: 10
+  environment:
+    variables:
+        Bucket: ${output:${stage}:${app}:middlestagebucket.bucket}
+        TENCENT_SECRET_ID: ${env:TENCENT_SECRET_ID}
+        TENCENT_SECRET_KEY: ${env:TENCENT_SECRET_KEY}
+  
+  events: # 触发器
+    - cos: # cos触发器
+        name: ${output:${stage}:${app}:srcmr.cosOrigin}
+        parameters:
+          bucket: ${output:${stage}:${app}:srcmr.cosOrigin}
+          events: 'cos:ObjectCreated:*'
+          enable: true

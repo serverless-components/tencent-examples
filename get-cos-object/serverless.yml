@@ -1,0 +1,16 @@
+name: get-cos-object
+author: Tencent Cloud, Inc.
+org: Tencent Cloud, Inc.
+description: Get cos object from your cos bucket
+keywords: scf, cos, nodejs
+repo: https://github.com/serverless-components/tencent-examples/tree/master/get-cos-object
+readme: https://github.com/serverless-components/tencent-examples/tree/master/get-cos-object/README.md
+license: MIT
+src:
+  src: ./
+  exclude:
+    - .env
+    - '.git/**'
+    - serverless.yml
+    - '**/node_modules'
+    - '**/package-lock.json'
