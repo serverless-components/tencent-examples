@@ -11,4 +11,4 @@ A collection of ready-to-deploy Serverless Framework project examples.
 | [ocr-app](https://github.com/serverless-components/tencent-examples/tree/master/ocr-app)| Serverless OCR Application developed by Serverless Framework. |
 |[restful-api](https://github.com/serverless-components/tencent-examples/tree/master/restful-api)|Build a serverless REST API application with tencent serverless SCF component, support GET/PUT methods.|
 |[Map_Reduce_Demo](https://github.com/serverless-components/tencent-examples/tree/master/Map_Reduce_Demo)|Deploy a MapReduce wordcount application.|
-|[GetCosObject](https://github.com/Jiachen0417/tencent-examples/tree/master/get-cos-object)|Get cos object from your cos bucket.|
+|[GetCosObject](https://github.com/serverless-components/tencent-examples/tree/master/get-cos-object)|Get cos object from your cos bucket.|
