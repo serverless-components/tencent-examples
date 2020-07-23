@@ -1,0 +1,22 @@
+component: scf
+name: scf-timer
+org: Tencent
+app: scf-timer
+stage: dev
+inputs:
+  name: scf-timer
+  src: ./
+  description: trigger scf function based on timer
+  handler: index.main_handler
+  runtime: Nodejs8.9
+  namespace: default
+  region: ap-guangzhou
+  memorySize: 128
+  timeout: 10
+  events:
+     - timer:
+         name: test-timer
+         parameters:
+           cronExpression: '*/30 * * * * * *'
+           enable: true
+           argument: argument
