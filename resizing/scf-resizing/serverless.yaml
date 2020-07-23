@@ -14,12 +14,13 @@ inputs:
   runtime: Python2.7
   namespace: default
   region: ${env:region}
-  env:
-    appid: ${env:appid}
-    secret_id: ${env:TENCENT_SECRET_ID}
-    secret_key: ${env:TENCENT_SECRET_KEY}
-    region: ${env:region}
-    resized_bucket: ${env:resized_bucket}
+  environment:
+    variables:
+        appid: ${env:appid}
+        secret_id: ${env:TENCENT_SECRET_ID}
+        secret_key: ${env:TENCENT_SECRET_KEY}
+        region: ${env:region}
+        resized_bucket: ${env:resized_bucket}
   memorySize: 128
   timeout: 5
   events:
