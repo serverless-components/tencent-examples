@@ -37,7 +37,6 @@ const instanceBackendYaml = {
     src: path.resolve(__dirname, '../server/'),
     functionName: 'ocr-backend-integration-tests',
     runtime: 'Nodejs10.15',
-    region: 'ap-guangzhou',
     functionConf: {
       timeout: 10,
       environment: {
@@ -81,9 +80,11 @@ const sdk = getServerlessSdk(instanceBackendYaml.org)
 
 it('should successfully deploy ocr bucket app', async () => {
   const instance = await sdk.deploy(instanceBucketYaml, credentials)
-  instanceBackendYaml.region = instance.outputs.region
-  instanceBackendYaml.inputs.REGION = instance.outputs.region
-  instanceBackendYaml.inputs.BUCKET = instance.outputs.bucket
+  instanceBackendYaml.inputs.region = instance.outputs.region
+  instanceBackendYaml.inputs.functionConf.environment.variabbles.BUCKET =
+    instance.outputs.bucket
+  instanceBackendYaml.inputs.functionConf.environment.variabbles.REGION =
+    instance.outputs.region
   instanceFrontendYaml.inputs.region = instance.outputs.region
   instanceFrontendYaml.inputs.bucketName = instance.outputs.bucket
 })
