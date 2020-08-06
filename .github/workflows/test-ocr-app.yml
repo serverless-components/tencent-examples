@@ -1,0 +1,40 @@
+name: Integration Tests
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [10.15]
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - name: Install Inner Dependencies
+      run: |
+        cd ocr-app
+        npm run bootstrap
+    - name: Install Dependencies
+      run: |
+        cd ocr-app
+        npm install
+    - name: Run Integration Tests
+      run: |
+        cd ocr-app
+        npm test
+      env:
+        TENCENT_SECRET_ID: ${{ secrets.TENCENT_SECRET_ID}}
+        TENCENT_SECRET_KEY: ${{ secrets.TENCENT_SECRET_KEY}}
+        TENCENT_APP_ID: ${{ secrets.TENCENT_APP_ID }}
+        BUCKET: ${{ secrets.BUCKET }}
+        REGION: ${{ secrets.REGION}}
+        SERVERLESS_PLATFORM_STAGE: ${{ secrets.SERVERLESS_PLATFORM_STAGE }}
