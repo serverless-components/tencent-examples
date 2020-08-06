@@ -2,6 +2,8 @@ name: Integration Tests
 
 on:
   push:
+    paths:
+    - 'ocr-app/**'
     branches: [master]
 
 jobs:
