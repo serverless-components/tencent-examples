@@ -5,27 +5,6 @@ require('dotenv').config()
 // set enough timeout for deployment to finish
 jest.setTimeout(600000)
 
-const instanceBucketYaml = {
-  component: 'cos',
-  name: 'ocr-bucket-test',
-  stage: 'dev',
-  org: 'orgDemo',
-  app: 'appDemo',
-  inputs: {
-    bucket: 'ocr-bucket',
-    region: process.env.REGION,
-    protocol: 'https',
-    acl: { permissions: 'public-read' },
-    cors: [
-      {
-        maxAgeSeconds: 0,
-        allowedMethods: ['GET', 'PUT', 'POST'],
-        allowedOrigins: '*',
-        allowedHeaders: '*',
-      },
-    ],
-  },
-}
 // the yaml file we're testing against
 const instanceBackendYaml = {
   org: 'orgDemo',
@@ -37,13 +16,16 @@ const instanceBackendYaml = {
     src: path.resolve(__dirname, '../server/'),
     functionName: 'ocr-backend-integration-tests',
     runtime: 'Nodejs10.15',
+    region: process.env.REGION,
     functionConf: {
       timeout: 10,
       environment: {
         variabbles: {
+          REGION: process.env.REGION,
           TENCENT_APP_ID: process.env.TENCENT_APP_ID,
           TENCENT_SECRET_ID: process.env.TENCENT_SECRET_ID,
           TENCENT_SECRET_KEY: process.env.TENCENT_SECRET_KEY,
+          BUCKET: process.env.BUCKET,
         },
       },
     },
@@ -61,6 +43,8 @@ const instanceFrontendYaml = {
   name: 'ocr-frontend-integration-tests',
   stage: 'dev',
   inputs: {
+    region: process.env.REGION,
+    bucketName: process.env.BUCKET,
     protocol: 'https',
     src: {
       src: path.resolve(__dirname, '../frontend/'),
@@ -77,17 +61,6 @@ const instanceFrontendYaml = {
 const credentials = getCredentials()
 
 const sdk = getServerlessSdk(instanceBackendYaml.org)
-
-it('should successfully deploy ocr bucket app', async () => {
-  const instance = await sdk.deploy(instanceBucketYaml, credentials)
-  instanceBackendYaml.inputs.region = instance.outputs.region
-  instanceBackendYaml.inputs.functionConf.environment.variabbles.BUCKET =
-    instance.outputs.bucket
-  instanceBackendYaml.inputs.functionConf.environment.variabbles.REGION =
-    instance.outputs.region
-  instanceFrontendYaml.inputs.region = instance.outputs.region
-  instanceFrontendYaml.inputs.bucketName = instance.outputs.bucket
-})
 
 it('should successfully deploy ocr backend app', async () => {
   const instance = await sdk.deploy(instanceBackendYaml, credentials)
@@ -118,17 +91,6 @@ it('should successfully remove ocr backend app', async () => {
 
 it('should successfully remove ocr frontend app', async () => {
   await sdk.remove(instanceFrontendYaml, credentials)
-  result = await sdk.getInstance(
-    instanceBackendYaml.org,
-    instanceBackendYaml.stage,
-    instanceBackendYaml.app,
-    instanceBackendYaml.name,
-  )
-  expect(result.instance.instanceStatus).toEqual('inactive')
-})
-
-it('should successfully remove ocr bucket app', async () => {
-  await sdk.remove(instanceBucketYaml, credentials)
   result = await sdk.getInstance(
     instanceBackendYaml.org,
     instanceBackendYaml.stage,
