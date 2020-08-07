@@ -1,0 +1,48 @@
+component: scf
+name: meeting_bot
+org: Tencent
+app: meeting_bot
+stage: dev
+inputs:
+  src: ./src
+  name: meeting_bot
+  runtime: Python3.6
+  timeout: 3
+  codeUri: ./meeting_bot
+  description: sends regular/spontaneous reminders for meetings
+  region: ${env:REGION}
+  environment:
+    variables:
+      wechat_url: ${env:WEBHOOK1}
+      slack_url: ${env:WEBHOOK2}
+  handler: index.main_handler
+  memorySize: 64
+  tags:
+    app: meeting_bot
+  events:
+    - apigw:
+        name: spontaneous_meeting
+        parameters:
+          protocols:
+            - http
+            - https
+          serviceName: spontaneous_meeting
+          description: schedule a spontaneous meeting
+          environment: release
+          endpoints:
+            - path: /spontaneous_meeting
+              method: ANY
+              enableCORS: TRUE
+              serviceTimeout: 10
+    - timer:
+         name: daily_meeting
+         parameters:
+           cronExpression: '0 0 10 * * MON-FRI *'
+           enable: true
+           argument: argument
+    - timer:
+         name: weekly_meeting
+         parameters:
+           cronExpression: '0 0 12 * * MON *'
+           enable: true
+           argument: argument
