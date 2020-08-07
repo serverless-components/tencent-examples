@@ -1,0 +1,26 @@
+component: scf
+name: personal-reminder
+org: Tencent
+app: personal-reminder
+stage: dev
+inputs:
+  name: personal-reminder
+  src: ./
+  description: trigger scf function based on timer
+  handler: index.main_handler
+  runtime: Nodejs8.9
+  namespace: default
+  region: ap-guangzhou
+  memorySize: 128
+  timeout: 10
+  environment:
+    variables:
+      EMAIL_ADDRESS: ${env:EMAIL_ADDRESS}
+      EMAIL_ADDRESS_PASSWORD: ${env:EMAIL_ADDRESS_PASSWORD}
+  events:
+     - timer:
+         name: test-timer
+         parameters:
+           cronExpression: '*/60 * * * * * *'
+           enable: true
+           argument: argument
