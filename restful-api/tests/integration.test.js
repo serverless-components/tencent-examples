@@ -1,73 +1,16 @@
-const { getServerlessSdk, getCredentials } = require('./utils')
+const { getYamlConfig, getServerlessSdk, getCredentials } = require('./utils')
 const path = require('path')
 const axios = require('axios')
-const { exception } = require('console')
 require('dotenv').config()
 
 // set enough timeout for deployment to finish
 jest.setTimeout(600000)
 
-// the yaml file we're testing against
-const instanceBackendYaml = {
-  org: 'orgDemo',
-  app: 'appDemo',
-  component: 'scf',
-  name: 'restful-api-tests',
-  stage: 'dev',
-  inputs: {
-    name: 'restful-api-tests',
-    src: path.resolve(__dirname, '../src/'),
-    handler: 'index.main_handler',
-    runtime: 'Python3.6',
-    functionName: 'ocr-backend-integration-tests',
-    description: 'My Serverless Function',
-    memoriSize: 128,
-    timeout: 20,
-    region: process.env.REGION,
-    events: [
-      {
-        apigw: {
-          name: 'serverless',
-          parameters: {
-            protocols: ['http'],
-            serviceName: 'serverless',
-            description: 'the serverless service',
-            environment: 'release',
-            endpoints: [
-              {
-                path: '/users/{user_type}/{action}',
-                method: 'GET',
-                description: 'serverless rest api',
-                enableCORS: true,
-                serviceTimeout: 10,
-                param: [
-                  {
-                    name: 'user_type',
-                    position: 'PATH',
-                    required: 'TRUE',
-                    type: 'string',
-                    defaultValue: 'teacher',
-                    desc: 'mytest',
-                  },
-                  {
-                    name: 'action',
-                    position: 'PATH',
-                    required: 'TRUE',
-                    type: 'string',
-                    defaultValue: 'go',
-                    desc: 'mytest',
-                  },
-                ],
-              },
-            ],
-          },
-        },
-      },
-    ],
-  },
-}
+const instanceBackendYaml = getYamlConfig(
+  path.resolve(__dirname, '../src/serverless.yml'),
+)
 
-// get aws credentials from env
+// get tencent cloud credentials from env
 const credentials = getCredentials()
 
 const sdk = getServerlessSdk(instanceBackendYaml.org)
