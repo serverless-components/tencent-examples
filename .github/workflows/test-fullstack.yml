@@ -39,3 +39,4 @@ jobs:
         TENCENT_APP_ID: ${{ secrets.TENCENT_APP_ID }}
         REGION: ${{ secrets.REGION}}
         SERVERLESS_PLATFORM_STAGE: ${{ secrets.SERVERLESS_PLATFORM_STAGE }}
+        ZONE: ${{ secrets.ZONE }}
