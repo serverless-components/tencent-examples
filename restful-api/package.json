@@ -1,0 +1,19 @@
+{
+  "name": "restful-api",
+  "version": "1.0.0",
+  "description": "## Quick Start",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest ./tests/integration.test.js --testEnvironment node"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@serverless/platform-client-china": "^1.0.32",
+    "axios": "^0.19.2",
+    "dotenv": "^8.2.0",
+    "jest": "^26.2.2",
+    "js-yaml": "^3.14.0"
+  }
+}

@@ -1,9 +1,9 @@
-name: Integration ocr app Tests
+name: Integration resutful api Tests
 
 on:
   pull_request:
     paths:
-    - 'ocr-app/**'
+    - 'restful-api/**'
     branches: [master]
 
 jobs:
@@ -21,17 +21,13 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - name: Install Inner Dependencies
-      run: |
-        cd ocr-app
-        npm run bootstrap
     - name: Install Dependencies
       run: |
-        cd ocr-app
+        cd restful-api
         npm install
     - name: Run Integration Tests
       run: |
-        cd ocr-app
+        cd restful-api
         npm test
       env:
         TENCENT_SECRET_ID: ${{ secrets.TENCENT_SECRET_ID}}
