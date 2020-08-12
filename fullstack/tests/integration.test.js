@@ -12,7 +12,7 @@ const path = require('path')
 jest.setTimeout(600000)
 
 const instanceVpcYaml = getVpcYamlConfig(
-  path.resolve(__dirname, '../vpc/serverless.yml1'),
+  path.resolve(__dirname, '../vpc/serverless.yml'),
 )
 
 const instanceDBYaml = getDBConfig(
