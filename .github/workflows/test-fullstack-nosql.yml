@@ -31,7 +31,7 @@ jobs:
         npm install
     - name: Run Integration Tests
       run: |
-        cd fullstack
+        cd fullstack-nosql
         npm test
       env:
         TENCENT_SECRET_ID: ${{ secrets.TENCENT_SECRET_ID}}
