@@ -1,6 +1,5 @@
 name: fullstack-nosql
 author: Tencent Cloud, Inc.
-org: Tencent Cloud, Inc.
 description: Deploy a nosql full stack application.
 keywords: tencent, serverless, express, website, fullstack, nosql
 repo: https://github.com/serverless-components/tencent-examples/tree/master/fullstack-nosql
