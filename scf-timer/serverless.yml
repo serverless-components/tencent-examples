@@ -1,8 +1,6 @@
 component: scf
 name: personal-reminder
-org: Tencent
 app: personal-reminder
-stage: dev
 inputs:
   name: personal-reminder
   src: ./
