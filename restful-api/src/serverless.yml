@@ -31,13 +31,13 @@ inputs:
               param:
                 - name: user_type
                   position: PATH
-                  required: 'TRUE'
+                  required: TRUE
                   type: string
                   defaultValue: teacher
                   desc: mytest
                 - name: action
                   position: PATH
-                  required: 'TRUE'
+                  required: TRUE
                   type: string
                   defaultValue: go
                   desc: mytest

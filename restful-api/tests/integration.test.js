@@ -13,12 +13,12 @@ const instanceBackendYaml = getYamlConfig(
 // get tencent cloud credentials from env
 const credentials = getCredentials()
 
-const sdk = getServerlessSdk(instanceBackendYaml.org)
+const sdk = getServerlessSdk()
 
 it('should successfully deploy restful api app', async () => {
   const instance = await sdk.deploy(instanceBackendYaml, credentials)
-  expect(instance.outputs.Triggers.apigw[0]).toBeDefined()
-  const originUrl = instance.outputs.Triggers.apigw[0]
+  expect(instance.outputs.triggers.apigw[0]).toBeDefined()
+  const originUrl = instance.outputs.triggers.apigw[0]
   const teacherUrl = originUrl
     .replace('{user_type}', 'teacher')
     .replace('{action}', 'go')
