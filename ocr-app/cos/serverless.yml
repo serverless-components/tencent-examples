@@ -1,6 +1,4 @@
-org: serverless
 app: ocr-app
-stage: dev
 name: ocr-bucket
 component: cos
 
