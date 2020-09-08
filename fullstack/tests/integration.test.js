@@ -29,7 +29,7 @@ const instanceWebYaml = getWebConfig(
 // get tencent cloud credentials from env
 const credentials = getCredentials()
 
-const sdk = getServerlessSdk(instanceVpcYaml.org)
+const sdk = getServerlessSdk()
 
 it('should successfully deploy fullstack vpc app', async () => {
   const instance = await sdk.deploy(instanceVpcYaml, credentials)
