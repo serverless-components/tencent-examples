@@ -24,7 +24,7 @@ const instanceWebYaml = getWebConfig(
 // get tencent cloud credentials from env
 const credentials = getCredentials()
 
-const sdk = getServerlessSdk(instanceDBYaml.org)
+const sdk = getServerlessSdk()
 
 it('should successfully deploy fullstack db app', async () => {
   const instance = await sdk.deploy(instanceDBYaml, credentials)
