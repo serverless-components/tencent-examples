@@ -1,66 +1,27 @@
-const { getServerlessSdk, getCredentials } = require('./utils')
+const {
+  getServerlessSdk,
+  getCredentials,
+  getFrontendYamlConfig,
+  getBackendYamlConfig,
+} = require('./utils')
 const path = require('path')
 require('dotenv').config()
 
 // set enough timeout for deployment to finish
 jest.setTimeout(600000)
 
-// the yaml file we're testing against
-const instanceBackendYaml = {
-  org: 'orgDemo',
-  app: 'appDemo',
-  component: 'express',
-  name: 'ocr-backend-integration-tests',
-  stage: 'dev',
-  inputs: {
-    src: path.resolve(__dirname, '../server/'),
-    functionName: 'ocr-backend-integration-tests',
-    runtime: 'Nodejs10.15',
-    region: process.env.REGION,
-    functionConf: {
-      timeout: 10,
-      environment: {
-        variabbles: {
-          REGION: process.env.REGION,
-          TENCENT_APP_ID: process.env.TENCENT_APP_ID,
-          TENCENT_SECRET_ID: process.env.TENCENT_SECRET_ID,
-          TENCENT_SECRET_KEY: process.env.TENCENT_SECRET_KEY,
-          BUCKET: process.env.BUCKET,
-        },
-      },
-    },
-    apigatewayConf: {
-      enableCORS: true,
-      protocols: ['http', 'https'],
-    },
-  },
-}
+const instanceBackendYaml = getBackendYamlConfig(
+  path.resolve(__dirname, '../server/serverless.yml'),
+)
 
-const instanceFrontendYaml = {
-  org: 'orgDemo',
-  app: 'appDemo',
-  component: 'website',
-  name: 'ocr-frontend-integration-tests',
-  stage: 'dev',
-  inputs: {
-    region: process.env.REGION,
-    bucketName: process.env.BUCKET,
-    protocol: 'https',
-    src: {
-      src: path.resolve(__dirname, '../frontend/'),
-      hook: 'SKIP_PREFLIGHT_CHECK=true npm run build',
-      envPath: './',
-      dist: path.resolve(__dirname, '../frontend/build'),
-      index: 'index.html',
-      error: 'index.html',
-    },
-    env: { apiUrl: '' },
-  },
-}
+const instanceFrontendYaml = getFrontendYamlConfig(
+  path.resolve(__dirname, '../frontend/serverless.yml'),
+)
+
 // get aws credentials from env
 const credentials = getCredentials()
 
-const sdk = getServerlessSdk(instanceBackendYaml.org)
+const sdk = getServerlessSdk()
 
 it('should successfully deploy ocr backend app', async () => {
   const instance = await sdk.deploy(instanceBackendYaml, credentials)
