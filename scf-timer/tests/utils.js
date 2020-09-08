@@ -8,12 +8,10 @@ const path = require('path')
  * Initializes and returns an instance of the serverless sdk
  * @param ${string} orgName - the serverless org name.
  */
-const getServerlessSdk = (orgName) => {
+const getServerlessSdk = () => {
   const sdk = new ServerlessSDK({
     skipRoleBinding: true,
-    context: {
-      orgName,
-    },
+    context: {},
   })
   return sdk
 }

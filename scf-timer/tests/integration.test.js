@@ -12,7 +12,7 @@ const instanceBackendYaml = getYamlConfig(
 // get tencent cloud credentials from env
 const credentials = getCredentials()
 
-const sdk = getServerlessSdk(instanceBackendYaml.org)
+const sdk = getServerlessSdk()
 
 it('should successfully deploy timer app', async () => {
   const instance = await sdk.deploy(instanceBackendYaml, credentials)
