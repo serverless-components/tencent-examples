@@ -59,7 +59,7 @@ const getFrontendYamlConfig = (filePath) => {
   try {
     const config = yaml.safeLoad(fs.readFileSync(filePath, 'utf-8'))
     config.inputs.region = process.env.REGION
-    config.inputs.bucketname = process.env.BUCKET
+    config.inputs.bucketName = process.env.BUCKET
     config.inputs.src.src = path.resolve(__dirname, '../frontend/')
     config.inputs.src.hook = 'SKIP_PREFLIGHT_CHECK=true npm run build'
     config.inputs.src.dist = path.resolve(__dirname, '../frontend/build/')

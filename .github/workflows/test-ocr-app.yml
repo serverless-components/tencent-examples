@@ -38,4 +38,6 @@ jobs:
         TENCENT_SECRET_KEY: ${{ secrets.TENCENT_SECRET_KEY}}
         TENCENT_APP_ID: ${{ secrets.TENCENT_APP_ID }}
         REGION: ${{ secrets.REGION}}
+        ZONE: ${{ secrets.ZONE}}
+        BUCKET: ${{ secrets.BUCKET}}
         SERVERLESS_PLATFORM_STAGE: ${{ secrets.SERVERLESS_PLATFORM_STAGE }}
