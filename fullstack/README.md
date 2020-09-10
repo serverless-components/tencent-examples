@@ -57,12 +57,12 @@ SecretId 和 SecretKey 信息、地域可用区及子网等信息。
 
 ```text
 # .env
-TENCENT_SECRET_ID=xxx  // 您账号的SecretId
-TENCENT_SECRET_KEY=xxx // 您账号的SecretKey
+TENCENT_SECRET_ID=xxx  # 您账号的SecretId
+TENCENT_SECRET_KEY=xxx # 您账号的SecretKey
 
 # 地域可用区配置
-REGION=ap-beijing //资源部署区，该项目中指云函数与静态页面部署区
-ZONE=ap-beijing-3 //资源部署可用区 ，该项目中指DB部署所在的可用区
+REGION=ap-beijing # 资源部署区，该项目中指云函数与静态页面部署区
+ZONE=ap-beijing-3 # 资源部署可用区 ，该项目中指DB部署所在的可用区
 ```
 
 > 说明：
