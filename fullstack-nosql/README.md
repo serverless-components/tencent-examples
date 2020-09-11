@@ -50,7 +50,9 @@ TENCENT_SECRET_KEY=123
 >    [API 密钥管理](https://console.cloud.tencent.com/cam/capi)  中获
 >    取**SecretId**和**SecretKey**。
 
-3.在 `backend/src` 文件夹目录下，通过以下命令安装所需依赖：
+3. [开通腾讯云开发环境](https://console.cloud.tencent.com/tcb/env/index)
+
+4. 在 `backend/src` 文件夹目录下，通过以下命令安装所需依赖：
 
 ```bash
 $ npm install

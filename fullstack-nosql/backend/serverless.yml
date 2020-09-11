@@ -24,7 +24,7 @@ inputs:
           protocols:
             - http
             - https
-          serviceName:
+          serviceName: fullstackNoSQLBackend
           description: The service of Serverless Framework - MongoDB
           environment: release
           endpoints:
