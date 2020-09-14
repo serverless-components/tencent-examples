@@ -74,7 +74,7 @@ ZONE=ap-beijing-3 # 资源部署可用区 ，该项目中指DB部署所在的可
 - ZONE 目前只支持 ap-beijing-3 、ap-guangzhou-2、ap-shanghai-2。
 - 您可以在子网中获取 VPC_ID 和 SUBNET_ID，**请务必保证和 ZONE 在同一个可用区**。
 
-  3.通过执行以下命令，安装所需依赖：
+3.通过执行以下命令，安装所需依赖：
 
 ```bash
 $ npm run bootstrap
