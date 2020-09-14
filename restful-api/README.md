@@ -10,7 +10,7 @@ REST API 模板使用 Tencent SCF 组件及其触发器能力，方便的在腾�
 
 &nbsp;
 
-- [Check out the English version tutorial here.](./README_EN.md)
+- [Check out the English version tutorial here.](./README.en.md)
 
 &nbsp;
 
