@@ -49,15 +49,26 @@ Components: 2.30.1
 $ serverless init -t ocr-app
 ```
 
-2.创建 `.env` 文件，在里面输入您的账户、密钥信息
+2.在项目模板中找到 `.env.example` 文件，修改名称为 `.env`，并在其中配置对应的腾讯云 SecretId 和 SecretKey 等信息：
 
 ```
-# .env
 TENCENT_APP_ID=xxx
 TENCENT_SECRET_ID=xxx
 TENCENT_SECRET_KEY=xxx
 
+# region of bucket
+REGION=ap-guangzhou
+# bucket name, using to store upload pictures
+BUCKET=ocr-images
 ```
+
+> 说明：
+
+- 如果没有腾讯云账号，请先 [注册新账号](https://cloud.tencent.com/register)。
+- 如果已有腾讯云账号，请保证您的账号已经授权了 AdministratorAccess 权限。 您可以
+  在 [API 密钥管理](https://console.cloud.tencent.com/cam/capi) 中获取AppId, SecretId
+  和 SecretKey。
+
 
 3.下载所有npm依赖
 

@@ -57,12 +57,12 @@ SecretId 和 SecretKey 信息、地域可用区及子网等信息。
 
 ```text
 # .env
-TENCENT_SECRET_ID=xxx  // 您账号的SecretId
-TENCENT_SECRET_KEY=xxx // 您账号的SecretKey
+TENCENT_SECRET_ID=xxx  # 您账号的SecretId
+TENCENT_SECRET_KEY=xxx # 您账号的SecretKey
 
 # 地域可用区配置
-REGION=ap-beijing //资源部署区，该项目中指云函数与静态页面部署区
-ZONE=ap-beijing-3 //资源部署可用区 ，该项目中指DB部署所在的可用区
+REGION=ap-beijing # 资源部署区，该项目中指云函数与静态页面部署区
+ZONE=ap-beijing-3 # 资源部署可用区 ，该项目中指DB部署所在的可用区
 ```
 
 > 说明：
@@ -74,7 +74,7 @@ ZONE=ap-beijing-3 //资源部署可用区 ，该项目中指DB部署所在的可
 - ZONE 目前只支持 ap-beijing-3 、ap-guangzhou-2、ap-shanghai-2。
 - 您可以在子网中获取 VPC_ID 和 SUBNET_ID，**请务必保证和 ZONE 在同一个可用区**。
 
-  3.通过执行以下命令，安装所需依赖：
+3.通过执行以下命令，安装所需依赖：
 
 ```bash
 $ npm run bootstrap
