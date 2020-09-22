@@ -1,6 +1,4 @@
-org: serverless
 app: restful-api
-stage: dev
 component: scf
 name: restful-api
 

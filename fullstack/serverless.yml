@@ -1,6 +1,5 @@
 name: fullstack
 author: Tencent Cloud, Inc.
-org: Tencent Cloud, Inc.
 description: Deploy a full stack application.
 keywords: tencent, serverless, express, website, fullstack
 repo: https://github.com/serverless-components/tencent-examples/tree/master/fullstack

@@ -1,8 +1,6 @@
 component: website
 name: fullstack-frontend
-org: serverless
 app: fullstack-nosql
-stage: dev
 
 inputs:
   src:

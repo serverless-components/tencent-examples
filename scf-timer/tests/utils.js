@@ -33,11 +33,9 @@ const getCredentials = () => {
 }
 
 const defaultConfig = {
-  org: 'orgDemo',
   app: 'appDemo',
   component: 'scf',
   name: 'personal-reminder-tests',
-  stage: 'dev',
   inputs: {
     name: 'personal-reminder-tests',
     src: path.resolve(__dirname, '../'),

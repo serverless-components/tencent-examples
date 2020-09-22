@@ -38,7 +38,6 @@ const getCredentials = () => {
 }
 
 const defaultConfig = {
-  org: 'orgDemo',
   app: 'appDemo',
   component: 'scf',
   name: 'restful-api-tests',

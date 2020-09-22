@@ -1,6 +1,5 @@
 name: ocr-app
 author: Tencent Cloud, Inc.
-org: Tencent Cloud, Inc.
 description: Deploy a serverless OCR application.
 keywords: tencent, serverless, express, website, ocr
 repo: https://github.com/serverless-components/tencent-examples/tree/master/ocr-app

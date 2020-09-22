@@ -1,6 +1,4 @@
-org: serverless
 app: fullstack-nosql
-stage: dev
 component: scf
 name: fullstack-backend
 
