@@ -1,0 +1,16 @@
+org: orgDemo
+app: appDemo
+stage: dev
+component: egg
+name: eggDemo
+
+inputs:
+  src: ./
+  region: ap-guangzhou
+  runtime: Nodejs10.15
+  role: SCF_QcsRole
+  apigatewayConf:
+    protocols:
+      - http
+      - https
+    environment: release
