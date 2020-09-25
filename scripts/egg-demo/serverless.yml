@@ -7,8 +7,8 @@ description-i18n:
   zh-cn: 快速部署一个Egg.js 基础应用
 type: template 
 keywords: tencent, Egg, nodejs
-repo: https://github.com/serverless-components/tencent-examples/blob/master/egg-demo
-readme:  https://github.com/serverless-components/tencent-egg/blob/master/README.md
+repo: https://github.com/serverless-components/tencent-examples/tree/master/egg-demo
+readme:  https://github.com/serverless-components/tencent-examples/blob/master/egg-demo/README.md
 license: MIT 
 src: 
   src: ../../egg-demo

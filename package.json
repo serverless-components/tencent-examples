@@ -4,7 +4,17 @@
   "description": "A collection of ready-to-deploy Serverless Framework project examples.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "generateReadmes": "node generateReadmeForTemplate.js",
+    "publish-egg-demo": "cd scripts/egg-demo && sls publish",
+    "publish-express-demo": "cd scripts/express-demo && sls publish",
+    "publish-flask-demo": "cd scripts/flask-demo && sls publish",
+    "publish-fullstack": "cd scripts/fullstack && sls publish",
+    "publish-koa-demo": "cd scripts/koa-demo && sls publish",
+    "publish-laravel-demo": "cd scripts/laravel-demo && sls publish",
+    "publish-nextjs-demo": "cd scripts/nextjs-demo && sls publish",
+    "publish-nuxtjs-demo": "cd scripts/nuxtjs-demo && sls publish",
+    "publish-restful-api": "cd scripts/restful-api && sls publish",
+    "publish-website-demo": "cd scripts/website-demo && sls publish"
   },
   "repository": {
     "type": "git",
