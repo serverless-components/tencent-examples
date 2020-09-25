@@ -4,14 +4,15 @@
 
 | 模版 | 描述 |
 | --- | --- |
-| react-starter | --- |
-| egg-demo |   |
-| express-demo |   |
-| flask-demo |   |
+| react-starter |  |
+| vue-starter |  |
+| egg-starter |   |
+| express-starter |   |
+| flask-starter |   |
 | fullstack |   |
-| koa-demo |   |
-| laravel-demo |   |
-| nextjs-demo |   |
-| nuxtjs-demo |   |
-| restful-demo |   |
-| website-demo |   |
+| koa-starter |   |
+| laravel-starter |   |
+| nextjs-starter |   |
+| nuxtjs-starter |   |
+| restful-starter |   |
+| website-starter |   |
