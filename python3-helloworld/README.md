@@ -62,7 +62,7 @@ $ touch .env # 腾讯云的配置信息
 ```
 
 ```
-# .env
+# .env file
 TENCENT_SECRET_ID=123
 TENCENT_SECRET_KEY=123
 ```

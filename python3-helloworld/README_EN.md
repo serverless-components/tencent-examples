@@ -1,4 +1,4 @@
-# Quickly create and deploy a python3-helloworld application
+# Quickly create and deploy python3-helloworld application
 
 [中文](./README.md) | **English**
 
@@ -26,7 +26,7 @@ serverless init python3-helloworld
 
 ### 3. Deploy
 
-You can user following command to deploy the APP.
+You can use following command to deploy the APP.
 
 ```bash
 serverless deploy
@@ -59,12 +59,11 @@ serverless remove --all
 ### Setting up credentials (Optional)
 
 By default, you are able to login your Tencent Cloud account by scanning QR code and an `.env` file with credentials is auto generated.
-
-By default, the credentials will be expired after 2 hours.
+The credentials will be expired after 2 hours.
 If you would like to use persistent credentials, 
-you can [create an API Key here]((https://console.cloud.tencent.com/cam/capi) and add the `SecretId` and `SecretKey` into the `.env` file
+you can [create an API Key here](https://console.cloud.tencent.com/cam/capi) and add the `SecretId` and `SecretKey` into the `.env` file
 
-> If you don's have a Tencent Cloud Account, you can register [here](https://cloud.tencent.com/register)。
+> If you don's have a Tencent Cloud Account, you can register [here](https://cloud.tencent.com/register)
 
 ```bash
 touch .env # Adddd in your Tencent credentials here
@@ -72,7 +71,7 @@ touch .env # Adddd in your Tencent credentials here
 
 
 ```
-# .env
+# .env file
 TENCENT_SECRET_ID=123
 TENCENT_SECRET_KEY=123
 ```
