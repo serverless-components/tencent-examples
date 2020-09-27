@@ -54,23 +54,22 @@ serverless remove --all
 
 ### 账号配置（可选）
 
-当前默认支持 CLI 扫描二维码登录，如您希望配置持久的环境变量/秘钥信息，也可以本地创建 \`.env\` 文件
+serverless 默认支持扫描二维码登录，用户扫描二维码后会自动生成一个 \`.env\` 文件并将密钥存入其中.
+如您希望配置持久的环境变量/秘钥信息，也可以本地创建 \`.env\` 文件, 
+把从[API 密钥管理](https://console.cloud.tencent.com/cam/capi)中获取的 \`SecretId\` 和\`SecretKey\` 填入其中.
+
+> 如果没有腾讯云账号，可以在此[注册新账号](https://cloud.tencent.com/register)。
 
 \`\`\`bash
 $ touch .env # 腾讯云的配置信息
 \`\`\`
-
-在 \`.env\` 文件中配置腾讯云的 SecretId 和 SecretKey 信息并保存
-
-如果没有腾讯云账号，可以在此[注册新账号](https://cloud.tencent.com/register)。
-
-如果已有腾讯云账号，可以在[API 密钥管理](https://console.cloud.tencent.com/cam/capi)中获取 \`SecretId\` 和\`SecretKey\`.
 
 \`\`\`
 # .env
 TENCENT_SECRET_ID=123
 TENCENT_SECRET_KEY=123
 \`\`\`
+
 `;
 
 const generateReadmeEN = (templateName) => `# Quickly create and deploy a ${templateName} application
@@ -109,6 +108,19 @@ serverless deploy
 
 This command will walk you through signing up a Tencent Cloud Account to deploy the APP.
 
+### 4. Monitor
+
+Anytime you need to know more about your running express instance, you can run \`serverless info\` to view the most critical info. 
+This is especially helpful when you want to know the outputs of your instances so that you can reference them in another instance. 
+You will also see a url where you'll be able to view more info about your instance on the Serverless Dashboard.
+
+It also shows you the status of your instance, when it was last deployed, and how many times it was deployed. 
+To dig even deeper, you can pass the --debug flag to view the state of your component instance in case the deployment failed for any reason.
+
+\`\`\`bash
+serverless info
+\`\`\`
+
 ### 5. Remove
 
 If you wanna tear down your entire infrastructure that was created during deployment, 
@@ -118,19 +130,19 @@ just run \`serverless remove --all\` and serverless will remove all the data it 
 serverless remove --all
 \`\`\`
 
-### 账号配置（Optional）
+### Setting up credentials (Optional)
 
-当前默认支持 CLI 扫描二维码登录，如您希望配置持久的环境变量/秘钥信息，也可以本地创建 \`.env\` 文件
+By default, you are able to login your Tencent Cloud account by scanning QR code and an \`.env\` file with credentials is auto generated.
+
+By default, the credentials will be expired after 2 hours.
+If you would like to use persistent credentials, 
+you can [create an API Key here]((https://console.cloud.tencent.com/cam/capi) and add the \`SecretId\` and \`SecretKey\` into the \`.env\` file
+
+> If you don's have a Tencent Cloud Account, you can register [here](https://cloud.tencent.com/register)。
 
 \`\`\`bash
-$ touch .env # 腾讯云的配置信息
+touch .env # Adddd in your Tencent credentials here
 \`\`\`
-
-在 \`.env\` 文件中配置腾讯云的 SecretId 和 SecretKey 信息并保存
-
-如果没有腾讯云账号，可以在此[注册新账号](https://cloud.tencent.com/register)。
-
-如果已有腾讯云账号，可以在[API 密钥管理](https://console.cloud.tencent.com/cam/capi)中获取 \`SecretId\` 和\`SecretKey\`.
 
 
 \`\`\`
