@@ -1,6 +1,6 @@
 # Serverless Tencent Examples
 
-**中文** | [English](./README.en.md)
+> **中文** | [English](./README.en.md)
 
 一系列可以通过 serverless 直接部署到腾讯云函数的模版
 
