@@ -1,6 +1,6 @@
 # Serverless Tencent Examples
 
-中文 | [English](./README.en.md)
+**中文** | [English](./README.en.md)
 
 一系列可以通过 serverless 直接部署到腾讯云函数的模版
 
@@ -18,7 +18,7 @@
 | [laravel-demo](./laravel-demo) | 快速部署一个 Laravel 应用 |
 | [flask-demo](./flask-demo) | 快速部署一个 Flask 应用 |
 | [scf-demo](./scf-demo) | 快速部署一个 SCF 应用 |
-| [nodejs105-helloworld](./nodejs105-helloworld) | Nodejs10.5 helloworld function |
-| [go1-helloworld](./go1-helloworld) | Go1 helloworld function |
-| [php7-helloworld](./php7-helloworld) | PHP7 helloworld function |
-| [python3-helloworld](./python3-helloworld) | Python3 helloworld function |
+| [nodejs105-helloworld](./nodejs105-helloworld) | Nodejs10.5 helloworld 函数 |
+| [go1-helloworld](./go1-helloworld) | Go1 helloworld 函数 |
+| [php7-helloworld](./php7-helloworld) | PHP7 helloworld 函数 |
+| [python3-helloworld](./python3-helloworld) | Python3 helloworld 函数 |

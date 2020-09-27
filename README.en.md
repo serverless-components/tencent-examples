@@ -1,10 +1,10 @@
 # Serverless Tencent Examples
 
-[中文](./README.md) | English
+[中文](./README.md) | **English**
 
-一系列可以通过 serverless 直接部署到腾讯云函数的模版
+A collection of ready-to-deploy examples for Tencent.
 
-| 模版 | 描述 |
+| Template | Description |
 | --- | --- |
 | [website-demo](./website-demo) | Deploy an static website app |
 | [react-starter](./react-starter) | Deploy a react.js app via SCF and Apigateway |
