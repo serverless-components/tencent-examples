@@ -1,6 +1,6 @@
 # Serverless Tencent Examples
 
-> **中文** | [English](./README.en.md)
+**中文** | [English](./README_EN.md)
 
 一系列可以通过 serverless 直接部署到腾讯云函数的模版
 
@@ -15,9 +15,9 @@
 | [nextjs-demo](./nextjs-demo) | 快速部署一个 next.js 应用 |
 | [nuxtjs-demo](./nuxtjs-demo) | 快速部署一个 nuxt.js 应用 |
 | [fullstack](./fullstack) | 快速部署一个 fullstack 应用 |
-| [laravel-demo](./laravel-demo) | 快速部署一个 Laravel 应用 |
-| [flask-demo](./flask-demo) | 快速部署一个 Flask 应用 |
-| [scf-demo](./scf-demo) | 快速部署一个 SCF 应用 |
+| [laravel-demo](./laravel-demo) | 快速部署一个 laravel 应用 |
+| [flask-demo](./flask-demo) | 快速部署一个 flask 应用 |
+| [scf-demo](./scf-demo) | 快速部署一个 scf 应用 |
 | [nodejs105-helloworld](./nodejs105-helloworld) | Nodejs10.5 helloworld 函数 |
 | [go1-helloworld](./go1-helloworld) | Go1 helloworld 函数 |
 | [php7-helloworld](./php7-helloworld) | PHP7 helloworld 函数 |

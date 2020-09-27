@@ -1,101 +1,70 @@
-# Vue starter
+# 快速构建 vue-starter
 
-## 操作场景
+**中文** | [English](./README_EN.md)
 
-该模板可以快速部署一个基于Vue的页面
+## 简介
 
-## 操作步骤
+vue-starter 模板使用 Tencent SCF 组件及其触发器能力，方便的在腾讯云创建，配置和管理一个 vue-starter 应用。
 
-### 安装
+## 快速开始
 
-通过 npm 全局安装 [serverless cli](https://github.com/serverless/serverless)：
-
-```bash
-$ npm install -g serverless
-```
-
-如果之前您已经安装过 Serverless Framework，可以通过下列命令升级到最新版：
+### 1. 安装
 
 ```bash
-$ npm update -g serverless
+# 安装 Serverless Framework
+npm install -g serverless
 ```
 
-### 配置
+### 2. 配置
 
-1. 新建一个本地文件夹，使用 `sls init` 命令，`--name`后面可以执行指定名称, 下载相关 template：
+通过如下命令直接下载该例子：
 
 ```bash
-$ serverless init -t vue-starter --name name
+serverless init vue-starter
 ```
 
-2. 在项目模板根目录中新建 `.env`，并在其中配置对应的腾
-   讯云 SecretId 和 SecretKey 信息， 或者在执行`sls deploy` 并扫码之后系统自动在根目录生成`.env`文件：
+### 3. 部署
 
-```text
+通过`serverless deploy`命令进行部署，并可以添加`--debug`参数查看部署过程中的信息
+
+如您的账号未[登陆](https://cloud.tencent.com/login)或[注册](https://cloud.tencent.com/register)腾讯云，您可以直接通过`微信`扫描命令行中的二维码进行授权登陆和注册。
+
+```bash
+serverless deploy
+```
+
+### 4. 查看状态
+
+执行以下命令，查看您部署的项目信息：
+
+```bash
+serverless info
+```
+
+### 5. 移除
+
+可以通过以下命令移除 vue-starter 应用
+
+```bash
+serverless remove --all
+```
+
+### 账号配置（可选）
+
+当前默认支持 CLI 扫描二维码登录，如您希望配置持久的环境变量/秘钥信息，也可以本地创建 `.env` 文件
+
+```bash
+$ touch .env # 腾讯云的配置信息
+```
+
+在 `.env` 文件中配置腾讯云的 SecretId 和 SecretKey 信息并保存
+
+如果没有腾讯云账号，可以在此[注册新账号](https://cloud.tencent.com/register)。
+
+如果已有腾讯云账号，可以在[API 密钥管理](https://console.cloud.tencent.com/cam/capi)中获取 `SecretId` 和`SecretKey`.
+
+```
 # .env
 TENCENT_SECRET_ID=123
 TENCENT_SECRET_KEY=123
 ```
-
-> 说明:
->
-> 1. 如果没有腾讯云账号，请先[注册新账号](https://cloud.tencent.com/register)。
-> 2. 如果已有腾讯云账号，可以在
->    [API 密钥管理](https://console.cloud.tencent.com/cam/capi)  中获
->    取**SecretId**和**SecretKey**。
-
-### 部署
-
-配置完成后，进入含有 .env 文件的根目录下，通过以下命令进行部署，创建一个新的云开
-发环境，将后台代码部署到 SCF 云函数平台，并通过 website 组件部署静态网站：
-
-```bash
-$ sls deploy --all
-```
-
-> 注意:
->
-> 1. 由于 sls 运行角色限制，需要用户登
->    录[访问管理角色页面](https://console.cloud.tencent.com/cam/role)，手动为
->    **SLS_QcsRole** 添加 **TCBFullAccess** 的策略，否则无法正常运行
-> 2. 目前 TCB 端仅支持每月最多创建销毁 4 次环境，请谨慎创建，若超过 4 次部署将会
->    报错
-
-访问命令行输出的 website url，即可查看您的 Serverless 站点。
-
-### 移除
-
-可通过以下命令移除项目：
-
-```bash
-$ sls remove --all
-```
-
-## Deploy
-```
-serverless deploy
-```
-
-## Project setup
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
-

@@ -4,7 +4,7 @@
   "description": "A collection of ready-to-deploy Serverless Framework project examples.",
   "main": "index.js",
   "scripts": {
-    "generateReadmes": "node generateReadmeForTemplate.js",
+    "generateReadmes": "node generateREADMEs.js",
     "publish-egg-demo": "cd scripts/egg-demo && sls publish",
     "publish-express-demo": "cd scripts/express-demo && sls publish",
     "publish-flask-demo": "cd scripts/flask-demo && sls publish",

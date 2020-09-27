@@ -1,6 +1,6 @@
 # Serverless Tencent Examples
 
-> [中文](./README.md) | **English**
+[中文](./README.md) | **English**
 
 A collection of ready-to-deploy examples for Tencent Cloud.
 
