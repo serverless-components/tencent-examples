@@ -8,7 +8,7 @@ description-i18n:
 type: template 
 keywords: tencent, Website, APIGateway
 repo: https://github.com/serverless-components/tencent-examples/tree/master/website-demo
-readme:  https://github.com/serverless-components/tencent-examples/blob/master/website-dem/README.md
+readme:  https://github.com/serverless-components/tencent-examples/blob/master/website-demo/README.md
 license: MIT 
 src: 
   src: ../../website-demo

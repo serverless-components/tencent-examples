@@ -14,4 +14,3 @@ src:
   src: ../../koa-demo
   exclude: 
      - '**/node_modules'
-
