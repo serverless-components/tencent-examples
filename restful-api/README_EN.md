@@ -29,6 +29,7 @@ serverless init restful-api
 You can use following command to deploy the APP.
 
 ```bash
+cd restful-api
 serverless deploy
 ```
 
@@ -66,7 +67,7 @@ you can [create an API Key here](https://console.cloud.tencent.com/cam/capi) and
 > If you don's have a Tencent Cloud Account, you can register [here](https://cloud.tencent.com/register)
 
 ```bash
-touch .env # Adddd in your Tencent credentials here
+touch .env # Add your Tencent credentials here
 ```
 
 

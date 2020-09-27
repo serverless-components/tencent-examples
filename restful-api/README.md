@@ -30,6 +30,7 @@ serverless init restful-api
 如您的账号未[登陆](https://cloud.tencent.com/login)或[注册](https://cloud.tencent.com/register)腾讯云，您可以直接通过`微信`扫描命令行中的二维码进行授权登陆和注册。
 
 ```bash
+cd restful-api
 serverless deploy
 ```
 

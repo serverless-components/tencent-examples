@@ -33,6 +33,7 @@ serverless init ${templateName}
 如您的账号未[登陆](https://cloud.tencent.com/login)或[注册](https://cloud.tencent.com/register)腾讯云，您可以直接通过\`微信\`扫描命令行中的二维码进行授权登陆和注册。
 
 \`\`\`bash
+cd ${templateName}
 serverless deploy
 \`\`\`
 
@@ -103,6 +104,7 @@ serverless init ${templateName}
 You can use following command to deploy the APP.
 
 \`\`\`bash
+cd ${templateName}
 serverless deploy
 \`\`\`
 
@@ -140,7 +142,7 @@ you can [create an API Key here](https://console.cloud.tencent.com/cam/capi) and
 > If you don's have a Tencent Cloud Account, you can register [here](https://cloud.tencent.com/register)
 
 \`\`\`bash
-touch .env # Adddd in your Tencent credentials here
+touch .env # Add your Tencent credentials here
 \`\`\`
 
 
