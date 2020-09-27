@@ -1,0 +1,11 @@
+name: react-starter
+org: serverless
+component: website
+app: react-starter
+stage: dev
+inputs:
+  src:
+    src: ./
+    hook: npm run build
+    dist: ./dist
+
