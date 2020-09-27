@@ -2,7 +2,7 @@
 
 [中文](./README.md) | **English**
 
-A collection of ready-to-deploy examples for Tencent.
+A collection of ready-to-deploy examples for Tencent Cloud.
 
 | Template | Description |
 | --- | --- |
