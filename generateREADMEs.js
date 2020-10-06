@@ -126,10 +126,10 @@ serverless info
 ### 5. Remove
 
 If you wanna tear down your entire infrastructure that was created during deployment, 
-just run \`serverless remove --all\` and serverless will remove all the data it needs from the built-in state storage system to delete only the relevant cloud resources that it created.
+just run \`serverless remove\` and serverless will remove all the data it needs from the built-in state storage system to delete only the relevant cloud resources that it created.
 
 \`\`\`bash
-serverless remove --all
+serverless remove
 \`\`\`
 
 ### Setting up credentials (Optional)
