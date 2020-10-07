@@ -14,7 +14,6 @@ A collection of ready-to-deploy examples for Tencent Cloud.
 | [eggjs-demo](./egg-demo) | Deploy an egg.js app via SCF and Apigateway |
 | [nextjs-demo](./nextjs-demo) | Deploy an nextjs app. |
 | [nuxtjs-demo](./nuxtjs-demo) | Deploy an Nuxt.js app via SCF and Apigateway |
-| [fullstack](./fullstack) | Deploy a fullstack app via SCF and Apigateway |
 | [laravel-demo](./laravel-demo) | Deploy an Laravel app via SCF and Apigateway |
 | [flask-demo](./flask-demo) | Deploy a flask app via SCF and Apigateway |
 | [scf-demo](./scf-demo) | Deploy a SCF application |
@@ -22,3 +21,4 @@ A collection of ready-to-deploy examples for Tencent Cloud.
 | [go1-helloworld](./go1-helloworld) | Go1 helloworld function |
 | [php7-helloworld](./php7-helloworld) | PHP7 helloworld function |
 | [python3-helloworld](./python3-helloworld) | Python3 helloworld function |
+| [fullstack](./fullstack) | Deploy a fullstack app via SCF and Apigateway |

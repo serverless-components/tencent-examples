@@ -47,7 +47,7 @@ serverless info
 可以通过以下命令移除 vue-starter 应用
 
 ```bash
-serverless remove --all
+serverless remove
 ```
 
 ### 账号配置（可选）

@@ -14,7 +14,6 @@
 | [eggjs-demo](./egg-demo) | 快速部署一个 egg.js 应用 |
 | [nextjs-demo](./nextjs-demo) | 快速部署一个 next.js 应用 |
 | [nuxtjs-demo](./nuxtjs-demo) | 快速部署一个 nuxt.js 应用 |
-| [fullstack](./fullstack) | 快速部署一个 fullstack 应用 |
 | [laravel-demo](./laravel-demo) | 快速部署一个 laravel 应用 |
 | [flask-demo](./flask-demo) | 快速部署一个 flask 应用 |
 | [scf-demo](./scf-demo) | 快速部署一个 scf 应用 |
@@ -22,3 +21,4 @@
 | [go1-helloworld](./go1-helloworld) | Go1 helloworld 函数 |
 | [php7-helloworld](./php7-helloworld) | PHP7 helloworld 函数 |
 | [python3-helloworld](./python3-helloworld) | Python3 helloworld 函数 |
+| [fullstack](./fullstack) | 快速部署一个 fullstack 应用 |
