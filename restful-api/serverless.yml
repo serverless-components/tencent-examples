@@ -1,43 +1,16 @@
-org: serverless
-app: restful-api
-stage: dev
-component: scf
 name: restful-api
+version: 0.0.4
+type: template
+org: Tencent Cloud, Inc.
+author: Tencent Cloud, Inc.
+description: Build a serverless REST API application with tencent serverless SCF component, support GET/PUT methods.
+keywords: tencent, serverless, rest api, scf
+repo: https://github.com/serverless-components/tencent-examples/tree/master/restful-api
+readme: https://github.com/serverless-components/tencent-examples/tree/master/restful-api/README.md
+license: MIT
 
-inputs:
-  name: ${name}
-  src: ./
-  handler: index.main_handler
-  runtime: Python3.6
-  region: ap-guangzhou
-  description: My Serverless Function
-  memorySize: 128
-  timeout: 20
-  events:
-    - apigw:
-        name: serverless
-        parameters:
-          protocols:
-            - http
-          serviceName: serverless
-          description: the serverless service
-          environment: release
-          endpoints:
-            - path: /users/{user_type}/{action}
-              method: GET
-              description: Serverless REST API
-              enableCORS: TRUE
-              serviceTimeout: 10
-              param:
-                - name: user_type
-                  position: PATH
-                  required: TRUE
-                  type: string
-                  defaultValue: teacher
-                  desc: mytest
-                - name: action
-                  position: PATH
-                  required: TRUE
-                  type: string
-                  defaultValue: go
-                  desc: mytest
+src:
+  src: ./src
+  exclude:
+    - .env
+    - '.git/**'

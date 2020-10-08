@@ -5,16 +5,9 @@
   "main": "index.js",
   "scripts": {
     "generateReadmes": "node generateREADMEs.js",
-    "publish-egg-demo": "cd scripts/egg-demo && sls publish",
-    "publish-express-demo": "cd scripts/express-demo && sls publish",
-    "publish-flask-demo": "cd scripts/flask-demo && sls publish",
-    "publish-fullstack": "cd scripts/fullstack && sls publish",
-    "publish-koa-demo": "cd scripts/koa-demo && sls publish",
-    "publish-laravel-demo": "cd scripts/laravel-demo && sls publish",
-    "publish-nextjs-demo": "cd scripts/nextjs-demo && sls publish",
-    "publish-nuxtjs-demo": "cd scripts/nuxtjs-demo && sls publish",
-    "publish-restful-api": "cd scripts/restful-api && sls publish",
-    "publish-website-demo": "cd scripts/website-demo && sls publish"
+    "publishDev": "cd $dir && SERVERLESS_PLATFORM_STAGE=dev sls publish",
+    "publishAllDev": "cd $dir && SERVERLESS_PLATFORM_STAGE=dev sls publish",
+    "publishProd": "cd $dir && sls publish"
   },
   "repository": {
     "type": "git",

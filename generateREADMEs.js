@@ -160,7 +160,9 @@ const folderNames = fs.readdirSync('./');
 
 folderNames.forEach(folderName => {
   const isDir = fs.statSync(folderName).isDirectory();
-  const notTemplateFolders = ['.github', 'scripts']
+  const notTemplateFolders = ['.git', '.github', 'scripts'];
+
+  // is template folder
   if (isDir && !notTemplateFolders.includes(folderName)) {
     const readmeCN = generateReadmeCN(folderName);
     fs.writeFileSync(path.join(folderName, 'README.md'), readmeCN, 'utf-8');
