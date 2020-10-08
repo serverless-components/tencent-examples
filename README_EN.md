@@ -17,8 +17,8 @@ A collection of ready-to-deploy examples for Tencent Cloud.
 | [laravel-starter](./laravel-starter) | Deploy an Laravel app via SCF and Apigateway |
 | [flask-starter](./flask-starter) | Deploy a flask app via SCF and Apigateway |
 | [scf-starter](./scf-starter) | Deploy a SCF application |
-| [nodejs105-helloworld](./nodejs105-helloworld) | Nodejs10.5 helloworld function |
-| [go1-helloworld](./go1-helloworld) | Go1 helloworld function |
-| [php7-helloworld](./php7-helloworld) | PHP7 helloworld function |
-| [python3-helloworld](./python3-helloworld) | Python3 helloworld function |
+| [scf-nodejs](./scf-nodejs) | Nodejs10.5 helloworld function |
+| [scf-go](./scf-go) | Go1 helloworld function |
+| [scf-php](./scf-php) | PHP7 helloworld function |
+| [scf-python](./scf-python) | Python3 helloworld function |
 | [fullstack](./fullstack) | Deploy a fullstack app via SCF and Apigateway |

@@ -1,10 +1,10 @@
-# Quickly create and deploy go1-helloworld application
+# Quickly create and deploy scf-go application
 
 [中文](./README.md) | **English**
 
 ## Introduction
 
-Easily deploy go1-helloworld applications to Tencent Cloud's serverless infrastructure using this Serverless Framework Component.
+Easily deploy scf-go applications to Tencent Cloud's serverless infrastructure using this Serverless Framework Component.
 Your application will auto-scale, never charge you for idle time, and require little-to-zero administration.
 
 ## Quick Start
@@ -18,10 +18,10 @@ npm install -g serverless
 
 ### 2. Initialize
 
-Initializing the go1-helloworld template by running this following command:
+Initializing the scf-go template by running this following command:
 
 ```bash
-serverless init go1-helloworld
+serverless init scf-go
 ```
 
 ### 3. Deploy
@@ -29,7 +29,7 @@ serverless init go1-helloworld
 You can use following command to deploy the APP.
 
 ```bash
-cd go1-helloworld
+cd scf-go
 serverless deploy
 ```
 

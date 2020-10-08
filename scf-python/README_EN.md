@@ -1,10 +1,10 @@
-# Quickly create and deploy python3-helloworld application
+# Quickly create and deploy scf-python application
 
 [中文](./README.md) | **English**
 
 ## Introduction
 
-Easily deploy python3-helloworld applications to Tencent Cloud's serverless infrastructure using this Serverless Framework Component.
+Easily deploy scf-python applications to Tencent Cloud's serverless infrastructure using this Serverless Framework Component.
 Your application will auto-scale, never charge you for idle time, and require little-to-zero administration.
 
 ## Quick Start
@@ -18,10 +18,10 @@ npm install -g serverless
 
 ### 2. Initialize
 
-Initializing the python3-helloworld template by running this following command:
+Initializing the scf-python template by running this following command:
 
 ```bash
-serverless init python3-helloworld
+serverless init scf-python
 ```
 
 ### 3. Deploy
@@ -29,7 +29,7 @@ serverless init python3-helloworld
 You can use following command to deploy the APP.
 
 ```bash
-cd python3-helloworld
+cd scf-python
 serverless deploy
 ```
 

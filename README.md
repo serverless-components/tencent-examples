@@ -17,8 +17,8 @@
 | [laravel-starter](./laravel-starter) | 快速部署一个 laravel 应用 |
 | [flask-starter](./flask-starter) | 快速部署一个 flask 应用 |
 | [scf-starter](./scf-starter) | 快速部署一个 scf 应用 |
-| [nodejs105-helloworld](./nodejs105-helloworld) | Nodejs10.5 helloworld 函数 |
-| [go1-helloworld](./go1-helloworld) | Go1 helloworld 函数 |
-| [php7-helloworld](./php7-helloworld) | PHP7 helloworld 函数 |
-| [python3-helloworld](./python3-helloworld) | Python3 helloworld 函数 |
+| [scf-nodejs](./scf-nodejs) | Nodejs10.5 helloworld 函数 |
+| [scf-go](./scf-go) | Go1 helloworld 函数 |
+| [scf-php](./scf-php) | PHP7 helloworld 函数 |
+| [scf-python](./scf-python) | Python3 helloworld 函数 |
 | [fullstack](./fullstack) | 快速部署一个 fullstack 应用 |

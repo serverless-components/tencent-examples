@@ -1,10 +1,10 @@
-# 快速构建 python3-helloworld
+# 快速构建 scf-python
 
 **中文** | [English](./README_EN.md)
 
 ## 简介
 
-python3-helloworld 模板使用 Tencent SCF 组件及其触发器能力，方便的在腾讯云创建，配置和管理一个 python3-helloworld 应用。
+scf-python 模板使用 Tencent SCF 组件及其触发器能力，方便的在腾讯云创建，配置和管理一个 scf-python 应用。
 
 ## 快速开始
 
@@ -20,7 +20,7 @@ npm install -g serverless
 通过如下命令直接下载该例子：
 
 ```bash
-serverless init python3-helloworld
+serverless init scf-python
 ```
 
 ### 3. 部署
@@ -30,7 +30,7 @@ serverless init python3-helloworld
 如您的账号未[登陆](https://cloud.tencent.com/login)或[注册](https://cloud.tencent.com/register)腾讯云，您可以直接通过`微信`扫描命令行中的二维码进行授权登陆和注册。
 
 ```bash
-cd python3-helloworld
+cd scf-python
 serverless deploy
 ```
 
@@ -44,7 +44,7 @@ serverless info
 
 ### 5. 移除
 
-可以通过以下命令移除 python3-helloworld 应用
+可以通过以下命令移除 scf-python 应用
 
 ```bash
 serverless remove

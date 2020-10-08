@@ -1,10 +1,10 @@
-# Quickly create and deploy nodejs105-helloworld application
+# Quickly create and deploy scf-nodejs application
 
 [中文](./README.md) | **English**
 
 ## Introduction
 
-Easily deploy nodejs105-helloworld applications to Tencent Cloud's serverless infrastructure using this Serverless Framework Component.
+Easily deploy scf-nodejs applications to Tencent Cloud's serverless infrastructure using this Serverless Framework Component.
 Your application will auto-scale, never charge you for idle time, and require little-to-zero administration.
 
 ## Quick Start
@@ -18,10 +18,10 @@ npm install -g serverless
 
 ### 2. Initialize
 
-Initializing the nodejs105-helloworld template by running this following command:
+Initializing the scf-nodejs template by running this following command:
 
 ```bash
-serverless init nodejs105-helloworld
+serverless init scf-nodejs
 ```
 
 ### 3. Deploy
@@ -29,7 +29,7 @@ serverless init nodejs105-helloworld
 You can use following command to deploy the APP.
 
 ```bash
-cd nodejs105-helloworld
+cd scf-nodejs
 serverless deploy
 ```
 

@@ -1,10 +1,10 @@
-# Quickly create and deploy php7-helloworld application
+# Quickly create and deploy scf-php application
 
 [中文](./README.md) | **English**
 
 ## Introduction
 
-Easily deploy php7-helloworld applications to Tencent Cloud's serverless infrastructure using this Serverless Framework Component.
+Easily deploy scf-php applications to Tencent Cloud's serverless infrastructure using this Serverless Framework Component.
 Your application will auto-scale, never charge you for idle time, and require little-to-zero administration.
 
 ## Quick Start
@@ -18,10 +18,10 @@ npm install -g serverless
 
 ### 2. Initialize
 
-Initializing the php7-helloworld template by running this following command:
+Initializing the scf-php template by running this following command:
 
 ```bash
-serverless init php7-helloworld
+serverless init scf-php
 ```
 
 ### 3. Deploy
@@ -29,7 +29,7 @@ serverless init php7-helloworld
 You can use following command to deploy the APP.
 
 ```bash
-cd php7-helloworld
+cd scf-php
 serverless deploy
 ```
 
