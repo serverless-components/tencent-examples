@@ -1,10 +1,10 @@
-# 快速构建 scf-go
+# 快速构建 scf-golang
 
 **中文** | [English](./README_EN.md)
 
 ## 简介
 
-scf-go 模板使用 Tencent SCF 组件及其触发器能力，方便的在腾讯云创建，配置和管理一个 scf-go 应用。
+scf-golang 模板使用 Tencent SCF 组件及其触发器能力，方便的在腾讯云创建，配置和管理一个 scf-golang 应用。
 
 ## 快速开始
 
@@ -12,7 +12,7 @@ scf-go 模板使用 Tencent SCF 组件及其触发器能力，方便的在腾讯
 
 ```bash
 # 安装 Serverless Framework
-npm install -g serverless
+$ npm install -g serverless
 ```
 
 ### 2. 配置
@@ -20,7 +20,7 @@ npm install -g serverless
 通过如下命令直接下载该例子：
 
 ```bash
-serverless init scf-go
+$ serverless init scf-golang
 ```
 
 ### 3. 部署
@@ -30,8 +30,8 @@ serverless init scf-go
 如您的账号未[登陆](https://cloud.tencent.com/login)或[注册](https://cloud.tencent.com/register)腾讯云，您可以直接通过`微信`扫描命令行中的二维码进行授权登陆和注册。
 
 ```bash
-cd scf-go
-serverless deploy
+$ cd scf-golang
+$ serverless deploy
 ```
 
 ### 4. 查看状态
@@ -39,15 +39,15 @@ serverless deploy
 执行以下命令，查看您部署的项目信息：
 
 ```bash
-serverless info
+$ serverless info
 ```
 
 ### 5. 移除
 
-可以通过以下命令移除 scf-go 应用
+可以通过以下命令移除 scf-golang 应用
 
 ```bash
-serverless remove
+$ serverless remove
 ```
 
 ### 账号配置（可选）
@@ -67,4 +67,3 @@ $ touch .env # 腾讯云的配置信息
 TENCENT_SECRET_ID=123
 TENCENT_SECRET_KEY=123
 ```
-

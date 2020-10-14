@@ -1,12 +1,12 @@
 org: fullstack
-app: fullstack-serverless-db
+app: fullstack-serverless-frontend
 stage: dev
 component: website
 name: fullstack-frontend
 
 inputs:
   region: ${env:REGION}
-  bucketName: fullstack-serverless-db
+  bucketName: fullstack-serverless-frontend
   protocol: https
   src:
     src: ./

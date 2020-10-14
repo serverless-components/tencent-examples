@@ -12,7 +12,7 @@ express-starter 模板使用 Tencent SCF 组件及其触发器能力，方便的
 
 ```bash
 # 安装 Serverless Framework
-npm install -g serverless
+$ npm install -g serverless
 ```
 
 ### 2. 配置
@@ -20,7 +20,7 @@ npm install -g serverless
 通过如下命令直接下载该例子：
 
 ```bash
-serverless init express-starter
+$ serverless init express-starter
 ```
 
 ### 3. 部署
@@ -30,8 +30,8 @@ serverless init express-starter
 如您的账号未[登陆](https://cloud.tencent.com/login)或[注册](https://cloud.tencent.com/register)腾讯云，您可以直接通过`微信`扫描命令行中的二维码进行授权登陆和注册。
 
 ```bash
-cd express-starter
-serverless deploy
+$ cd express-starter
+$ serverless deploy
 ```
 
 ### 4. 查看状态
@@ -39,7 +39,7 @@ serverless deploy
 执行以下命令，查看您部署的项目信息：
 
 ```bash
-serverless info
+$ serverless info
 ```
 
 ### 5. 移除
@@ -47,7 +47,7 @@ serverless info
 可以通过以下命令移除 express-starter 应用
 
 ```bash
-serverless remove
+$ serverless remove
 ```
 
 ### 账号配置（可选）
@@ -67,4 +67,3 @@ $ touch .env # 腾讯云的配置信息
 TENCENT_SECRET_ID=123
 TENCENT_SECRET_KEY=123
 ```
-

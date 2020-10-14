@@ -1,10 +1,10 @@
-# Quickly create and deploy egg-starter application
+# Quickly create and deploy eggjs-starter application
 
 [中文](./README.md) | **English**
 
 ## Introduction
 
-Easily deploy egg-starter applications to Tencent Cloud's serverless infrastructure using this Serverless Framework Component.
+Easily deploy eggjs-starter applications to Tencent Cloud's serverless infrastructure using this Serverless Framework Component.
 Your application will auto-scale, never charge you for idle time, and require little-to-zero administration.
 
 ## Quick Start
@@ -13,15 +13,15 @@ Your application will auto-scale, never charge you for idle time, and require li
 
 ```bash
 # Install Serverless Framework
-npm install -g serverless
+$ npm install -g serverless
 ```
 
 ### 2. Initialize
 
-Initializing the egg-starter template by running this following command:
+Initializing the eggjs-starter template by running this following command:
 
 ```bash
-serverless init egg-starter
+$ serverless init eggjs-starter
 ```
 
 ### 3. Deploy
@@ -29,8 +29,8 @@ serverless init egg-starter
 You can use following command to deploy the APP.
 
 ```bash
-cd egg-starter
-serverless deploy
+$ cd eggjs-starter
+$ serverless deploy
 ```
 
 This command will walk you through signing up a Tencent Cloud Account to deploy the APP.
@@ -45,7 +45,7 @@ It also shows you the status of your instance, when it was last deployed, and ho
 To dig even deeper, you can pass the --debug flag to view the state of your component instance in case the deployment failed for any reason.
 
 ```bash
-serverless info
+$ serverless info
 ```
 
 ### 5. Remove
@@ -54,7 +54,7 @@ If you wanna tear down your entire infrastructure that was created during deploy
 just run `serverless remove` and serverless will remove all the data it needs from the built-in state storage system to delete only the relevant cloud resources that it created.
 
 ```bash
-serverless remove
+$ serverless remove
 ```
 
 ### Setting up credentials (Optional)
@@ -67,7 +67,7 @@ you can [create an API Key here](https://console.cloud.tencent.com/cam/capi) and
 > If you don's have a Tencent Cloud Account, you can register [here](https://cloud.tencent.com/register)
 
 ```bash
-touch .env # Add your Tencent credentials here
+$ touch .env # Add your Tencent credentials here
 ```
 
 

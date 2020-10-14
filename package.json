@@ -4,9 +4,9 @@
   "description": "A collection of ready-to-deploy Serverless Framework project examples.",
   "main": "index.js",
   "scripts": {
-    "generateReadmes": "node generateREADMEs.js",
+    "generateREADMEs": "node generateREADMEs.js",
     "publishDev": "cd $dir && SERVERLESS_PLATFORM_STAGE=dev sls publish",
-    "publishAllDev": "cd $dir && SERVERLESS_PLATFORM_STAGE=dev sls publish",
+    "publishAllDev": "node publishAllDev.js",
     "publishProd": "cd $dir && sls publish"
   },
   "repository": {
