@@ -15,7 +15,7 @@ ${templateName} 模板使用 Tencent SCF 组件及其触发器能力，方便的
 
 \`\`\`bash
 # 安装 Serverless Framework
-$ npm install -g serverless
+npm install -g serverless
 \`\`\`
 
 ### 2. 配置
@@ -23,7 +23,7 @@ $ npm install -g serverless
 通过如下命令直接下载该例子：
 
 \`\`\`bash
-$ serverless init ${templateName}
+serverless init ${templateName}
 \`\`\`
 
 ### 3. 部署
@@ -33,8 +33,8 @@ $ serverless init ${templateName}
 如您的账号未[登陆](https://cloud.tencent.com/login)或[注册](https://cloud.tencent.com/register)腾讯云，您可以直接通过\`微信\`扫描命令行中的二维码进行授权登陆和注册。
 
 \`\`\`bash
-$ cd ${templateName}
-$ serverless deploy
+cd ${templateName}
+serverless deploy
 \`\`\`
 
 ### 4. 查看状态
@@ -42,7 +42,7 @@ $ serverless deploy
 执行以下命令，查看您部署的项目信息：
 
 \`\`\`bash
-$ serverless info
+serverless info
 \`\`\`
 
 ### 5. 移除
@@ -50,7 +50,7 @@ $ serverless info
 可以通过以下命令移除 ${templateName} 应用
 
 \`\`\`bash
-$ serverless remove
+serverless remove
 \`\`\`
 
 ### 账号配置（可选）
@@ -62,7 +62,7 @@ serverless 默认支持扫描二维码登录，用户扫描二维码后会自动
 > 如果没有腾讯云账号，可以在此[注册新账号](https://cloud.tencent.com/register)。
 
 \`\`\`bash
-$ touch .env # 腾讯云的配置信息
+touch .env # 腾讯云的配置信息
 \`\`\`
 
 \`\`\`
@@ -87,7 +87,7 @@ Your application will auto-scale, never charge you for idle time, and require li
 
 \`\`\`bash
 # Install Serverless Framework
-$ npm install -g serverless
+npm install -g serverless
 \`\`\`
 
 ### 2. Initialize
@@ -95,7 +95,7 @@ $ npm install -g serverless
 Initializing the ${templateName} template by running this following command:
 
 \`\`\`bash
-$ serverless init ${templateName}
+serverless init ${templateName}
 \`\`\`
 
 ### 3. Deploy
@@ -103,8 +103,8 @@ $ serverless init ${templateName}
 You can use following command to deploy the APP.
 
 \`\`\`bash
-$ cd ${templateName}
-$ serverless deploy
+cd ${templateName}
+serverless deploy
 \`\`\`
 
 This command will walk you through signing up a Tencent Cloud Account to deploy the APP.
@@ -119,7 +119,7 @@ It also shows you the status of your instance, when it was last deployed, and ho
 To dig even deeper, you can pass the --debug flag to view the state of your component instance in case the deployment failed for any reason.
 
 \`\`\`bash
-$ serverless info
+serverless info
 \`\`\`
 
 ### 5. Remove
@@ -128,7 +128,7 @@ If you wanna tear down your entire infrastructure that was created during deploy
 just run \`serverless remove\` and serverless will remove all the data it needs from the built-in state storage system to delete only the relevant cloud resources that it created.
 
 \`\`\`bash
-$ serverless remove
+serverless remove
 \`\`\`
 
 ### Setting up credentials (Optional)
@@ -141,7 +141,7 @@ you can [create an API Key here](https://console.cloud.tencent.com/cam/capi) and
 > If you don's have a Tencent Cloud Account, you can register [here](https://cloud.tencent.com/register)
 
 \`\`\`bash
-$ touch .env # Add your Tencent credentials here
+touch .env # Add your Tencent credentials here
 \`\`\`
 
 

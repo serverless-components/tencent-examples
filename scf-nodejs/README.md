@@ -12,7 +12,7 @@ scf-nodejs 模板使用 Tencent SCF 组件及其触发器能力，方便的在�
 
 ```bash
 # 安装 Serverless Framework
-$ npm install -g serverless
+npm install -g serverless
 ```
 
 ### 2. 配置
@@ -20,7 +20,7 @@ $ npm install -g serverless
 通过如下命令直接下载该例子：
 
 ```bash
-$ serverless init scf-nodejs
+serverless init scf-nodejs
 ```
 
 ### 3. 部署
@@ -30,8 +30,8 @@ $ serverless init scf-nodejs
 如您的账号未[登陆](https://cloud.tencent.com/login)或[注册](https://cloud.tencent.com/register)腾讯云，您可以直接通过`微信`扫描命令行中的二维码进行授权登陆和注册。
 
 ```bash
-$ cd scf-nodejs
-$ serverless deploy
+cd scf-nodejs
+serverless deploy
 ```
 
 ### 4. 查看状态
@@ -39,7 +39,7 @@ $ serverless deploy
 执行以下命令，查看您部署的项目信息：
 
 ```bash
-$ serverless info
+serverless info
 ```
 
 ### 5. 移除
@@ -47,7 +47,7 @@ $ serverless info
 可以通过以下命令移除 scf-nodejs 应用
 
 ```bash
-$ serverless remove
+serverless remove
 ```
 
 ### 账号配置（可选）
@@ -59,7 +59,7 @@ serverless 默认支持扫描二维码登录，用户扫描二维码后会自动
 > 如果没有腾讯云账号，可以在此[注册新账号](https://cloud.tencent.com/register)。
 
 ```bash
-$ touch .env # 腾讯云的配置信息
+touch .env # 腾讯云的配置信息
 ```
 
 ```
