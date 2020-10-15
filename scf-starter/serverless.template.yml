@@ -1,0 +1,18 @@
+name: scf-starter
+version: 0.0.0
+type: template
+org: "Tencent Cloud, Inc."
+author: "Tencent Cloud, Inc."
+description: Deploys a SCF on Tencent Cloud
+keywords: tencent cloud, serverless, scf
+repo: https://github.com/serverless-components/tencent-examples/tree/master/scf-starter
+readme: https://github.com/serverless-components/tencent-examples/tree/master/scf-starter/README.md
+license: MIT
+
+src:
+  src: ./src
+  exclude:
+    - .env
+    - '.git/**'
+    - '**/node_modules'
+    - '**/package-lock.json'

@@ -1,0 +1,23 @@
+{
+  "name": "tencent-examples",
+  "version": "1.0.0",
+  "description": "A collection of ready-to-deploy Serverless Framework project examples.",
+  "main": "index.js",
+  "scripts": {
+    "generateREADMEs": "node generateREADMEs.js",
+    "publishDev": "cd $dir && SERVERLESS_PLATFORM_STAGE=dev sls publish",
+    "publishAllDev": "node publishAllDev.js",
+    "publishProd": "cd $dir && sls publish"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/serverless-components/tencent-examples.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/serverless-components/tencent-examples/issues"
+  },
+  "homepage": "https://github.com/serverless-components/tencent-examples#readme"
+}

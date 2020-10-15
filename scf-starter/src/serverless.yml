@@ -1,0 +1,20 @@
+#应用信息
+app: scf-starter
+
+#组件信息
+component: scf # (必填) 引用 component 的名称，当前用到的是 tencent-scf 组件
+name: scfdemo # (必填) 创建的实例名称，请修改成您的实例名称
+
+#组件参数
+inputs:
+  name: ${name}-${stage}-${app} #函数名称
+  src: ./src  #代码路径
+  handler: index.main_handler #入口
+  runtime: Nodejs10.15 # 云函数运行时的环境
+  region: ap-guangzhou # 云函数所在区域
+  events: # 触发器
+    - apigw: # 网关触发器
+        parameters:
+          endpoints:
+            - path: /
+              method: GET
