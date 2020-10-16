@@ -7,8 +7,8 @@ description-i18n:
   zh-cn: 快速部署一个 Nuxt.js 基础应用
 type: template 
 keywords: tencent, Nuxtjs, nodejs, SCF, APIGateway
-repo: https://github.com/serverless-components/tencent-examples/tree/master/nuxt-starter
-readme:  https://github.com/serverless-components/tencent-examples/blob/master/nuxt-starter/README.md
+repo: https://github.com/serverless-components/tencent-examples/tree/master/nuxtjs-starter
+readme:  https://github.com/serverless-components/tencent-examples/blob/master/nuxtjs-starter/README.md
 license: MIT 
 src: 
   src: ./src
