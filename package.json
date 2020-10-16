@@ -4,10 +4,8 @@
   "description": "A collection of ready-to-deploy Serverless Framework project examples.",
   "main": "index.js",
   "scripts": {
-    "generateREADMEs": "node generateREADMEs.js",
-    "publishDev": "cd $dir && SERVERLESS_PLATFORM_STAGE=dev sls publish",
-    "publishAllDev": "node publishAllDev.js",
-    "publishProd": "cd $dir && sls publish"
+    "generateREADMEs": "node scripts/generateREADMEs.js",
+    "publishAllTemplates": "node scripts/publishAllTemplates.js"
   },
   "repository": {
     "type": "git",
