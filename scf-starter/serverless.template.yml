@@ -4,6 +4,8 @@ type: template
 org: "Tencent Cloud, Inc."
 author: "Tencent Cloud, Inc."
 description: Deploys a SCF on Tencent Cloud
+description-i18n:
+  zh-cn: 快速部署一个云函数 # 中文描述
 keywords: tencent cloud, serverless, scf
 repo: https://github.com/serverless-components/tencent-examples/tree/master/scf-starter
 readme: https://github.com/serverless-components/tencent-examples/tree/master/scf-starter/README.md

@@ -2,7 +2,6 @@ const fs = require('fs');
 const util = require('util');
 const exec = util.promisify(require('child_process').exec);
 
-
 const folderNames = fs.readdirSync('./');
 
 const run = async () => {
@@ -13,7 +12,9 @@ const run = async () => {
     // is template dir
     if (isDir && !notTemplateFolders.includes(folderName)) {
       console.log('start publishing', folderName);
-      const { stdout, stderr } = await exec(`dir=${folderName} npm run publishDev`);
+
+      // To publish templates in dev env: add SERVERLESS_PLATFORM_STAGE=dev
+      const { stdout, stderr } = await exec(`cd ${folderName} && sls publish`);
       if (stderr) console.error('stderr:', stderr);
       console.log(folderName, 'published');
     }

@@ -4,6 +4,8 @@ type: template
 org: Tencent Cloud, Inc.
 author: "Tencent Cloud, Inc."
 description: Deploys a serverless React website on Tencent Cloud
+description-i18n:
+  zh-cn: 快速部署一个 React.js 应用
 keywords: tencent cloud, serverless, website, frontend, react
 repo: https://github.com/serverless-components/tencent-examples/tree/master/react-starter
 readme: https://github.com/serverless-components/tencent-examples/tree/master/react-starter/README.md

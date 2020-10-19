@@ -4,7 +4,7 @@ author: Tencent Cloud, Inc.
 org: Tencent Cloud, Inc.
 description:  Deploy an static website app.
 description-i18n:
-  zh-cn: 快速创建一个静态网站托管应用
+  zh-cn: 快速部署一个静态网站
 type: template 
 keywords: tencent, Website, APIGateway
 repo: https://github.com/serverless-components/tencent-examples/tree/master/website-starter
