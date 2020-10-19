@@ -5,7 +5,7 @@ author: Tencent Cloud, Inc. # 作者的名字
 org: Tencent Cloud, Inc. # 组织名称，可选
 description:  This is helloworld function  # 英文描述
 description-i18n:
-  zh-cn: helloworld 空白模板函数 # 中文描述
+  zh-cn: 快速部署一个 PHP 云函数 # 中文描述
 type: template #类型：模版
 keywords: tencent, scf, PHP7.2, helloworld # 关键字
 repo: https://github.com/serverless-components/tencent-examples/tree/master/scf-php # 源代码

@@ -4,6 +4,8 @@ type: template
 org: Tencent Cloud, Inc.
 author: Tencent Cloud, Inc.
 description: Build a serverless REST API application with tencent serverless SCF component, support GET/PUT methods.
+description-i18n:
+  zh-cn: 快速部署一个 REST API 使用 python + API gateway
 keywords: tencent, serverless, rest api, scf
 repo: https://github.com/serverless-components/tencent-examples/tree/master/restful-api
 readme: https://github.com/serverless-components/tencent-examples/tree/master/restful-api/README.md
