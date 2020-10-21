@@ -1,10 +1,15 @@
-![](https://i.v2ex.co/3d2SgCWC.png)
+![](https://i.v2ex.co/31A64dZd.png)
 
+<h2 align="center">
+  <b>使用 serverless 快速部署各种应用到腾讯云函数</b>
+</h2>
 
+<br/>
 
-**中文** | [English](./README_EN.md)
-
-一系列可以通过 serverless 直接部署到腾讯云函数的模版
+<p align="center">
+  <span>简体中文</span> |
+  <a href="./README_EN.md">English</a>
+</p>
 
 ## 快速开始
 
