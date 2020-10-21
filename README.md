@@ -12,11 +12,11 @@
 ## 快速开始
 
 ```bash
-# 安装 Serverless Framework
-npm install -g serverless
+# 安装 Serverless 命令行工具
+$ npm install -g serverless
 
 # 选择模版并部署
-serverless
+$ serverless
 ```
 
 ## 所有模版
