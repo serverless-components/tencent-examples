@@ -1,10 +1,8 @@
 ![](https://i.v2ex.co/31A64dZd.png)
 
 <h2 align="center">
-  <b>使用 serverless 快速部署各种应用到腾讯云函数</b>
+  <b>使用 <a href="https://github.com/serverless/serverless">serverless</a> 快速部署各种应用到腾讯云函数</b>
 </h2>
-
-<br/>
 
 <p align="center">
   <span>简体中文</span> |
