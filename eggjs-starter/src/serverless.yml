@@ -1,7 +1,6 @@
-org: orgDemo
+component: egg
 app: appDemo
 stage: dev
-component: egg
 name: egg
 
 inputs:

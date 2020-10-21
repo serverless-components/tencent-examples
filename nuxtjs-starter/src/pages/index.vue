@@ -2,28 +2,13 @@
   <div class="container">
     <div>
       <logo />
-      <h1 class="title">
-        nuxt-starter
-      </h1>
+      <h1 class="title">Welcome to Nuxt.js</h1>
       <h2 class="subtitle">
-        My superb Nuxt.js project
+        The SSR app is hosted on
+        <a href="https://cloud.tencent.com/product/ssr" target="_blank" rel="noopener noreferrer">
+          Serverless SSR
+        </a>
       </h2>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
     </div>
   </div>
 </template>
@@ -49,8 +34,8 @@ export default {
 }
 
 .title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, sans-serif;
   display: block;
   font-weight: 300;
   font-size: 100px;

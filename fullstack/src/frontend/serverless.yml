@@ -1,8 +1,6 @@
-org: fullstack
-app: fullstack-serverless-frontend
-stage: dev
 component: website
 name: fullstack-frontend
+app: fullstack-serverless-frontend
 
 inputs:
   region: ${env:REGION}

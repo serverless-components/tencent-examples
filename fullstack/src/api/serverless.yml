@@ -1,8 +1,6 @@
-org: fullstack
-app: fullstack-serverless-db
-stage: dev
 component: express
 name: fullstack-api
+app: fullstack-serverless-db
 
 inputs:
   src:

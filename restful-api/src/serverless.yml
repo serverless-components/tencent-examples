@@ -1,8 +1,6 @@
-org: serverless
-app: restful-api
-stage: dev
 component: scf
 name: restful-api
+app: restful-api
 
 inputs:
   name: ${name}

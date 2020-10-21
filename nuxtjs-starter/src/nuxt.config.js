@@ -1,52 +1,52 @@
-
-module.exports = {
+export default {
   mode: 'universal',
+  env: {
+    STATIC_URL: process.env.STATIC_URL || ''
+  },
   /*
-  ** Headers of the page
-  */
+   ** Build configuration
+   */
+  build: {
+    extend(config, { isDev, isClient }) {
+      if (!isDev && process.env.STATIC_URL) {
+        config.output.publicPath = process.env.STATIC_URL
+      }
+    }
+  },
+  /*
+   ** Headers of the page
+   */
   head: {
-    title: process.env.npm_package_name || '',
+    title: 'Serverless Nuxt.js Application',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
+      {
+        hid: 'description',
+        name: 'description',
+        content: 'Serverless Nuxt.js Application Created By Serverless Framework'
+      }
     ],
-    link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-    ]
+    link: [{ rel: 'icon', type: 'image/x-icon', href: `${process.env.STATIC_URL}/favicon.ico` }]
   },
   /*
-  ** Customize the progress-bar color
-  */
+   ** Customize the progress-bar color
+   */
   loading: { color: '#fff' },
   /*
-  ** Global CSS
-  */
-  css: [
-  ],
+   ** Global CSS
+   */
+  css: [],
   /*
-  ** Plugins to load before mounting the App
-  */
-  plugins: [
-  ],
+   ** Plugins to load before mounting the App
+   */
+  plugins: [],
   /*
-  ** Nuxt.js dev-modules
-  */
-  buildModules: [
-  ],
+   ** Nuxt.js dev-modules
+   */
+  buildModules: [],
   /*
-  ** Nuxt.js modules
-  */
-  modules: [
-  ],
-  /*
-  ** Build configuration
-  */
-  build: {
-    /*
-    ** You can extend webpack config here
-    */
-    extend (config, ctx) {
-    }
-  }
+   ** Nuxt.js modules
+   */
+  modules: []
 }

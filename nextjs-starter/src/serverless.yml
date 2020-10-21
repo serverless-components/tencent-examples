@@ -1,12 +1,11 @@
 component: nextjs
-name: nextjsDemo
-org: orgDemo
 app: appDemo
-stage: dev
+name: nextjsDemo
 
 inputs:
   src:
-    src: ./
+    dist: ./
+    hook: npm run build
     exclude:
       - .env
   region: ap-guangzhou
@@ -16,3 +15,7 @@ inputs:
       - http
       - https
     environment: release
+  staticConf:
+    cosConf:
+      replace: true
+      bucket: nextjs-demo

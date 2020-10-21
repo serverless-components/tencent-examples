@@ -17,4 +17,5 @@ src:
     - .env
     - '.git/**'
     - '**/node_modules'
+    - '**/dist'
     - '**/package-lock.json'

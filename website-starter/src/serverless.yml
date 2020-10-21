@@ -8,4 +8,5 @@ inputs:
     index: index.html
     error: index.html
   region: ap-guangzhou
-  bucketName: my-bucket
+  bucketName: my-website-starter
+  protocol: https
