@@ -17,7 +17,7 @@ $ npm install -g serverless
 
 # 选择模版并部署
 $ serverless
-```
+
 
 ## 所有模版
 
