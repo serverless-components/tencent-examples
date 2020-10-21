@@ -1,7 +1,6 @@
 component: egg
-app: appDemo
-stage: dev
 name: egg
+app: appDemo
 
 inputs:
   src: ./
