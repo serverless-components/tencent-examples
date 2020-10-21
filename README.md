@@ -1,8 +1,20 @@
+![](https://i.v2ex.co/3d2SgCWC.png)
+
 # Serverless Tencent Examples
 
 **中文** | [English](./README_EN.md)
 
 一系列可以通过 serverless 直接部署到腾讯云函数的模版
+
+## 快速开始
+
+```bash
+# 安装 Serverless Framework
+npm install -g serverless
+
+# 选择模版并部署
+serverless
+```
 
 | 模版 | 描述 |
 | --- | --- |
