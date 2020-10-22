@@ -19,9 +19,9 @@ $ npm install -g serverless
 $ serverless
 ```
 
-<p align="center">
-  <img src="https://i.v2ex.co/wdyWJYPY.gif" height="350" align="center">
-</p>
+<img src="https://i.v2ex.co/wdyWJYPY.gif" height="350" align="center">
+
+
 ## 所有模版
 
 | 模版 | Demo | 描述 | 用到的组件
