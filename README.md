@@ -21,10 +21,10 @@ $ serverless
 
 ## 所有模版
 
-| 模版 | 描述 |
-| --- | --- |
-| [website-starter](./website-starter) | 快速部署一个静态网站 |
-| [react-starter](./react-starter) | 快速部署一个 React 应用 |
+| 模版 | 描述 | Demo | 用到的 component
+| --- | --- | --- | --- |
+| [website-starter](./website-starter) | 快速部署一个静态网站 | [🔗]() | [tencent-website](https://github.com/serverless-components/tencent-website) |
+| [react-starter](./react-starter) | 快速部署一个 React 应用 | [🔗]() | 
 | [vue-starter](./vue-starter) | 快速部署一个 Vue 应用 |
 | [express-starter](./express-starter) | 快速部署一个 express 应用 |
 | [koa-starter](./koa-starter) | 快速部署一个 koa 应用 |
@@ -34,8 +34,8 @@ $ serverless
 | [laravel-starter](./laravel-starter) | 快速部署一个 laravel 应用 |
 | [flask-starter](./flask-starter) | 快速部署一个 flask 应用 |
 | [scf-starter](./scf-starter) | 快速部署一个 scf 应用 |
-| [scf-nodejs](./scf-nodejs) | Nodejs10.5 helloworld 函数 |
-| [scf-go](./scf-go) | Go1 helloworld 函数 |
-| [scf-php](./scf-php) | PHP7 helloworld 函数 |
-| [scf-python](./scf-python) | Python3 helloworld 函数 |
+| [scf-nodejs](./scf-nodejs) | Nodejs helloworld 函数 |
+| [scf-go](./scf-go) | Go helloworld 函数 |
+| [scf-php](./scf-php) | PHP helloworld 函数 |
+| [scf-python](./scf-python) | Python helloworld 函数 |
 | [fullstack](./fullstack) | 快速部署一个 fullstack 应用 |
