@@ -18,6 +18,7 @@ $ npm install -g serverless
 # 🤞 只需一个命令，选择模版并部署
 $ serverless
 ```
+<img src="https://i.v2ex.co/wdyWJYPY.gif" height="400">
 
 ## 所有模版
 
