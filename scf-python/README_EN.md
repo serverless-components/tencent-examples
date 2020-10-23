@@ -21,7 +21,8 @@ npm install -g serverless
 Initializing the scf-python template by running this following command:
 
 ```bash
-serverless init scf-python
+serverless init scf-python --name example
+cd example
 ```
 
 ### 3. Deploy

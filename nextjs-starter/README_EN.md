@@ -21,7 +21,8 @@ npm install -g serverless
 Initializing the nextjs-starter template by running this following command:
 
 ```bash
-serverless init nextjs-starter
+serverless init nextjs-starter --name example
+cd example
 ```
 
 ### 3. Deploy

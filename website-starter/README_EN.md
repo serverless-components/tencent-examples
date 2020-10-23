@@ -21,7 +21,8 @@ npm install -g serverless
 Initializing the website-starter template by running this following command:
 
 ```bash
-serverless init website-starter
+serverless init website-starter --name example
+cd example
 ```
 
 ### 3. Deploy

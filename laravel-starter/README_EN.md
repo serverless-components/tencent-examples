@@ -21,7 +21,8 @@ npm install -g serverless
 Initializing the laravel-starter template by running this following command:
 
 ```bash
-serverless init laravel-starter
+serverless init laravel-starter --name example
+cd example
 ```
 
 ### 3. Deploy

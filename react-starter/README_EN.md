@@ -21,7 +21,8 @@ npm install -g serverless
 Initializing the react-starter template by running this following command:
 
 ```bash
-serverless init react-starter
+serverless init react-starter --name example
+cd example
 ```
 
 ### 3. Deploy

@@ -21,7 +21,8 @@ npm install -g serverless
 Initializing the eggjs-starter template by running this following command:
 
 ```bash
-serverless init eggjs-starter
+serverless init eggjs-starter --name example
+cd example
 ```
 
 ### 3. Deploy

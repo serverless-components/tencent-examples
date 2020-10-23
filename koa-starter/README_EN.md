@@ -21,7 +21,8 @@ npm install -g serverless
 Initializing the koa-starter template by running this following command:
 
 ```bash
-serverless init koa-starter
+serverless init koa-starter --name example
+cd example
 ```
 
 ### 3. Deploy

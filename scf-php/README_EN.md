@@ -21,7 +21,8 @@ npm install -g serverless
 Initializing the scf-php template by running this following command:
 
 ```bash
-serverless init scf-php
+serverless init scf-php --name example
+cd example
 ```
 
 ### 3. Deploy

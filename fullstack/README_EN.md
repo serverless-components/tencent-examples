@@ -21,7 +21,8 @@ npm install -g serverless
 Initializing the fullstack template by running this following command:
 
 ```bash
-serverless init fullstack
+serverless init fullstack --name example
+cd example
 ```
 
 ### 3. Deploy

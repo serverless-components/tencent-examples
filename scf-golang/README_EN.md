@@ -21,7 +21,8 @@ npm install -g serverless
 Initializing the scf-golang template by running this following command:
 
 ```bash
-serverless init scf-golang
+serverless init scf-golang --name example
+cd example
 ```
 
 ### 3. Deploy

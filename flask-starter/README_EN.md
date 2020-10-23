@@ -21,7 +21,8 @@ npm install -g serverless
 Initializing the flask-starter template by running this following command:
 
 ```bash
-serverless init flask-starter
+serverless init flask-starter --name example
+cd example
 ```
 
 ### 3. Deploy

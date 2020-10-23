@@ -21,7 +21,8 @@ npm install -g serverless
 Initializing the restful-api template by running this following command:
 
 ```bash
-serverless init restful-api
+serverless init restful-api --name example
+cd example
 ```
 
 ### 3. Deploy

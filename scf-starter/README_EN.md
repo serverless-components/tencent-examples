@@ -21,7 +21,8 @@ npm install -g serverless
 Initializing the scf-starter template by running this following command:
 
 ```bash
-serverless init scf-starter
+serverless init scf-starter --name example
+cd example
 ```
 
 ### 3. Deploy

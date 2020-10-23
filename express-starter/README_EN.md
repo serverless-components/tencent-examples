@@ -21,7 +21,8 @@ npm install -g serverless
 Initializing the express-starter template by running this following command:
 
 ```bash
-serverless init express-starter
+serverless init express-starter --name example
+cd example
 ```
 
 ### 3. Deploy
