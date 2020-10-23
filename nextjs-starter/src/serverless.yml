@@ -15,7 +15,3 @@ inputs:
       - http
       - https
     environment: release
-  staticConf:
-    cosConf:
-      replace: true
-      bucket: nextjs-demo
