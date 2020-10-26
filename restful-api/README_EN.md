@@ -68,7 +68,8 @@ you can [create an API Key here](https://console.cloud.tencent.com/cam/capi) and
 > If you don's have a Tencent Cloud Account, you can register [here](https://cloud.tencent.com/register)
 
 ```bash
-touch .env # Add your Tencent credentials here
+# Add your Tencent credentials here
+touch .env
 ```
 
 

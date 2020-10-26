@@ -59,7 +59,8 @@ serverless 默认支持扫描二维码登录，用户扫描二维码后会自动
 > 如果没有腾讯云账号，可以在此[注册新账号](https://cloud.tencent.com/register)。
 
 ```bash
-touch .env # 腾讯云的配置信息
+# 腾讯云的配置信息
+touch .env
 ```
 
 ```
