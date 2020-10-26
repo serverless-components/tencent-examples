@@ -1,12 +1,11 @@
 component: nuxtjs
 name: nuxtjsDemo
-org: orgDemo
 app: appDemo
-stage: dev
 
 inputs:
   src:
-    src: ./
+    hook: npm run build
+    dist: ./
     exclude:
       - .env
   region: ap-guangzhou

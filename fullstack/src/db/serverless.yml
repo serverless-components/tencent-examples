@@ -1,9 +1,6 @@
-org: fullstack
-app: fullstack-serverless-db
-stage: dev
-
 component: postgresql
 name: fullstack-db
+app: fullstack-serverless-db
 
 inputs:
   region: ${env:REGION}

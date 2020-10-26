@@ -15,24 +15,24 @@ express-starter 模板使用 Tencent SCF 组件及其触发器能力，方便的
 npm install -g serverless
 ```
 
-### 2. 配置
+### 2. 创建
 
 通过如下命令直接下载该例子：
 
 ```bash
-serverless init express-starter
+serverless init express-starter --name example
+cd example
 ```
 
 ### 3. 部署
 
-通过`serverless deploy`命令进行部署，并可以添加`--debug`参数查看部署过程中的信息
-
-如您的账号未[登陆](https://cloud.tencent.com/login)或[注册](https://cloud.tencent.com/register)腾讯云，您可以直接通过`微信`扫描命令行中的二维码进行授权登陆和注册。
+在 `serverless.yml` 文件所在的项目根目录，运行以下指令，将会弹出二维码，直接扫码授权进行部署：
 
 ```bash
-cd express-starter
 serverless deploy
 ```
+
+> **说明**：如果鉴权失败，请参考 [权限配置](https://cloud.tencent.com/document/product/1154/43006) 进行授权。
 
 ### 4. 查看状态
 
@@ -59,7 +59,8 @@ serverless 默认支持扫描二维码登录，用户扫描二维码后会自动
 > 如果没有腾讯云账号，可以在此[注册新账号](https://cloud.tencent.com/register)。
 
 ```bash
-touch .env # 腾讯云的配置信息
+# 腾讯云的配置信息
+touch .env
 ```
 
 ```

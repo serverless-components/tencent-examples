@@ -1,12 +1,11 @@
 component: nextjs
 name: nextjsDemo
-org: orgDemo
 app: appDemo
-stage: dev
 
 inputs:
   src:
-    src: ./
+    dist: ./
+    hook: npm run build
     exclude:
       - .env
   region: ap-guangzhou

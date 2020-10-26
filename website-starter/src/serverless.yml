@@ -1,8 +1,6 @@
 component: website
-name: websitedemo
-org: test
+name: websiteDemo
 app: websiteApp
-stage: dev
 
 inputs:
   src:
@@ -10,5 +8,5 @@ inputs:
     index: index.html
     error: index.html
   region: ap-guangzhou
-  bucketName: my-bucket
-  protocol: http
+  bucketName: my-website-starter
+  protocol: https

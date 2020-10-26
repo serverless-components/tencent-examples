@@ -13,4 +13,3 @@ license: MIT
 src: 
   src: ./src
   exclude:
-     - '**/vendor'

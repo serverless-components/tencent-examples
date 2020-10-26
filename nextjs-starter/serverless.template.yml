@@ -7,12 +7,12 @@ description-i18n:
   zh-cn: 快速部署一个 nextjs 应用
 type: template 
 keywords: tencent, nextjs, nodejs
-repo: https://github.com/serverless-components/tencent-example/tree/master/nextjs-starter
-readme:  https://github.com/serverless-components/tencent-example/blob/master/nextjs-starter/README.md
+repo: https://github.com/serverless-components/tencent-examples/tree/master/nextjs-starter
+readme:  https://github.com/serverless-components/tencent-examples/blob/master/nextjs-starter/README.md
 license: MIT 
 src: 
   src: ./src
   exclude: 
-    - .env
-    - serverless.yml
-
+    - '**/node_modules'
+    - '**/package-lock.json'
+    - '**/.next'
