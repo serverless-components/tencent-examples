@@ -1,17 +1,16 @@
-name: express-starter 
-displayName: Express.js 项目模版
+name: websocket-starter
+displayName: websocket 项目模版
 author: Tencent Cloud, Inc.
 org: Tencent Cloud, Inc.
-description:  Deploy an Express.js app via SCF and Apigateway
+description: Deploy an websocket app via SCF and Apigateway
 description-i18n:
-  zh-cn: 快速部署一个 Express.js 基础应用
-type: template 
-keywords: tencent, Expressjs, nodejs, SCF, APIGateway
-repo: https://github.com/serverless-components/tencent-examples/tree/master/express-starter
-readme:  https://github.com/serverless-components/tencent-examples/tree/master/express-starter/README.md
-license: MIT 
-src: 
+  zh-cn: 快速部署一个 websocket 基础应用
+type: template
+keywords: tencent, websocket, nodejs, SCF, APIGateway
+repo: https://github.com/serverless-components/tencent-examples/tree/master/websocket-starter
+readme: https://github.com/serverless-components/tencent-examples/tree/master/websocket-starter/README.md
+license: MIT
+src:
   src: ./src
-  exclude: 
-      - '**/node_modules'
-
+  exclude:
+    - '**/node_modules'
