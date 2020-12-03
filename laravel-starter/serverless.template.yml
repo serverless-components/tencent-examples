@@ -12,4 +12,6 @@ readme:  https://github.com/serverless-components/tencent-examples/blob/master/l
 license: MIT 
 src: 
   src: ./src
-  exclude:
+  include:
+    - .env
+    - .env.example
