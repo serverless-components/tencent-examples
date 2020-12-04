@@ -1,7 +1,7 @@
-name: Test express-starter
+name: Publish and test express-starter
 
 on:
-  pull_request:
+  push:
     branches: [ master ]
     paths: [ 'express-starter/**' ]
 
@@ -12,7 +12,6 @@ jobs:
   test:
     runs-on: ubuntu-latest
     env:
-      SERVERLESS_PLATFORM_STAGE: dev
       TENCENT_SECRET_ID: ${{ secrets.TENCENT_SECRET_ID }}
       TENCENT_SECRET_KEY: ${{ secrets.TENCENT_SECRET_KEY }}
       SERVERLESS_PLATFORM_VENDOR: tencent
@@ -23,7 +22,7 @@ jobs:
           node-version: '14.x'
       - name: Install serverless cli
         run: sudo npm i serverless -g
-      - name: Publish template to dev env
+      - name: Publish template
         run: cd express-starter && sls publish
       - name: Test template
         run: |
