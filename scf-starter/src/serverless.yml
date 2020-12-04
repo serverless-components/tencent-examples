@@ -7,8 +7,8 @@ name: scfdemo # (必填) 创建的实例名称，请修改成您的实例名称
 
 #组件参数
 inputs:
-  name: ${name}-${stage}-${app} #函数名称
-  src: ./src  #代码路径
+  name: ${name}-${app} #函数名称
+  src: ./  #代码路径
   handler: index.main_handler #入口
   runtime: Nodejs10.15 # 云函数运行时的环境
   region: ap-guangzhou # 云函数所在区域
