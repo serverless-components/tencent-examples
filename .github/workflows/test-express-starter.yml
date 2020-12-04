@@ -10,11 +10,12 @@ on:
 
 jobs:
   test:
-    env:
-      - SERVERLESS_PLATFORM_STAGE: dev
-      - TENCENT_SECRET_ID: ${{ secrets.TENCENT_SECRET_ID }}
-      - TENCENT_SECRET_KEY: ${{ secrets.TENCENT_SECRET_KEY }}
     runs-on: ubuntu-latest
+    env:
+      SERVERLESS_PLATFORM_STAGE: dev
+      TENCENT_SECRET_ID: ${{ secrets.TENCENT_SECRET_ID }}
+      TENCENT_SECRET_KEY: ${{ secrets.TENCENT_SECRET_KEY }}
+      SERVERLESS_PLATFORM_VENDOR: tencent
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
