@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  test:
+  publishAndTest:
     runs-on: ubuntu-latest
     env:
       TENCENT_SECRET_ID: ${{ secrets.TENCENT_SECRET_ID }}
