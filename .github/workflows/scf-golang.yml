@@ -1,9 +1,9 @@
-name: Publish and test express-starter
+name: Publish and test scf-golang
 
 on:
   push:
     branches: [ master ]
-    paths: [ 'express-starter/**' ]
+    paths: [ 'scf-golang/**' ]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -23,9 +23,9 @@ jobs:
       - name: Install serverless cli
         run: sudo npm i serverless -g
       - name: Publish template
-        run: cd express-starter && sls publish
+        run: cd scf-golang && sls publish
       - name: Test template
         run: |
-          sls init express-starter --name test-express-starter
-          cd test-express-starter
+          sls init scf-golang --name test-scf-golang
+          cd test-scf-golang
           sls deploy
