@@ -12,7 +12,7 @@ readme: https://github.com/serverless-components/tencent-examples/tree/master/re
 license: MIT
 
 src:
-  src: ./
+  src: ./src
   exclude:
     - .env
     - '.git/**'

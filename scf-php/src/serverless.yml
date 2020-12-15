@@ -3,7 +3,6 @@ name: ap-guangzhou_default_helloworld
 app: helloworld
 
 inputs:
-  name: helloworld
   src: ./
   description: helloworld 空白模板函数
   handler: index.main_handler
