@@ -1,0 +1,26 @@
+name: Publish and test transcode-app
+
+on:
+  push:
+    branches: [ master ]
+    paths: [ 'transcode-app/**' ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  publishAndTest:
+    runs-on: ubuntu-latest
+    env:
+      TENCENT_SECRET_ID: ${{ secrets.TENCENT_SECRET_ID }}
+      TENCENT_SECRET_KEY: ${{ secrets.TENCENT_SECRET_KEY }}
+      SERVERLESS_PLATFORM_VENDOR: tencent
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '14.x'
+      - name: Install serverless cli
+        run: sudo npm i serverless -g
+      - name: Publish template
+        run: cd transcode-app && sls publish

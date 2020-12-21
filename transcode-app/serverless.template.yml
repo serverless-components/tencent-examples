@@ -1,0 +1,15 @@
+name: transcode-app
+author: Tencent Cloud, Inc.
+org: Tencent Cloud, Inc.
+description: Deploy a transcode app
+description-i18n:
+  zh-cn: 使用COS+云函数+CLS+FFmpeg，快速构建高可用、并行处理、实时日志、高度自定义视频转码服务。
+keywords: tencent, serverless, express, website, transcode
+repo: https://github.com/serverless-components/tencent-examples/tree/master/transcode-app
+readme: https://github.com/serverless-components/tencent-examples/tree/master/transcode-app/README.md
+license: MIT
+
+src:
+  src: ./src
+  include:
+    - .env
