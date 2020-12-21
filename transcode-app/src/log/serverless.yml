@@ -1,0 +1,10 @@
+#组件信息 全量配置参考https://github.com/serverless-components/tencent-cls/blob/master/docs/configure.md
+component: cls # 引用 component 的名称
+name: cls-video # 创建的实例名称，请修改成您的实例名称
+
+#组件参数
+inputs:
+  name: cls-log  # 您需要配置一个name，作为您的cls日志集名称
+  topic: video-log # 您需要配置一个topic，作为您的cls日志主题名称
+  region: ${env:REGION} # 区域，统一在环境变量中定义
+  period: 7 # 日志保存时间，单位天
