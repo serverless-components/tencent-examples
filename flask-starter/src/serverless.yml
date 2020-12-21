@@ -1,5 +1,5 @@
 component: flask # (required) name of the component. In that case, it's flask.
-name: flashDemo # (required) name of your flash component instance.
+name: flaskDemo # (required) name of your flask component instance.
 app: appDemo # (optional) serverless dashboard app. default is the same as the name property.
 
 inputs:
