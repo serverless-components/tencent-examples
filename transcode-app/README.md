@@ -193,7 +193,7 @@ yml文件 `transcode-app/transcode/serverless.yml`中 `DST_FORMAT`与`FFMPEG_CMD
 例：转码mp4格式视频，可以将FFMPEG_CMD配置为:
 
 ```
-DST_FORMATS: mp4
+DST_FORMAT: mp4
 FFMPEG_CMD: ffmpeg -i {input} -vcodec copy -y -f {dst_format} -movflags frag_keyframe+empty_moov {output}
 ```
 
