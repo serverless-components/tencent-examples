@@ -55,9 +55,9 @@
    |- log/ #log日志配置
    |  └── serverless.yml
    └──transcode/  #转码函数配置
-      |- ffmpeg   #转码ffmpeg工具
-      |- index.py
-      |- task_report.py
+      |- src/
+      |   |- ffmpeg   #转码ffmpeg工具
+      |   └── index.py
       └── serverless.yml
    
    ```
@@ -66,11 +66,9 @@
 
    b)  `transcode/serverless.yml` 定义函数的基础配置及转码参数配置。
 
-   c)  `transcode/index.py` 转码功能实现。
+   c)  `transcode/src/index.py` 转码功能实现。
 
-   d)  `transcode/task_report.py` cls日志上报接口。
-
-   e)   `transcode/ffmpeg` 转码工具ffmpeg。
+   d)   `transcode/src/ffmpeg` 转码工具ffmpeg。
 
 3. 配置环境变量和应用参数
 
@@ -100,7 +98,7 @@
    a)  cls日志定义，文件`transcode-app/log/serverless.yml`
 
    ```
-   #组件信息
+   #组件信息 全量配置参考https://github.com/serverless-components/tencent-cls/blob/master/docs/configure.md
    component: cls # 引用 component 的名称
    name: cls-video # 创建的实例名称，请修改成您的实例名称
    
@@ -112,10 +110,10 @@
      period: 7 # 日志保存时间，单位天
    ```
 
-   b)  云函数及转码配置，文件`transcode-app/transcode/serverless.yml` ：  
+   b)  云函数及转码配置，文件`transcode-app/transcode/serverless.yml`   
 
    ```
-   #组件信息
+   #组件信息 全量配置参考https://github.com/serverless-components/tencent-scf/blob/master/docs/configure.md
    component: scf # 引用 component 的名称
    name: transcode-video # 创建的实例名称，请修改成您的实例名称
    
@@ -124,7 +122,7 @@
      name: transcode-video-${app}-${stage}
      src: ./src
      handler: index.main_handler 
-     role: transcodeRole # 函数执行角色，已授予cos对应桶全读写权限
+     role: transcodeRole # 函数运行角色，已授予cos对应桶全读写权限
      runtime: Python3.6 
      memorySize: 3072 # 内存大小，单位MB
      timeout: 43200 # 函数执行超时时间, 单位秒, 即本demo目前最大支持12h运行时长
@@ -141,7 +139,7 @@
          DST_FORMATS: avi # 转码生成格式
          FFMPEG_CMD: ffmpeg -i {inputs} -y -f {dst_format} {outputs}  # 转码基础命令，您可自定义配置，但必须包含ffmpeg配置参数和格式化部分，否则会造成转码任务失败。
          FFMPEG_DEBUG: 0 # 是否输出ffmpeg日志 0为不输出 1为输出
-         TZ: Aisa/Shanghai # cls日志输出时间的时区
+         TZ: Asia/Shanghai # cls日志输出时间的时区
      events:
        - cos: # cos触发器    	
            parameters:          
@@ -234,5 +232,5 @@ FFMPEG_CMD: ffmpeg -i {inputs} -vcodec copy -y -f {dst_format} -movflags frag_ke
    >
    > 您可以直接选择 `QcloudCOSFullAccess` 对象存储（COS）全读写访问权限，如果需要更细粒度的权限配置，请根据实际情况配置选择。
 
-4. 输入角色名称，完成创建角色及授权。
-![1608278445413](https://main.qcloudimg.com/raw/d5d1532a9c9d505e64eef2442b594fac.png)
+4. 输入角色名称，完成创建角色及授权。该角色将作为函数的运行角色，配置在文件`transcode-app/transcode/serverless.yml`  中。![1608278445413](https://main.qcloudimg.com/raw/d5d1532a9c9d505e64eef2442b594fac.png)
+
