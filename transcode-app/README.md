@@ -179,10 +179,10 @@
 批量文件上传到cos会并行触发转码执行。
 
 1. 登陆云函数控制台，查看日志监控。
-![1608278445413](https://main.qcloudimg.com/raw/d103eeaf53816d74c6045ee4929b3dc8.png)
+![1608278445413](https://main.qcloudimg.com/raw/ce7f8a54fe41408be857fed9b251a388.png)
 2. 直接点击函数对应的cls日志，查看日志检索分析 。
-![1608278445413](https://main.qcloudimg.com/raw/cd4e93dde155de1c3d99c21785a1674f.png)
-![1608278445413](https://main.qcloudimg.com/raw/cccd120d0c4fe9e863ec8c425b05a566.png)
+![1608278445413](https://main.qcloudimg.com/raw/848f3cd68b63000c069a1ad43aeaa8a9.jpg)
+![1608278445413](https://main.qcloudimg.com/raw/5db54886ce37e132bfa3a324651cf193.png)
 
 ## FFmpeg工具
 
