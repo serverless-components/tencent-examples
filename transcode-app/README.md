@@ -244,5 +244,5 @@ FFMPEG_CMD: ffmpeg -i {input} -vcodec copy -y -f {dst_format} -movflags frag_key
 
     > 说明：
     >
-    > 由于运行角色密钥最长有效期为12小时，因此函数配置的超时时间不能大于12小时。如果您需要更长的函数执行时长，可以通过改造`transcode-app/transcode/src/index.py`  中的访问cos方式，配置永久密钥去读写访问cos。这样会暴露您的密钥在代码中，请谨慎使用。
+    > 由于运行角色密钥最长有效期为12小时，因此函数配置的超时时间不能大于12小时。如果您需要更长的函数执行时长，可以通过改造`transcode-app/transcode/src/index.py`  中的访问cos方式，配置永久密钥去读写访问cos。但这样会暴露您的密钥在代码中，请谨慎使用。
 
