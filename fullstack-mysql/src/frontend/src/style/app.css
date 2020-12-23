@@ -37,8 +37,8 @@ body {
   height: 100%;
   width: 100%;
   margin: 0;
-  padding: 30px 50px 50px 50px;
-  width: 1220px;
+  padding: 30px 20px;
+  width: 1200px;
   box-sizing: border-box;
   margin: 0 auto;
 }
@@ -59,9 +59,6 @@ section.title {
   float: right;
 }
 
-.title-left {
-}
-
 .title-left h1 {
   font-family: Soleil;
   font-size: 66px;
@@ -72,7 +69,7 @@ section.title {
 
 .title-left h3 {
   display: flex;
-  margin: 0 0 80px;
+  margin: 0 0 40px 0;
   font-family: Soleil;
   font-size: 24px;
   line-height: 36px;
@@ -97,25 +94,10 @@ section.title {
   text-align: center;
 }
 
-.hero {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: auto;
-  min-height: 40vh;
-  animation-duration: 2000ms;
-  animation-name: fadeIn;
-}
-
-.hero img {
-  max-height: 40vh;
-  pointer-events: none;
-}
-
 .tagline {
   align-items: center;
   height: auto;
-  margin-top: 40px;
+  margin-top: 0px;
   color: #ffffff;
   font-size: 18px;
   text-align: center;

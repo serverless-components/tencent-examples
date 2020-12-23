@@ -1,3 +1,7 @@
+CREATE DATABASE IF NOT EXISTS fullstack;
+
+USE fullstack;
+
 CREATE TABLE IF NOT EXISTS users(
   id     INT UNSIGNED AUTO_INCREMENT COMMENT 'primary key',
   name   VARCHAR(30) DEFAULT NULL,

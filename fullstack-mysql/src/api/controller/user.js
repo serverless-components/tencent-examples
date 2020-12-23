@@ -46,4 +46,9 @@ module.exports = {
     const res = await db.query('DELETE FROM users WHERE name = ?', name);
     return res;
   },
+
+  async deleteUserId(id) {
+    const res = await db.query('DELETE FROM users WHERE id = ?', id);
+    return res;
+  },
 };

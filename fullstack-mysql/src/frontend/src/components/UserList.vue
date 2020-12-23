@@ -1,43 +1,65 @@
 <template>
   <div class="right">
-    <h3>User List</h3>
-    <!-- user list -->
-    <section class="user-list">
-      <ul v-if="list.length > 0">
-        <li v-for="item in list" :key="item.id">
-          <p>
-            <b>Name: {{ item.name }}</b
-            >&nbsp;&nbsp; <b>Email: {{ item.email }}</b
-            >&nbsp;&nbsp;
-            <b>Site: {{ item.site }}</b>
-            <button class="delete-btn" @click="deleteUser(item.name)">
-              删除
-            </button>
-          </p>
-        </li>
-      </ul>
-      <span v-else>{{ loading ? "Loading" : "No Data" }}</span>
-    </section>
+    <el-card class="box-card">
+      <div slot="header" class="clearfix">
+        <span>User List</span>
+      </div>
+      <el-table :data="list" style="width: 100%" v-loading="loading">
+        <el-table-column prop="name" label="姓名" width="180">
+        </el-table-column>
+        <el-table-column prop="email" label="邮箱" width="180">
+        </el-table-column>
+        <el-table-column prop="site" label="网站"> </el-table-column>
+        <el-table-column fixed="right" label="操作" width="100">
+          <template slot-scope="scope">
+            <el-button @click="deleteUser(scope.row)" type="text" size="small"
+              >删除</el-button
+            >
+          </template>
+        </el-table-column>
+      </el-table>
+    </el-card>
   </div>
 </template>
 <script>
+import axios from "axios";
 export default {
   name: "UserList",
-  props: {
-    loading: {
-      type: Boolean,
-      default: false
-    },
-    list: {
-      type: Array,
-      default() {
-        return [];
-      }
-    }
+  data() {
+    return {
+      list: [],
+      loading: false
+    };
+  },
+  async mounted() {
+    await this.getUsers();
+
+    this.$EventBus.$on("submit", async () => {
+      await this.getUsers();
+    });
   },
   methods: {
-    deleteUser(name) {
-      this.$emit("delete", name);
+    async getUsers() {
+      this.loading = true;
+      const { data } = await axios.get(`${window.env.apiUrl}user`);
+
+      if (data.code !== 0) {
+        this.list = [];
+      } else {
+        this.list = data.data || [];
+      }
+      this.loading = false;
+    },
+    async deleteUser({ id }) {
+      const { data } = await axios.delete(`${window.env.apiUrl}user/${id}`);
+      if (data.code !== 0) {
+        this.$message({
+          type: "error",
+          message: data.message
+        });
+      } else {
+        await this.getUsers();
+      }
     }
   }
 };

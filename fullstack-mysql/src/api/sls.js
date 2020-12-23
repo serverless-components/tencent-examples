@@ -68,11 +68,11 @@ app.post('/user', async (req, res) => {
 });
 
 // delete user
-app.delete('/user/:name', async (req, res) => {
+app.delete('/user/:id', async (req, res) => {
   let result = '';
   try {
-    const { name } = req.params;
-    const data = await UserController.deleteUserByName(name);
+    const { id } = req.params;
+    const data = await UserController.deleteUserId(id);
     result = {
       code: 0,
       data,

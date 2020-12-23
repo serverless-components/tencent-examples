@@ -1,49 +1,38 @@
 <template>
   <div class="left">
-    <h3>User Form</h3>
     <!-- user form -->
-    <section
-      class="user-form"
-      action="#"
-    >
-      <div class="form-item">
-        <label for="name">Name:</label>
-        <input
-          name="name"
-          v-model="form.name"
-          type="text"
-        />
-        <br />
+    <el-card class="box-card">
+      <div slot="header" class="clearfix">
+        <span>User Form</span>
       </div>
-
-      <div class="form-item">
-        <label for="email">Email:</label>
-        <input
-          name="email"
-          v-model="form.email"
-          type="email"
-        />
-        <br />
-      </div>
-
-      <div class="form-item">
-        <label for="site">Site:</label>
-        <input
-          name="site"
-          v-model="form.site"
-          type="text"
-        />
-        <br />
-      </div>
-
-      <button
-        class="submit-btn"
-        @click="submit"
-      >Submit</button>
-    </section>
+      <el-form
+        label-width="80px"
+        :model="form"
+        ref="form"
+        :rules="rules"
+        class="user-form"
+      >
+        <el-form-item label="Name" prop="name" required>
+          <el-input v-model="form.name"></el-input>
+        </el-form-item>
+        <el-form-item label="Email" prop="email" required>
+          <el-input v-model="form.email"></el-input>
+        </el-form-item>
+        <el-form-item label="Site" prop="site">
+          <el-input v-model="form.site"></el-input>
+        </el-form-item>
+        <el-form-item>
+          <el-button type="primary" @click="submitForm('form')"
+            >Submit</el-button
+          >
+        </el-form-item>
+      </el-form>
+    </el-card>
   </div>
 </template>
 <script>
+import axios from "axios";
+
 export default {
   name: "UserForm",
   data() {
@@ -52,18 +41,46 @@ export default {
         name: "",
         email: "",
         site: ""
+      },
+      rules: {
+        name: [{ required: true, message: "Please input name" }],
+        email: [{ required: true, message: "Please input name" }]
       }
     };
   },
   methods: {
-    submit() {
-      this.$emit("submit", Object.assign(this.form));
+    async submitForm(formName) {
+      this.$refs[formName].validate(async valid => {
+        if (valid) {
+          try {
+            const { data } = await axios.post(
+              `${window.env.apiUrl}user`,
+              this.form
+            );
+            console.log("data", data);
+            if (data.code === 0) {
+              this.$EventBus.$emit("submit");
+            } else {
+              this.$message({
+                type: "error",
+                message: data.message
+              });
+            }
+          } catch (e) {
+            this.$message({
+              type: "error",
+              message: e.message
+            });
+          }
+        } else {
+          return false;
+        }
+      });
     }
   }
 };
 </script>
 <style lang="css" scoped>
-
 .user-form {
   color: #fff;
   width: 500px;
