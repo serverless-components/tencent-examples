@@ -1,6 +1,6 @@
 app: fullstack-mysql-app
 
-component: cynosdb@dev
+component: cynosdb
 name: fullstack-db
 
 inputs:
