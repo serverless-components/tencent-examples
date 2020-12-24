@@ -25,6 +25,15 @@ serverless init fullstack-mysql --name example
 cd example
 ```
 
+### 2.1 Config .env
+
+Nowadays, because Serverless Mysql only support `ap-shanghai-2` and `ap-nanjing-1`, so we need config it in `.env` file, just add two environment variables, `REGION` and `ZONE`:
+
+```
+REGION=ap-shanghai
+ZONE=ap-shanghai-2
+```
+
 ### 3. Deploy
 
 You can use following command to deploy the APP.
