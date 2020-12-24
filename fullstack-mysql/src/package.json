@@ -1,0 +1,30 @@
+{
+  "name": "tencent-fullstack",
+  "version": "1.1.0",
+  "description": "Fullstack with serverless db",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest ./tests/integration.test.js --testEnvironment node",
+    "bootstrap": "node scripts/bootstrap.js",
+    "deploy": "sls deploy --all",
+    "remove": "sls remove --all",
+    "info": "npm run info:vpc && npm run info:db && npm run info:api && npm run info:frontend",
+    "info:vpc": "sls info --target=./vpc",
+    "info:db": "sls info --target=./db",
+    "info:api": "sls info --target=./api",
+    "info:frontend": "sls info --target=./frontend"
+  },
+  "keywords": [
+    "fullstack",
+    "serverless",
+    "serverless-db"
+  ],
+  "author": "yugasun",
+  "license": "MIT",
+  "devDependencies": {
+    "@serverless/platform-client-china": "^1.0.32",
+    "dotenv": "^8.2.0",
+    "jest": "^26.3.0",
+    "js-yaml": "^3.14.0"
+  }
+}

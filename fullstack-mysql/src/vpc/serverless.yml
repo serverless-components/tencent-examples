@@ -1,0 +1,11 @@
+app: fullstack-mysql-app
+
+component: vpc
+name: fullstack-vpc
+
+
+inputs:
+  region: ${env:REGION}
+  zone: ${env:ZONE}
+  vpcName: serverless
+  subnetName: serverless
