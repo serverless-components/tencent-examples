@@ -1,0 +1,21 @@
+app: fullstack-mysql-app
+
+component: website
+name: fullstack-frontend
+
+inputs:
+  region: ${env:REGION}
+  bucketName: fullstack-mysql-app-frontend
+  protocol: https
+  src:
+    src: ./
+    hook: npm run build
+    dist: ./dist
+    envPath: ./
+    index: index.html
+    error: index.html
+    exclude:
+      - 'public/env.js'
+  env:
+    # get api url after below api service deployed.
+    apiUrl: ${output:${stage}:${app}:fullstack-api.apigw.url}

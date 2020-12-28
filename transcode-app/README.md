@@ -11,7 +11,7 @@
 
 1. 流式转码。采用流式拉取源视频文件，流式上传转码文件的工作方式，突破了本地存储的限制，且不需要额外部署cfs等产品。
 2. 实时日志。视频转码过程中，可通过cls日志服务实时查看转码进度。同时支持输出ffmpeg应用的完整日志。
-3. 长时运行。利用云函数的长时运行机制，支持12h的运行时长，可覆盖大文件耗时较长的转码场景。
+3. 长时运行。利用云函数的长时运行机制，支持12h-24h的运行时长，可覆盖大文件耗时较长的转码场景。
 4. 自定义参数。支持用户自定义配置ffmpeg命令参数。
 
 ### 应用资源
@@ -55,9 +55,9 @@
    |- log/ #log日志配置
    |  └── serverless.yml
    └──transcode/  #转码函数配置
-      |- ffmpeg   #转码ffmpeg工具
-      |- index.py
-      |- task_report.py
+      |- src/
+      |   |- ffmpeg   #转码ffmpeg工具
+      |   └── index.py
       └── serverless.yml
    
    ```
@@ -66,11 +66,9 @@
 
    b)  `transcode/serverless.yml` 定义函数的基础配置及转码参数配置。
 
-   c)  `transcode/index.py` 转码功能实现。
+   c)  `transcode/src/index.py` 转码功能实现。
 
-   d)  `transcode/task_report.py` cls日志上报接口。
-
-   e)   `transcode/ffmpeg` 转码工具ffmpeg。
+   d)   `transcode/src/ffmpeg` 转码工具ffmpeg。
 
 3. 配置环境变量和应用参数
 
@@ -100,7 +98,7 @@
    a)  cls日志定义，文件`transcode-app/log/serverless.yml`
 
    ```
-   #组件信息
+   #组件信息 全量配置参考https://github.com/serverless-components/tencent-cls/blob/master/docs/configure.md
    component: cls # 引用 component 的名称
    name: cls-video # 创建的实例名称，请修改成您的实例名称
    
@@ -112,10 +110,10 @@
      period: 7 # 日志保存时间，单位天
    ```
 
-   b)  云函数及转码配置，文件`transcode-app/transcode/serverless.yml` ：  
+   b)  云函数及转码配置，文件`transcode-app/transcode/serverless.yml`   
 
    ```
-   #组件信息
+   #组件信息 全量配置参考https://github.com/serverless-components/tencent-scf/blob/master/docs/configure.md
    component: scf # 引用 component 的名称
    name: transcode-video # 创建的实例名称，请修改成您的实例名称
    
@@ -124,7 +122,7 @@
      name: transcode-video-${app}-${stage}
      src: ./src
      handler: index.main_handler 
-     role: transcodeRole # 函数执行角色，已授予cos对应桶全读写权限
+     role: transcodeRole # 函数运行角色，已授予cos对应桶全读写权限
      runtime: Python3.6 
      memorySize: 3072 # 内存大小，单位MB
      timeout: 43200 # 函数执行超时时间, 单位秒, 即本demo目前最大支持12h运行时长
@@ -138,10 +136,10 @@
          REGION: ${env:REGION} # 输出桶区域
          DST_BUCKET: test-123456789 # 输出桶名称
          DST_PATH: video/outputs/ # 输出桶路径
-         DST_FORMATS: avi # 转码生成格式
-         FFMPEG_CMD: ffmpeg -i {inputs} -y -f {dst_format} {outputs}  # 转码基础命令，您可自定义配置，但必须包含ffmpeg配置参数和格式化部分，否则会造成转码任务失败。
-         FFMPEG_DEBUG: 0 # 是否输出ffmpeg日志 0为不输出 1为输出
-         TZ: Aisa/Shanghai # cls日志输出时间的时区
+         DST_FORMAT: avi # 转码生成格式
+         FFMPEG_CMD: ffmpeg -i {input} -y -f {dst_format} {output}  # 转码基础命令，您可自定义配置，但必须包含ffmpeg配置参数和格式化部分，否则会造成转码任务失败。
+         FFMPEG_DEBUG: 1 # 是否输出ffmpeg日志 0为不输出 1为输出
+         TZ: Asia/Shanghai # cls日志输出时间的时区
      events:
        - cos: # cos触发器    	
            parameters:          
@@ -181,22 +179,22 @@
 批量文件上传到cos会并行触发转码执行。
 
 1. 登陆云函数控制台，查看日志监控。
-![1608278445413](https://main.qcloudimg.com/raw/d103eeaf53816d74c6045ee4929b3dc8.png)
+![1608278445413](https://main.qcloudimg.com/raw/ce7f8a54fe41408be857fed9b251a388.png)
 2. 直接点击函数对应的cls日志，查看日志检索分析 。
-![1608278445413](https://main.qcloudimg.com/raw/cd4e93dde155de1c3d99c21785a1674f.png)
-![1608278445413](https://main.qcloudimg.com/raw/cccd120d0c4fe9e863ec8c425b05a566.png)
+![1608278445413](https://main.qcloudimg.com/raw/848f3cd68b63000c069a1ad43aeaa8a9.jpg)
+![1608278445413](https://main.qcloudimg.com/raw/5db54886ce37e132bfa3a324651cf193.png)
 
 ## FFmpeg工具
 
 ### ffmpeg指令
 
-yml文件 `transcode-app/transcode/serverless.yml`中 `DST_FORMATS`与`FFMPEG_CMD`指定了转码应用的转码指令，您可根据应用场景自定义配置。
+yml文件 `transcode-app/transcode/serverless.yml`中 `DST_FORMAT`与`FFMPEG_CMD`指定了转码应用的转码指令，您可根据应用场景自定义配置。
 
 例：转码mp4格式视频，可以将FFMPEG_CMD配置为:
 
 ```
-DST_FORMATS: mp4
-FFMPEG_CMD: ffmpeg -i {inputs} -vcodec copy -y -f {dst_format} -movflags frag_keyframe+empty_moov {outputs}
+DST_FORMAT: mp4
+FFMPEG_CMD: ffmpeg -i {input} -vcodec copy -y -f {dst_format} -movflags frag_keyframe+empty_moov {output}
 ```
 
 
@@ -216,6 +214,13 @@ FFMPEG_CMD: ffmpeg -i {inputs} -vcodec copy -y -f {dst_format} -movflags frag_ke
  cd transcode && sls deploy
 ```
 
+
+> 说明：
+>
+> 自行编译的ffmpeg环境与云函数运行环境如果不同，可能会导致ffmpeg权限问题。我们提供了云函数执行环境的官方镜像，请使用[官方镜像环境](https://cloud.tencent.com/document/product/583/50826)编译您的ffmpeg。
+
+
+
 ## 运行角色
 
 转码函数运行时需要读取cos资源进行转码，并将转码后的资源写回cos，因此需要给函数配置一个授权cos全读写的运行角色。更多参考[函数运行角色](https://cloud.tencent.com/document/product/583/47933#.E8.BF.90.E8.A1.8C.E8.A7.92.E8.89.B2)。
@@ -234,5 +239,10 @@ FFMPEG_CMD: ffmpeg -i {inputs} -vcodec copy -y -f {dst_format} -movflags frag_ke
    >
    > 您可以直接选择 `QcloudCOSFullAccess` 对象存储（COS）全读写访问权限，如果需要更细粒度的权限配置，请根据实际情况配置选择。
 
-4. 输入角色名称，完成创建角色及授权。
-![1608278445413](https://main.qcloudimg.com/raw/d5d1532a9c9d505e64eef2442b594fac.png)
+4. 输入角色名称，完成创建角色及授权。该角色将作为函数的运行角色，配置在文件`transcode-app/transcode/serverless.yml`  中。![1608278445413](https://main.qcloudimg.com/raw/d5d1532a9c9d505e64eef2442b594fac.png)
+
+
+    > 说明：
+    >
+    > 由于运行角色密钥最长有效期为12小时，因此函数配置的超时时间不能大于12小时。如果您需要更长的函数执行时长，可以通过改造`transcode-app/transcode/src/index.py`  中的访问cos方式，配置永久密钥去读写访问cos。但这样会暴露您的密钥在代码中，请谨慎使用。
+
