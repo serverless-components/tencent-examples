@@ -27,6 +27,4 @@ jobs:
       - name: Test template
         run: |
           sls init springboot-starter --name test-springboot-starter
-          cd test-springboot-starter
-          sls deploy
 
