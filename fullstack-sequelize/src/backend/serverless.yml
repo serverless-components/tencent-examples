@@ -1,0 +1,30 @@
+app: fullstack-sequelize-app
+
+component: express
+name: fullstack-api
+
+inputs:
+  src:
+    src: ./
+    exclude:
+      - .env
+  functionName: ${name}
+  region: ${env:REGION}
+  runtime: Nodejs12.16
+  functionConf:
+    timeout: 30
+    vpcConfig:
+      vpcId: ${output:${stage}:${app}:fullstack-vpc.vpcId}
+      subnetId: ${output:${stage}:${app}:fullstack-vpc.subnetId}
+    environment:
+      variables:
+        DB_HOST: ${output:${stage}:${app}:fullstack-db.connection.ip}
+        DB_PORT: ${output:${stage}:${app}:fullstack-db.connection.port}
+        DB_USER: root
+        DB_NAME: fullstack
+        DB_PASSWORD: ${output:${stage}:${app}:fullstack-db.adminPassword}
+  apigatewayConf:
+    enableCORS: true
+    protocols:
+      - http
+      - https

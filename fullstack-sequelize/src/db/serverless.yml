@@ -1,0 +1,12 @@
+app: fullstack-sequelize-app
+
+component: cynosdb
+name: fullstack-db
+
+inputs:
+  region: ${env:REGION}
+  zone: ${env:ZONE}
+  vpcConfig:
+    vpcId: ${output:${stage}:${app}:fullstack-vpc.vpcId}
+    subnetId: ${output:${stage}:${app}:fullstack-vpc.subnetId}
+  enablePublicAccess: true
