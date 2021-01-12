@@ -1,0 +1,18 @@
+name: fullstack-sequelize
+author: Tencent Cloud, Inc.
+org: Tencent Cloud, Inc.
+description: Deploy a full stack application.
+description-i18n:
+  zh-cn: 快速部署一个 Full Stack 应用, vuejs + express + mysql
+keywords: tencent, serverless, express, website, fullstack
+repo: https://github.com/serverless-components/tencent-examples/tree/master/fullstack-sequelize
+readme: https://github.com/serverless-components/tencent-examples/tree/master/fullstack-sequelize/README.md
+license: MIT
+src:
+  src: ./src
+  exclude:
+    - .env
+    - '.git/**'
+    - serverless.yml
+    - '**/node_modules'
+    - '**/package-lock.json'
