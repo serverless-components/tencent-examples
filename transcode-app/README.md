@@ -23,7 +23,7 @@
 
 ### 注意事项
 
-1. 转码应用需要依赖云函数长时运行能力，目前该能力还在公测中，需要先[申请白名单](https://cloud.tencent.com/apply/p/hz85krvp8s8)。
+1. 转码应用需要依赖云函数[长时运行](https://cloud.tencent.com/document/product/583/51519)能力。
 
 2. 转码输出桶与函数建议配置在同一区域，因为跨区域配置转码应用稳定性及效率都会降低，并且会产生跨区流量费用。
 
@@ -35,7 +35,6 @@
 ## 前提条件
 
 1. [安装serverlesss framework](https://cloud.tencent.com/document/product/1154/42990)
-2. 函数长时运行[白名单申请](https://cloud.tencent.com/apply/p/hz85krvp8s8)。
 3. 配置部署账号权限。参考 [账号和权限配置](https://cloud.tencent.com/document/product/1154/43006) 
 4. 配置[运行角色](#运行角色)权限。
 
@@ -83,7 +82,7 @@
    a)  环境变量，文件`transcode-app/.env`
 
    ```
-   REGION=ap-shanghai  # 应用创建所在区，目前只支持上海区
+   REGION=ap-shanghai  # 应用创建所在区
    TENCENT_SECRET_ID=xxxxxxxxxxxx # 您的腾讯云sercretId
    TENCENT_SECRET_KEY=xxxxxxxxxxxx # 您的腾讯云sercretKey
    ```
@@ -127,7 +126,7 @@
      memorySize: 3072 # 内存大小，单位MB
      timeout: 43200 # 函数执行超时时间, 单位秒, 即本demo目前最大支持12h运行时长
      region: ${env:REGION} # 函数区域，统一在环境变量中定义
-     asyncRunEnable: true # 开启长时运行，目前只支持上海区
+     asyncRunEnable: true # 开启长时运行
      cls: # 函数日志
        logsetId: ${output:${stage}:${app}:cls-video.logsetId}  # cls日志集  cls-video为cls组件的实例名称
        topicId: ${output:${stage}:${app}:cls-video.topicId}  # cls日志主题
