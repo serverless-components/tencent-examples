@@ -1,17 +1,34 @@
-component: nextjs
-name: nextjsDemo
-app: appDemo
+# 欢迎使用 ⚡️serverless⚡️ 组件
+#
+# serverless组件是基于具体使用场景(Express, 静态网站等)提供的定制云资源编排和组织的解决方案。
+# 这是serverless的主要配置文件，包含了一些使用示例以及注释说明。
+# 您只需几行配置描述，即可进行云函数、API 网关、COS、DB 等
+# Serverless 资源进行快速创建、部署和修改。
+#
+# 有关完整的配置选项，请检查文档：
+# https://cloud.tencent.com/document/product/1154/51080
+#
+# 使用愉快
 
+# ##应用信息##
+component: nextjs # [必选]使用组件的名称，更多在 https://github.com/serverless-components
+name: nextjsDemo # [必选]组件的实例名称
+app: appDemo # app应用名称(同账号下应用名称唯一)。留空则取当前组件的实例名称。
+
+# ##nextjs 组件配置##
+# 更多内容请查看：https://github.com/serverless-components/tencent-nextjs/blob/master/docs/configure.md
 inputs:
-  src:
-    dist: ./
-    hook: npm run build
-    exclude:
+  src: # 项目代码路径
+    dist: ./ # 本地需要打包的文件目录
+    hook: npm run build # 项目钩子，可在scf运行时自动执行
+    exclude: # 被排除的文件或目录
       - .env
-  region: ap-guangzhou
-  runtime: Nodejs10.15
-  apigatewayConf:
-    protocols:
+  region: ap-guangzhou # 云函数所在区域。 [ap-hangzhou,ap-shanghai,ap-beijing,ap-chengdu,ap-hongkong 等]
+  runtime: Nodejs10.15 # 运行时环境。 [Nodejs10.15, Nodejs12.16]
+  apigatewayConf: #  api网关配置
+    protocols: # 支持的协议 [http, https]
       - http
       - https
-    environment: release
+    environment: release #部署环境
+    # 项目中如果涉及到文件上传，需要依赖 API 网关提供的 Base64 编码能力，使用时只需要 serverless.yml 中配置 isBase64Encoded 为 true
+    # isBase64Encoded: true
