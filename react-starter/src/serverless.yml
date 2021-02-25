@@ -15,7 +15,7 @@ component: website # [必选]使用组件的名称，更多在 https://github.co
 name: react-starter # [必选]组件的实例名称
 app: react-starter # app应用名称(同账号下应用名称唯一)。留空则取当前组件的实例名称。
 
-# ##react-starter 组件配置##
+# #website 组件配置##
 # 更多内容请查看：https://github.com/serverless-components/tencent-website/blob/master/docs/configure.md
 inputs:
   src: #该项目的代码信息，参数参考执行目录

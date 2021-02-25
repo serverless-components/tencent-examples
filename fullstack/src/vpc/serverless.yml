@@ -17,7 +17,7 @@ app: fullstack-serverless-vpc # app应用名称(同账号下应用名称唯一)�
 # stage: dev # app 环境字段，留空默认值为dev。如果项目根目录中的配置文件存在此字段，会继承根目录配置文件中相应字段的值
 
 
-# ##Express 组件配置##
+# ##Vpc 组件配置##
 # 更多内容请查看：https://github.com/serverless-components/tencent-vpc/blob/master/docs/configure.md
 inputs:
   region: ${env:REGION} # VPC 的所属地区

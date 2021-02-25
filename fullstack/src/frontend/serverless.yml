@@ -16,6 +16,8 @@ name: fullstack-frontendr # [必选]组件的实例名称
 app: fullstack-serverless-frontend # app应用名称(同账号下应用名称唯一)。留空则取当前组件的实例名称。如果项目根目录中的配置文件存在此字段，会继承根目录配置文件中相应字段的值
 # stage: dev # app 环境字段，留空默认值为dev。如果项目根目录中的配置文件存在此字段，会继承根目录配置文件中相应字段的值
 
+# ##website 组件配置##
+# 更多内容请查看：https://github.com/serverless-components/tencent-website/blob/master/docs/configure.md
 inputs:
   region: ${env:REGION} # 云函数所在区域
   bucketName: fullstack-serverless-frontend # Bucket 名称。 不允许大写字母。如果你不加 AppId 后缀，则默认自动会为你加上。
