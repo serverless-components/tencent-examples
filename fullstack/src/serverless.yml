@@ -1,1 +1,2 @@
-app: fullstack-serverless
+app: fullstack-serverless # app应用名称(同账号下应用名称唯一), 子实例的配置会继承此值
+# stage: app 环境字段，子实例的配置会继承此值

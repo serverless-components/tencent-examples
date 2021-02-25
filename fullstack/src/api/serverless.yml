@@ -1,25 +1,41 @@
-component: express
-name: fullstack-api
-app: fullstack-serverless-db
+# 欢迎使用 ⚡️serverless⚡️ 组件
+#
+# serverless组件是基于具体使用场景(Express, 静态网站等)提供的定制云资源编排和组织的解决方案。
+# 这是serverless的主要配置文件，包含了一些使用示例以及注释说明。
+# 您只需几行配置描述，即可进行云函数、API 网关、COS、DB 等
+# Serverless 资源进行快速创建、部署和修改。
+#
+# 有关完整的配置选项，请检查文档：
+# https://cloud.tencent.com/document/product/1154/51080
+#
+# 使用愉快
 
+# ##应用信息##
+component: express # [必选]使用组件的名称，更多在 https://github.com/serverless-components
+name: fullstack-api # [必选]组件的实例名称。
+app: fullstack-serverless-api # app应用名称(同账号下应用名称唯一)。留空则取当前组件的实例名称。如果项目根目录中的配置文件存在此字段，会继承根目录配置文件中相应字段的值
+# stage: dev # app 环境字段，留空默认值为dev。如果项目根目录中的配置文件存在此字段，会继承根目录配置文件中相应字段的值
+
+# ##Express 组件配置##
+# 更多内容请查看：https://github.com/serverless-components/tencent-express/blob/master/docs/configure.md
 inputs:
-  src:
-    src: ./
-    exclude:
+  src: # 项目代码路径
+    src: ./ # 本地需要打包的文件目录
+    exclude: # 被排除的文件或目录
       - .env
-  functionName: ${name}
-  region: ${env:REGION}
-  runtime: Nodejs10.15
-  functionConf:
-    timeout: 30
-    vpcConfig:
-      vpcId: ${output:${stage}:${app}:fullstack-vpc.vpcId}
-      subnetId: ${output:${stage}:${app}:fullstack-vpc.subnetId}
-    environment:
-      variables:
+  functionName: ${name} # 云函数名称
+  region: ${env:REGION} # 云函数所在区域
+  runtime: Nodejs10.15 # 运行环境
+  functionConf: # 函数配置相关
+    timeout: 30 # 超时时间，单位秒
+    vpcConfig: # 私有网络配置
+      vpcId: ${output:${stage}:${app}:fullstack-vpc.vpcId}  # 私有网络的Id
+      subnetId: ${output:${stage}:${app}:fullstack-vpc.subnetId} # 子网ID
+    environment: #  环境变量
+      variables: #  环境变量数组
         PG_CONNECT_STRING: ${output:${stage}:${app}:fullstack-db.private.connectionString}
-  apigatewayConf:
-    enableCORS: true
-    protocols:
+  apigatewayConf: #  api网关配置
+    enableCORS: true #  允许跨域
+    protocols: # 允许的网络协议
       - http
       - https
