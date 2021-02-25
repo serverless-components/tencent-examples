@@ -1,11 +1,26 @@
-component: website
-name: react-starter
-app: react-starter
+# 欢迎使用 ⚡️serverless⚡️ 组件
+#
+# serverless组件是基于具体使用场景(Express, 静态网站等)提供的定制云资源编排和组织的解决方案。
+# 这是serverless的主要配置文件，包含了一些使用示例以及注释说明。
+# 您只需几行配置描述，即可进行云函数、API 网关、COS、DB 等
+# Serverless 资源进行快速创建、部署和修改。
+#
+# 有关完整的配置选项，请检查文档：
+# https://cloud.tencent.com/document/product/1154/51080
+#
+# 使用愉快
 
+# ##应用信息##
+component: website # [必选]使用组件的名称，更多在 https://github.com/serverless-components
+name: react-starter # [必选]组件的实例名称
+app: react-starter # app应用名称(同账号下应用名称唯一)。留空则取当前组件的实例名称。
+
+# ##react-starter 组件配置##
+# 更多内容请查看：https://github.com/serverless-components/tencent-website/blob/master/docs/configure.md
 inputs:
-  src:
-    src: ./
-    hook: npm run build
-    dist: ./dist
-  bucketName: my-react-starter
-  protocol: https
+  src: #该项目的代码信息，参数参考执行目录
+    src: ./ # 你构建的项目代码目录
+    hook: npm run build # 	钩子脚本。在你项目代码上传之前执行。
+    dist: ./dist # 钩子脚本执行构建后，输出的目录。如果配置 hook， 此参数必填
+  bucketName: my-react-starter # Bucket 名称。 不允许大写字母。如果你不加 AppId 后缀，则默认自动会为你加上。
+  protocol: https # 请求协议。https 或 http
