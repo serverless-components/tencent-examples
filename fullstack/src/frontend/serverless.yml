@@ -23,7 +23,6 @@ inputs:
   bucketName: fullstack-serverless-frontend # Bucket 名称。 不允许大写字母。如果你不加 AppId 后缀，则默认自动会为你加上。
   protocol: https # 请求协议。https 或 http
   src: # 该项目的代码信息，参数参考执行目录
-    src: ./ # 你构建的项目代码目录。
     hook: npm run build # 钩子脚本。在你项目代码上传之前执行
     dist: ./dist # 钩子脚本执行构建后，输出的目录。如果配置 hook， 此参数必填
     envPath: ./ # 生成的 env.js 存放在你项目中的路径。默认是当前工作路径。
