@@ -10,15 +10,16 @@
 #
 # 使用愉快
 
+# ##应用信息##
+app: fullstack-serverless-db  # app应用名称(同账号下应用名称唯一)。留空则取当前组件的实例名称。(会被根目录配置文件中的app覆写)
 component: postgresql # [必选]使用组件的名称，更多在 https://github.com/serverless-components
 name: fullstack-db # [必选]组件的实例名称
-app: fullstack-serverless-db  # app应用名称(同账号下应用名称唯一)。留空则取当前组件的实例名称。如果项目根目录中的配置文件存在此字段，会继承根目录配置文件中相应字段的值
-# stage: dev # app 环境字段，留空默认值为dev。如果项目根目录中的配置文件存在此字段，会继承根目录配置文件中相应字段的值
+# stage: dev # app环境名称，默认为dev。(会被根目录配置文件中的stage覆写)
 
 # ##postgresql 组件配置##
 # 更多内容请查看: https://github.com/serverless-components/tencent-postgresql/blob/master/docs/configure.md
 inputs:
-  region: ${env:REGION}  # 可选 ap-guangzhou, ap-shanghai, ap-beijing, {env.REGION} 会使用.env文件中的REGION字段
+  region: ${env:REGION}  # {env.REGION} 会使用.env文件中的REGION字段。 [ap-guangzhou, ap-shanghai, ap-beijing]
   zone: ${env:ZONE} # [必选]数据库所在地区的区域, {env.ZONE} 会使用.env中的ZONE字段
   dBInstanceName: ${name} # 数据库实例名称，对一用户必须唯一, {name} 会使用此文件中的name字段
   vpcConfig: # vpc 配置

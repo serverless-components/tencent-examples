@@ -11,16 +11,16 @@
 # 使用愉快
 
 # ##应用信息##
+app: appDemo # app应用名称(同账号下应用名称唯一)。留空则取当前组件的实例名称。
 component: nuxtjs # [必选]使用组件的名称，更多在 https://github.com/serverless-components
 name: nuxtjsDemo # [必选]组件的实例名称
-app: appDemo # app应用名称(同账号下应用名称唯一)。留空则取当前组件的实例名称。
 
 # ##nuxtjs 组件配置##
 # 更多内容请查看：https://github.com/serverless-components/tencent-nuxtjs/blob/master/docs/configure.md
 inputs:
   src: # 项目代码路径
     dist: ./ # 钩子脚本执行构建后，输出的目录。如果配置 hook， 此参数必填
-    hook: npm run build #  	钩子脚本。在你项目代码上传之前执行
+    hook: npm run build # 钩子脚本。在项目代码上传之前执行
     exclude: # 被排除的文件或目录
       - .env
   region: ap-guangzhou # 云函数所在区域。 [ap-hangzhou,ap-shanghai,ap-beijing,ap-chengdu,ap-hongkong 等]

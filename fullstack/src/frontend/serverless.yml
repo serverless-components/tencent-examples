@@ -11,10 +11,10 @@
 # 使用愉快
 
 # ##应用信息##
+app: fullstack-serverless-frontend # app应用名称(同账号下应用名称唯一)。留空则取当前组件的实例名称。(会被根目录配置文件中的app覆写)
 component: website # [必选]使用组件的名称，更多在 https://github.com/serverless-components
 name: fullstack-frontendr # [必选]组件的实例名称
-app: fullstack-serverless-frontend # app应用名称(同账号下应用名称唯一)。留空则取当前组件的实例名称。如果项目根目录中的配置文件存在此字段，会继承根目录配置文件中相应字段的值
-# stage: dev # app 环境字段，留空默认值为dev。如果项目根目录中的配置文件存在此字段，会继承根目录配置文件中相应字段的值
+# stage: dev # app环境名称，默认为dev。(会被根目录配置文件中的stage覆写)
 
 # ##website 组件配置##
 # 更多内容请查看：https://github.com/serverless-components/tencent-website/blob/master/docs/configure.md
