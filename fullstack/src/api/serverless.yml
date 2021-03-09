@@ -8,34 +8,35 @@
 # 有关完整的配置选项，请检查文档：
 # https://cloud.tencent.com/document/product/1154/51080
 #
-# 使用愉快
+# 👩‍💻 Happy Coding 👨‍💻
 
-# ##应用信息##
-app: fullstack-serverless-api # app应用名称(同账号下应用名称唯一)。留空则取当前组件的实例名称。(会被根目录配置文件中的app覆写)
-component: express # [必选]使用组件的名称，更多在 https://github.com/serverless-components
-name: fullstack-api # [必选]组件的实例名称。
-# stage: dev # app环境名称，默认为dev。(会被根目录配置文件中的stage覆写)
+# ##应用信息## 
+# app,stage 会被根目录配置文件覆写
+app: fullstack-serverless-api # app名称(app唯一识别标识)。同账号下需唯一
+component: express # [必选]要使用组件，更多组件请查看 https://github.com/serverless-components
+name: fullstack-api # [必选]组件实例名称
+# stage: dev # app环境名称，默认为dev
 
 # ##Express 组件配置##
 # 更多内容请查看：https://github.com/serverless-components/tencent-express/blob/master/docs/configure.md
 inputs:
-  src: # 项目代码路径
+  src: # 执行目录 更多配置请参考配置文档
     src: ./ # 本地需要打包的文件目录
-    exclude: # 被排除的文件或目录
+    exclude:
       - .env
-  functionName: ${name} # 云函数名称
-  region: ${env:REGION} # 云函数所在区域
-  runtime: Nodejs10.15 # 运行环境
-  functionConf: # 函数配置相关
+  functionName: ${name} # 云函数名称。使用此配置文件中的name（组件实例名称）
+  region: ${env:REGION} # 部署目标地区。 更多参考 https://cloud.tencent.com/document/api/583/17238#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8
+  runtime: Nodejs10.15 # 运行环境。[Nodejs10.15, Nodejs12.16]
+  functionConf: # 函数配置
     timeout: 30 # 超时时间，单位秒
     vpcConfig: # 私有网络配置
-      vpcId: ${output:${stage}:${app}:fullstack-vpc.vpcId}  # 私有网络的Id
-      subnetId: ${output:${stage}:${app}:fullstack-vpc.subnetId} # 子网ID
-    environment: #  环境变量
-      variables: #  环境变量数组
+      vpcId: ${output:${stage}:${app}:fullstack-vpc.vpcId}  # 私有网络Id
+      subnetId: ${output:${stage}:${app}:fullstack-vpc.subnetId} # 子网Id
+    environment: # 环境变量
+      variables:
         PG_CONNECT_STRING: ${output:${stage}:${app}:fullstack-db.private.connectionString}
-  apigatewayConf: #  api网关配置
-    enableCORS: true #  允许跨域
-    protocols: # 允许的网络协议
+  apigatewayConf: # API 网关
+    enableCORS: true # 允许跨域
+    protocols:
       - http
       - https

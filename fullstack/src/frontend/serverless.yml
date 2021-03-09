@@ -8,26 +8,27 @@
 # 有关完整的配置选项，请检查文档：
 # https://cloud.tencent.com/document/product/1154/51080
 #
-# 使用愉快
+# 👩‍💻 Happy Coding 👨‍💻
 
 # ##应用信息##
-app: fullstack-serverless-frontend # app应用名称(同账号下应用名称唯一)。留空则取当前组件的实例名称。(会被根目录配置文件中的app覆写)
-component: website # [必选]使用组件的名称，更多在 https://github.com/serverless-components
-name: fullstack-frontendr # [必选]组件的实例名称
-# stage: dev # app环境名称，默认为dev。(会被根目录配置文件中的stage覆写)
+# app,stage 会被根目录配置文件覆写
+app: fullstack-serverless-frontend # app名称(app唯一识别标识)。同账号下需唯一
+component: website # [必选]要使用组件，更多组件请查看 https://github.com/serverless-components
+name: fullstack-frontendr # [必选]组件实例名称
+# stage: dev # app环境名称，默认为dev
 
 # ##website 组件配置##
 # 更多内容请查看：https://github.com/serverless-components/tencent-website/blob/master/docs/configure.md
 inputs:
-  region: ${env:REGION} # 云函数所在区域
-  bucketName: fullstack-serverless-frontend # Bucket 名称。 不允许大写字母。如果你不加 AppId 后缀，则默认自动会为你加上。
-  protocol: https # 请求协议。https 或 http
-  src: # 该项目的代码信息，参数参考执行目录
-    hook: npm run build # 钩子脚本。在你项目代码上传之前执行
-    dist: ./dist # 钩子脚本执行构建后，输出的目录。如果配置 hook， 此参数必填
-    envPath: ./ # 生成的 env.js 存放在你项目中的路径。默认是当前工作路径。
+  region: ${env:REGION} # 部署目标地区。 更多参考 https://cloud.tencent.com/document/api/583/17238#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8
+  bucketName: fullstack-serverless-frontend # Bucket 名称（不允许大写字母）。默认添加 AppId 作为后缀
+  protocol: https
+  src: # 执行目录
+    hook: npm run build # 构建命令。在代码上传之前执行
+    dist: ./dist # 输出的目录。如果配置 hook，此参数必填
+    envPath: ./ # 生成的 env.js 存放路径。默认是当前工作路径。
     index: index.html # 网站 index 页面
     error: index.html # 网站 error 页面
-  env: # 环境变量参数文件。会将 env 下配置的参数写入 env.js 文件中，将该文件打包上传到你的代码里。
-    # get api url after below api service deployed.
+  env: # 环境变量。会将 env 下配置的参数写入 env.js 文件，并一起打包上传。
+    # 在 api 服务部署后获取 api 访问地址
     apiUrl: ${output:${stage}:${app}:fullstack-api.apigw.url}

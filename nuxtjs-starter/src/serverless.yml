@@ -8,39 +8,38 @@
 # 有关完整的配置选项，请检查文档：
 # https://cloud.tencent.com/document/product/1154/51080
 #
-# 使用愉快
+# 👩‍💻 Happy Coding 👨‍💻
 
 # ##应用信息##
-app: appDemo # app应用名称(同账号下应用名称唯一)。留空则取当前组件的实例名称。
-component: nuxtjs # [必选]使用组件的名称，更多在 https://github.com/serverless-components
-name: nuxtjsDemo # [必选]组件的实例名称
+app: appDemo # app名称(app唯一识别标识)。同账号下需唯一，留空则继承组件实例名称
+component: nuxtjs # [必选]要使用组件，更多组件请查看 https://github.com/serverless-components
+name: nuxtjsDemo # [必选]组件实例名称
 
 # ##nuxtjs 组件配置##
 # 更多内容请查看：https://github.com/serverless-components/tencent-nuxtjs/blob/master/docs/configure.md
 inputs:
-  src: # 项目代码路径
-    dist: ./ # 钩子脚本执行构建后，输出的目录。如果配置 hook， 此参数必填
-    hook: npm run build # 钩子脚本。在项目代码上传之前执行
-    exclude: # 被排除的文件或目录
+  src: # 执行目录
+    hook: npm run build # 构建命令。在代码上传之前执行
+    dist: ./ # 输出的目录。如果配置 hook，此参数必填
+    exclude:
       - .env
-  region: ap-guangzhou # 云函数所在区域。 [ap-hangzhou,ap-shanghai,ap-beijing,ap-chengdu,ap-hongkong 等]
-  runtime: Nodejs10.15 # 运行时环境。 [Nodejs10.15, Nodejs12.16]
-  apigatewayConf: #  api网关配置
-    protocols: # 支持的协议 [http, https]
+  region: ap-guangzhou # 部署目标地区。 更多参考 https://cloud.tencent.com/document/api/583/17238#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8
+  runtime: Nodejs10.15 # 运行环境。[Nodejs10.15, Nodejs12.16]
+  apigatewayConf: # API 网关
+    protocols:
       - http
       - https
-    environment: release #部署环境
-    # 项目中如果涉及到文件上传，需要依赖 API 网关提供的 Base64 编码能力，使用时只需要 serverless.yml 中配置 isBase64Encoded 为 true
-    # isBase64Encoded: true
+    environment: release # 发布环境。[test, prepub，release]
+    # isBase64Encoded: true # 项目中如果涉及到文件上传，需要依赖 API 网关提供的 Base64 编码支持
     #customDomains: # 自定义域名绑定
-    #  - domain: abc.com # 待绑定的自定义的域名
-    #    certificateId: abcdefg # 待绑定自定义域名的证书唯一 ID
-    #    # 如要设置自定义路径映射，请设置为 false
-    #    isDefaultMapping: false
-    #    # 自定义路径映射的路径。使用自定义映射时，可一次仅映射一个 path 到一个环境，也可映射多个 path 到多个环境。并且一旦使用自定义映射，原本的默认映射规则不再生效，只有自定义映射路径生效。
+    #  - domain: abc.com # 待绑定的域名
+    #    certificateId: abcdefg # 待绑定域名的证书 ID
+    #    isDefaultMapping: false # 如要设置自定义路径映射，请设置为 false
+    #    # 自定义路径映射。可一次仅映射一个 path 到一个环境，也可映射多个 path 到多个环境。
+    #    # 一旦使用自定义映射，默认映射规则不再生效。
     #    pathMappingSet:
     #      - path: /
     #        environment: release
-    #    protocols: # 绑定自定义域名的协议类型，默认与服务的前端协议一致。
-    #      - http # 支持http协议
-    #      - https # 支持https协议
+    #    protocols:
+    #      - http
+    #      - https
