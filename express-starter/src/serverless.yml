@@ -29,3 +29,34 @@ inputs:
       - http
       - https
     environment: release # 发布环境。[test, prepub，release]
+=======
+# 使用愉快
+
+# ##应用信息## 
+app: express-app # app应用名称(同账号下应用名称唯一)。留空则取当前组件的实例名称。
+component: express # [必选]使用组件的名称，更多在 https://github.com/serverless-components
+name: expressDemo # [必选]组件的实例名称。
+# stage: dev # 环境名称。默认值是 dev。可使用 ${env.STAGE} 通过环境变量定义。
+
+# ##Express 组件配置##
+# 更多内容请查看：https://github.com/serverless-components/tencent-express/blob/master/docs/configure.md
+inputs:
+  runtime: Nodejs10.15 # 运行时环境。 [Nodejs10.15, Nodejs12.16]
+  region: ap-guangzhou # 云函数所在区域。 [ap-hangzhou,ap-shanghai,ap-beijing,ap-chengdu,ap-hongkong]
+  src: # 项目代码路径
+    src: ./ # 本地需要打包的文件目录
+    exclude: # 被排除的文件或目录
+      - .env
+      - .git
+  apigatewayConf: # api网关配置
+    enableCORS: false # 是否允许跨域
+    protocols: # 开通协议
+      - http
+      - https
+    environment: release # 环境变量
+    # customDomains: # 自定义域名绑定
+    #   - domain: foobar.com # 待绑定的自定义的域名
+    #     certificateId: foobar # 待绑定自定义域名的证书ID
+    #     protocols: # 绑定自定义域名的协议类型。
+    #       - http
+    #       - https
