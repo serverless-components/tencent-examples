@@ -18,7 +18,7 @@ name: expressDemo # [必选]组件实例名称
 # ##express 组件配置##
 # 更多配置请查看：https://github.com/serverless-components/tencent-express/blob/master/docs/configure.md
 inputs:
-  src: ./ # 执行目录
+  src: # 执行目录
     src: ./
     exclude:
       - .env
