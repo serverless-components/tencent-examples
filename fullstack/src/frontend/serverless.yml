@@ -24,6 +24,7 @@ inputs:
   bucketName: fullstack-serverless-frontend # Bucket 名称（不允许大写字母）。默认添加 AppId 作为后缀
   protocol: https
   src: # 执行目录
+    src: ./ # 本地需要打包的文件目录
     hook: npm run build # 构建命令。在代码上传之前执行
     dist: ./dist # 输出的目录。如果配置 hook，此参数必填
     envPath: ./ # 生成的 env.js 存放路径。默认是当前工作路径。
