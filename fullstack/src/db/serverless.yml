@@ -1,12 +1,29 @@
-component: postgresql
-name: fullstack-db
-app: fullstack-serverless-db
+# 欢迎使用 ⚡️serverless⚡️ 组件
+#
+# serverless组件是基于具体使用场景(Express, 静态网站等)提供的定制云资源编排和组织的解决方案。
+# 这是serverless的主要配置文件，包含了一些使用示例以及注释说明。
+# 您只需几行配置描述，即可进行云函数、API 网关、COS、DB 等
+# Serverless 资源进行快速创建、部署和修改。
+#
+# 有关完整的配置选项，请检查文档：
+# https://cloud.tencent.com/document/product/1154/51080
+#
+# 👩‍💻 Happy Coding 👨‍💻
 
+# ##应用信息##
+# app,stage 会被根目录配置文件覆写
+app: fullstack-serverless-db # app名称(app唯一识别标识)。同账号下需唯一
+component: postgresql # [必选]要使用组件，更多组件请查看 https://github.com/serverless-components
+name: fullstack-db # [必选]组件实例名称
+# stage: dev # app环境名称，默认为dev
+
+# ##postgresql 组件配置##
+# 更多内容请查看: https://github.com/serverless-components/tencent-postgresql/blob/master/docs/configure.md
 inputs:
-  region: ${env:REGION}
-  zone: ${env:ZONE}
-  dBInstanceName: ${name}
-  vpcConfig:
-    vpcId: ${output:${stage}:${app}:fullstack-vpc.vpcId}
-    subnetId: ${output:${stage}:${app}:fullstack-vpc.subnetId}
-  extranetAccess: false
+  region: ${env:REGION}  # 部署目标地区。 更多参考 https://cloud.tencent.com/document/api/583/17238#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8
+  zone: ${env:ZONE} # 数据库所在地区的区域, 由环境变量配置。[ap-guangzhou-2,ap-shanghai-2,...]
+  dBInstanceName: ${name} # 数据库实例名称。同账号下需唯一，使用此配置文件中的name（组件实例名称）
+  vpcConfig: # 私有网络配置
+    vpcId: ${output:${stage}:${app}:fullstack-vpc.vpcId} # 私有网络Id
+    subnetId: ${output:${stage}:${app}:fullstack-vpc.subnetId} # 子网Id
+  extranetAccess: false # 是否开启外网访问

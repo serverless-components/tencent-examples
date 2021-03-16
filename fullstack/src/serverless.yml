@@ -1,1 +1,16 @@
-app: fullstack-serverless
+# 欢迎使用 ⚡️serverless⚡️ 组件
+#
+# serverless组件是基于具体使用场景(Express, 静态网站等)提供的定制云资源编排和组织的解决方案。
+# 这是serverless的主要配置文件，包含了一些使用示例以及注释说明。
+# 您只需几行配置描述，即可进行云函数、API 网关、COS、DB 等
+# Serverless 资源进行快速创建、部署和修改。
+#
+# 有关完整的配置选项，请检查文档：
+# https://cloud.tencent.com/document/product/1154/51080
+#
+# 👩‍💻 Happy Coding 👨‍💻
+
+# ##应用信息##
+# app(应用名称)和stage(环境版本)信息，会覆写子目录配置
+app: fullstack-serverless # app名称(app唯一识别标识)。同账号下需唯一
+# stage: dev # app环境名称，默认为dev

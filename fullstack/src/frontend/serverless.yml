@@ -1,18 +1,35 @@
-component: website
-name: fullstack-frontend
-app: fullstack-serverless-frontend
+# 欢迎使用 ⚡️serverless⚡️ 组件
+#
+# serverless组件是基于具体使用场景(Express, 静态网站等)提供的定制云资源编排和组织的解决方案。
+# 这是serverless的主要配置文件，包含了一些使用示例以及注释说明。
+# 您只需几行配置描述，即可进行云函数、API 网关、COS、DB 等
+# Serverless 资源进行快速创建、部署和修改。
+#
+# 有关完整的配置选项，请检查文档：
+# https://cloud.tencent.com/document/product/1154/51080
+#
+# 👩‍💻 Happy Coding 👨‍💻
 
+# ##应用信息##
+# app,stage 会被根目录配置文件覆写
+app: fullstack-serverless-frontend # app名称(app唯一识别标识)。同账号下需唯一
+component: website # [必选]要使用组件，更多组件请查看 https://github.com/serverless-components
+name: fullstack-frontendr # [必选]组件实例名称
+# stage: dev # app环境名称，默认为dev
+
+# ##website 组件配置##
+# 更多内容请查看：https://github.com/serverless-components/tencent-website/blob/master/docs/configure.md
 inputs:
-  region: ${env:REGION}
-  bucketName: fullstack-serverless-frontend
+  region: ${env:REGION} # 部署目标地区。 更多参考 https://cloud.tencent.com/document/api/583/17238#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8
+  bucketName: fullstack-serverless-frontend # Bucket 名称（不允许大写字母）。默认添加 AppId 作为后缀
   protocol: https
-  src:
-    src: ./
-    hook: npm run build
-    dist: ./dist
-    envPath: ./
-    index: index.html
-    error: index.html
-  env:
-    # get api url after below api service deployed.
+  src: # 执行目录
+    src: ./ # 本地需要打包的文件目录
+    hook: npm run build # 构建命令。在代码上传之前执行
+    dist: ./dist # 输出的目录。如果配置 hook，此参数必填
+    envPath: ./ # 生成的 env.js 存放路径。默认是当前工作路径。
+    index: index.html # 网站 index 页面
+    error: index.html # 网站 error 页面
+  env: # 环境变量。会将 env 下配置的参数写入 env.js 文件，并一起打包上传。
+    # 在 api 服务部署后获取 api 访问地址
     apiUrl: ${output:${stage}:${app}:fullstack-api.apigw.url}

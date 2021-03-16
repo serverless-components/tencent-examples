@@ -2,39 +2,30 @@
 #
 # serverless组件是基于具体使用场景(Express, 静态网站等)提供的定制云资源编排和组织的解决方案。
 # 这是serverless的主要配置文件，包含了一些使用示例以及注释说明。
-# 您只需几行配置描述，即可进行云函数、API 网关、COS、DB 等 
+# 您只需几行配置描述，即可进行云函数、API 网关、COS、DB 等
 # Serverless 资源进行快速创建、部署和修改。
 #
 # 有关完整的配置选项，请检查文档：
 # https://cloud.tencent.com/document/product/1154/51080
 #
-# 使用愉快
+# 👩‍💻 Happy Coding 👨‍💻
 
-# ##应用信息## 
-app: express-app # app应用名称(同账号下应用名称唯一)。留空则取当前组件的实例名称。
-component: express # [必选]使用组件的名称，更多在 https://github.com/serverless-components
-name: expressDemo # [必选]组件的实例名称。
-# stage: dev # 环境名称。默认值是 dev。可使用 ${env.STAGE} 通过环境变量定义。
+# ##应用信息##
+app: appDemo # app名称(app唯一识别标识)。同账号下需唯一，留空则继承组件实例名称
+component: express # [必选]要使用组件，更多组件请查看 https://github.com/serverless-components
+name: expressDemo # [必选]组件实例名称
 
-# ##Express 组件配置##
-# 更多内容请查看：https://github.com/serverless-components/tencent-express/blob/master/docs/configure.md
+# ##express 组件配置##
+# 更多配置请查看：https://github.com/serverless-components/tencent-express/blob/master/docs/configure.md
 inputs:
-  runtime: Nodejs10.15 # 运行时环境。 [Nodejs10.15, Nodejs12.16]
-  region: ap-guangzhou # 云函数所在区域。 [ap-hangzhou,ap-shanghai,ap-beijing,ap-chengdu,ap-hongkong]
-  src: # 项目代码路径
-    src: ./ # 本地需要打包的文件目录
-    exclude: # 被排除的文件或目录
+  src: # 执行目录
+    src: ./
+    exclude:
       - .env
-      - .git
-  apigatewayConf: # api网关配置
-    enableCORS: false # 是否允许跨域
-    protocols: # 开通协议
+  region: ap-guangzhou # 部署目标地区。 更多参考 https://cloud.tencent.com/document/api/583/17238#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8
+  runtime: Nodejs10.15 # 运行环境。[Nodejs10.15, Nodejs12.16]
+  apigatewayConf: # API 网关
+    protocols:
       - http
       - https
-    environment: release # 环境变量
-    # customDomains: # 自定义域名绑定
-    #   - domain: foobar.com # 待绑定的自定义的域名
-    #     certificateId: foobar # 待绑定自定义域名的证书ID
-    #     protocols: # 绑定自定义域名的协议类型。
-    #       - http
-    #       - https
+    environment: release # 发布环境。[test, prepub，release]

@@ -1,13 +1,26 @@
-component: scf
-name: ap-guangzhou_default_helloworld
-app: helloworld
+# 欢迎使用 ⚡️serverless⚡️ 组件
+#
+# serverless组件是基于具体使用场景(Express, 静态网站等)提供的定制云资源编排和组织的解决方案。
+# 这是serverless的主要配置文件，包含了一些使用示例以及注释说明。
+# 您只需几行配置描述，即可进行云函数、API 网关、COS、DB 等
+# Serverless 资源进行快速创建、部署和修改。
+#
+# 有关完整的配置选项，请检查文档：
+# https://cloud.tencent.com/document/product/1154/51080
+#
+# 👩‍💻 Happy Coding 👨‍💻
 
+# ##应用信息##
+app: helloworld # app名称(app唯一识别标识)。同账号下需唯一，留空则继承组件实例名称
+component: scf # [必选]要使用组件，更多组件请查看 https://github.com/serverless-components
+name: ap-guangzhou_default_helloworld # [必选]组件实例名称
+
+# ##scf 组件配置##
+# 更多内容请查看: https://github.com/serverless-components/tencent-scf/blob/master/docs/configure.md
 inputs:
-  src: ./
-  description: helloworld 空白模板函数
-  handler: index.main_handler
-  runtime: Nodejs10.15
-  namespace: default
-  region: ap-guangzhou
-  memorySize: 128
-  timeout: 3
+  src: ./ # 执行目录
+  handler: index.main_handler # 函数方法名称【文件名称.函数名称】。名称要求字母开始和结尾，允许使用数字、下划线(_)和连接符(-)，2-60 个字符。
+  region: ap-guangzhou # 部署目标地区。 更多参考 https://cloud.tencent.com/document/api/583/17238#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8
+  runtime: Nodejs10.15 # 运行环境。[Nodejs10.15, Nodejs12.16]
+  memorySize: 128 # 函数运行内存，单位MB。[64, 128, ... 3072]，以 128 递增
+  timeout: 3 # 函数超时时间，单位秒，范围 1-900 
