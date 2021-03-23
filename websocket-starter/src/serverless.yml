@@ -1,0 +1,18 @@
+component: websocket
+app: appDemo
+name: websocketDemo
+
+inputs:
+  region: ap-guangzhou
+  src:
+    src: ./
+    exclude:
+      - .env
+  faas:
+    name: websocket-function
+    timeout: 10
+  apigw:
+    timeout: 30
+    environment: release
+    protocols:
+      - https
