@@ -1,6 +1,6 @@
-component: scf
-name: ap-guangzhou_default_helloworld
 app: scf-golang
+component: scf
+name: scf-golang
 
 inputs:
   src: ./

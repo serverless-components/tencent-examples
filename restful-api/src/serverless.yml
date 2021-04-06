@@ -1,6 +1,6 @@
+app: restful-api
 component: scf
 name: restful-api
-app: restful-api
 
 inputs:
   name: ${name}
