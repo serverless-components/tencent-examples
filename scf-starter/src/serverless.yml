@@ -1,3 +1,15 @@
+# 欢迎使用 ⚡️serverless⚡️ 组件
+#
+# serverless组件是基于具体使用场景(Express, 静态网站等)提供的定制云资源编排和组织的解决方案。
+# 这是serverless的主要配置文件，包含了一些使用示例以及注释说明。
+# 您只需几行配置描述，即可进行云函数、API 网关、COS、DB 等
+# Serverless 资源进行快速创建、部署和修改。
+#
+# 有关完整的配置选项，请检查文档：
+# https://cloud.tencent.com/document/product/1154/51080
+#
+# 👩‍💻 Happy Coding 👨‍💻
+
 #应用信息
 app: scf-starter
 
@@ -5,13 +17,15 @@ app: scf-starter
 component: scf # (必填) 引用 component 的名称，当前用到的是 tencent-scf 组件
 name: scfdemo # (必填) 创建的实例名称，请修改成您的实例名称
 
+# ##scf 组件配置##
+# 更多内容请查看: https://github.com/serverless-components/tencent-scf/blob/master/docs/configure.md
 #组件参数
 inputs:
   name: ${name}-${app} #函数名称
-  src: ./  #代码路径
-  handler: index.main_handler #入口
-  runtime: Nodejs10.15 # 云函数运行时的环境
-  region: ap-guangzhou # 云函数所在区域
+  src: ./ #代码路径
+  handler: index.main_handler # 函数方法名称【文件名称.函数名称】。名称要求字母开始和结尾，允许使用数字、下划线(_)和连接符(-)，2-60 个字符。
+  runtime: Nodejs10.15 # 运行环境。[Nodejs10.15, Nodejs12.16]
+  region: ap-guangzhou # 部署目标地区。 更多参考 https://cloud.tencent.com/document/api/583/17238#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8
   events: # 触发器
     - apigw: # 网关触发器
         parameters:
