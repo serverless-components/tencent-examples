@@ -13,7 +13,7 @@
 # ##应用信息##
 app: helloworld # app名称(app唯一识别标识)。同账号下需唯一，留空则继承组件实例名称
 component: scf # [必选]要使用组件，更多组件请查看 https://github.com/serverless-components
-name: ap-guangzhou_default_helloworld # [必选]组件实例名称
+name: scf-nodejs # [必选]组件实例名称
 
 # ##scf 组件配置##
 # 更多内容请查看: https://github.com/serverless-components/tencent-scf/blob/master/docs/configure.md

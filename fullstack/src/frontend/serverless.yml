@@ -14,7 +14,7 @@
 # app,stage 会被根目录配置文件覆写
 app: fullstack-serverless-frontend # app名称(app唯一识别标识)。同账号下需唯一
 component: website # [必选]要使用组件，更多组件请查看 https://github.com/serverless-components
-name: fullstack-frontendr # [必选]组件实例名称
+name: fullstack-frontend # [必选]组件实例名称
 # stage: dev # app环境名称，默认为dev
 
 # ##website 组件配置##

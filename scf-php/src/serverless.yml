@@ -1,5 +1,5 @@
 component: scf
-name: ap-guangzhou_default_helloworld
+name: scf-php
 app: helloworld
 
 inputs:
