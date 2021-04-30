@@ -21,7 +21,6 @@ name: scfdemo # (必填) 创建的实例名称，请修改成您的实例名称
 # 更多内容请查看: https://github.com/serverless-components/tencent-scf/blob/master/docs/configure.md
 #组件参数
 inputs:
-  name: ${name}-${app} #函数名称
   src: ./ #代码路径
   handler: index.main_handler # 函数方法名称【文件名称.函数名称】。名称要求字母开始和结尾，允许使用数字、下划线(_)和连接符(-)，2-60 个字符。
   runtime: Nodejs10.15 # 运行环境。[Nodejs10.15, Nodejs12.16]
