@@ -36,6 +36,7 @@ $ serverless
 | [nuxtjs-starter](./nuxtjs-starter) | [🔗](https://service-8dluulmq-1300862921.gz.apigw.tencentcs.com/release/) | Deploy an nuxt.js app | [tencent-nuxtjs](https://github.com/serverless-components/tencent-nuxtjs) |
 | [laravel-starter](./laravel-starter) | [🔗](https://service-4n47ghyi-1300862921.gz.apigw.tencentcs.com/release/) | Deploy an Laravel app | [tencent-laravel](https://github.com/serverless-components/tencent-laravel) |
 | [flask-starter](./flask-starter) | [🔗](https://service-fxv2lrb4-1300862921.gz.apigw.tencentcs.com/release/) | Deploy a flask app | [tencent-flask](https://github.com/serverless-components/tencent-flask) |
+| [springboot-starter](./springboot-starter) | [🔗](https://service-fxv2lrb4-1300862921.gz.apigw.tencentcs.com/release/) | Deploy a springboot app | [tencent-flask](https://github.com/serverless-components/tencent-springboot) |
 | [scf-starter](./scf-starter) | | Deploy a [SCF](https://cloud.tencent.com/product/scf) function | [tencent-scf](https://github.com/serverless-components/tencent-scf) |
 | [scf-nodejs](./scf-nodejs) | | Deploy a node.js [SCF](https://cloud.tencent.com/product/scf) function | [tencent-scf](https://github.com/serverless-components/tencent-scf) |
 | [scf-go](./scf-go) | | Deploy a golang [SCF](https://cloud.tencent.com/product/scf) function | [tencent-scf](https://github.com/serverless-components/tencent-scf) |

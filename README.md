@@ -36,6 +36,7 @@ $ serverless
 | [nuxtjs-starter](./nuxtjs-starter) | 快速部署一个 nuxt.js 应用 | [tencent-nuxtjs](https://github.com/serverless-components/tencent-nuxtjs) |
 | [laravel-starter](./laravel-starter) | 快速部署一个 laravel 应用 | [tencent-laravel](https://github.com/serverless-components/tencent-laravel) |
 | [flask-starter](./flask-starter) | 快速部署一个 flask 应用 | [tencent-flask](https://github.com/serverless-components/tencent-flask) |
+| [springboot-starter](./springboot-starter) | 快速部署一个 springboot 应用 | [tencent-springboot](https://github.com/serverless-components/tencent-springboot) |
 | [scf-starter](./scf-starter) | 快速部署一个 [SCF](https://cloud.tencent.com/product/scf) 云函数 | [tencent-scf](https://github.com/serverless-components/tencent-scf) |
 | [scf-nodejs](./scf-nodejs) | 快速部署一个 Nodejs 函数 | [tencent-scf](https://github.com/serverless-components/tencent-scf) |
 | [scf-go](./scf-go) | 快速部署一个 Go 函数 | [tencent-scf](https://github.com/serverless-components/tencent-scf) |
