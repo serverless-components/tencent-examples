@@ -27,5 +27,3 @@ jobs:
       - name: Test template
         run: |
           sls init nuxtjs-starter --name test-nuxtjs-starter
-          cd test-nuxtjs-starter
-          sls deploy

@@ -27,5 +27,3 @@ jobs:
       - name: Test template
         run: |
           sls init scf-starter --name test-scf-starter
-          cd test-scf-starter
-          sls deploy

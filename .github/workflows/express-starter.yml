@@ -27,5 +27,3 @@ jobs:
       - name: Test template
         run: |
           sls init express-starter --name test-express-starter
-          cd test-express-starter
-          sls deploy

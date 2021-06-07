@@ -27,5 +27,3 @@ jobs:
       - name: Test template
         run: |
           sls init eggjs-starter --name test-eggjs-starter
-          cd test-eggjs-starter
-          sls deploy

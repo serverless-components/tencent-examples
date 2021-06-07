@@ -27,5 +27,3 @@ jobs:
       - name: Test template
         run: |
           sls init react-starter --name test-react-starter
-          cd test-react-starter
-          sls deploy

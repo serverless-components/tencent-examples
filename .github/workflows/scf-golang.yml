@@ -27,5 +27,3 @@ jobs:
       - name: Test template
         run: |
           sls init scf-golang --name test-scf-golang
-          cd test-scf-golang
-          sls deploy

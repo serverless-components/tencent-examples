@@ -27,5 +27,3 @@ jobs:
       - name: Test template
         run: |
           sls init fullstack --name test-fullstack
-          cd test-fullstack
-          sls deploy

@@ -27,5 +27,3 @@ jobs:
       - name: Test template
         run: |
           sls init restful-api --name test-restful-api
-          cd test-restful-api
-          sls deploy
