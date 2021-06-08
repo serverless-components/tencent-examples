@@ -27,5 +27,3 @@ jobs:
       - name: Test template
         run: |
           sls init nextjs-starter --name test-nextjs-starter
-          cd test-nextjs-starter
-          sls deploy

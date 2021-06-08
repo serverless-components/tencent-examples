@@ -27,5 +27,3 @@ jobs:
       - name: Test template
         run: |
           sls init flask-starter --name test-flask-starter
-          cd test-flask-starter
-          sls deploy

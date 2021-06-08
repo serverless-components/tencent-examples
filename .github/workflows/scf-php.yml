@@ -27,5 +27,3 @@ jobs:
       - name: Test template
         run: |
           sls init scf-php --name test-scf-php
-          cd test-scf-php
-          sls deploy

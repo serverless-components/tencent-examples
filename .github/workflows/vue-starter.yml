@@ -27,5 +27,3 @@ jobs:
       - name: Test template
         run: |
           sls init vue-starter --name test-vue-starter
-          cd test-vue-starter
-          sls deploy
