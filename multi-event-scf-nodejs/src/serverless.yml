@@ -15,13 +15,11 @@ inputs:
   timeout: 3
   functions:
     index:
-      handler: app.index
-    user-list:
-      handler: app.list
+      handler: index.index
+    hello:
+      handler: index.hello
       memorySize: 256
       timeout: 10
-    user-create:
-      handler: app.detail
   triggers:
     - type: timer
       function: index
@@ -42,9 +40,13 @@ inputs:
             method: GET
             # api 的 function 配置优先级高于外层 function
             function: index
-          - path: /user
-            method: GET
-            function: user-list
-          - path: /user
+          - path: /hello/{name}
             method: POST
-            function: user-create
+            # api 的 function 配置优先级高于外层 function
+            function: hello
+            param:
+              - name: name
+                position: PATH
+                required: false
+                type: string
+                desc: name
