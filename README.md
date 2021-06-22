@@ -43,3 +43,4 @@ $ serverless
 | [scf-php](./scf-php) | 快速部署一个 PHP 函数 | [tencent-scf](https://github.com/serverless-components/tencent-scf) |
 | [scf-python](./scf-python) | 快速部署一个 Python 函数 | [tencent-scf](https://github.com/serverless-components/tencent-scf) |
 | [fullstack](./fullstack) | 快速部署一个 fullstack 应用 | [tencent-website](https://github.com/serverless-components/tencent-website) <br> [tencent-express](https://github.com/serverless-components/tencent-express) <br> [tencent-postgresql](https://github.com/serverless-components/tencent-postgresql) <br>  [tencent-vpc](https://github.com/serverless-components/tencent-vpc) |
+| [multi-event-scf-nodejs](./multi-event-scf-nodejs) | | 部署多事件类型 Nodejs 函数 | [tencent-multi-scf](https://github.com/serverless-components/tencent-multi-scf) |
