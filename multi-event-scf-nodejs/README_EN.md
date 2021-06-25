@@ -1,10 +1,10 @@
-# Quickly create and deploy multi-event-scf-nodejs application
+# Quickly create and deploy multi-scf-nodejs application
 
 [中文](./README.md) | **English**
 
 ## Introduction
 
-Easily deploy multi-event-scf-nodejs applications to Tencent Cloud's serverless infrastructure using this Serverless Framework Component.
+Easily deploy multi-scf-nodejs applications to Tencent Cloud's serverless infrastructure using this Serverless Framework Component.
 Your application will auto-scale, never charge you for idle time, and require little-to-zero administration.
 
 ## Quick Start
@@ -18,10 +18,10 @@ npm install -g serverless
 
 ### 2. Initialize
 
-Initializing the multi-event-scf-nodejs template by running this following command:
+Initializing the multi-scf-nodejs template by running this following command:
 
 ```bash
-serverless init multi-event-scf-nodejs --name example
+serverless init multi-scf-nodejs --name example
 cd example
 ```
 
@@ -30,7 +30,7 @@ cd example
 You can use following command to deploy the APP.
 
 ```bash
-cd multi-event-scf-nodejs
+cd multi-scf-nodejs
 serverless deploy
 ```
 
