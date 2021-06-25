@@ -1,5 +1,5 @@
 
-name: multi-event-multi-event-scf-nodejs # 项目模板的名字 
+name: multi-event-scf-nodejs # 项目模板的名字 
 displayName: 多事件函数 # 项目模板展示在控制台的名称（中文）
 author: Tencent Cloud, Inc. # 作者的名字
 org: Tencent Cloud, Inc. # 组织名称，可选

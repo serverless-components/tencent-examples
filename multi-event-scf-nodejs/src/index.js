@@ -14,19 +14,3 @@ exports.hello = async (event, context) => {
     queries: event.queryString || null,
   };
 };
-
-exports.list = async (event, context) => {
-  return [
-    {
-      id: 1,
-      name: 'test',
-    },
-  ];
-};
-
-exports.detail = async (event, context) => {
-  return {
-    id: 1,
-    name: 'test',
-  };
-};
