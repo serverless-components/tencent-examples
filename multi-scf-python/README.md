@@ -1,10 +1,10 @@
-# 快速构建 fullstack-sequelize
+# 快速构建 multi-scf-python
 
 **中文** | [English](./README_EN.md)
 
 ## 简介
 
-fullstack-sequelize 模板使用 Tencent SCF 组件及其触发器能力，方便的在腾讯云创建，配置和管理一个 fullstack-sequelize 应用。
+multi-scf-python 模板使用 Tencent SCF 组件及其触发器能力，方便的在腾讯云创建，配置和管理一个 multi-scf-python 应用。
 
 ## 快速开始
 
@@ -20,7 +20,7 @@ npm install -g serverless
 通过如下命令直接下载该例子：
 
 ```bash
-serverless init fullstack-sequelize --name example
+serverless init multi-scf-python --name example
 cd example
 ```
 
@@ -44,7 +44,7 @@ serverless info
 
 ### 5. 移除
 
-可以通过以下命令移除 fullstack-sequelize 应用
+可以通过以下命令移除 multi-scf-python 应用
 
 ```bash
 serverless remove

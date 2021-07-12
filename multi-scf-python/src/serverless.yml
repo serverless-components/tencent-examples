@@ -1,0 +1,52 @@
+app: multi-scf
+stage: dev
+
+component: multi-scf
+name: event_python_demo
+
+inputs:
+  src:
+    src: ./
+    exclude:
+      - .env
+  region: ap-guangzhou
+  runtime: Python3.6
+  memorySize: 128
+  timeout: 3
+  functions:
+    index:
+      handler: index.index
+    hello:
+      handler: index.hello
+      memorySize: 256
+      timeout: 10
+  triggers:
+    - type: timer
+      function: index
+      parameters:
+        name: timer1
+        cronExpression: '*/5 * * * * * *' # 每5秒触发一次
+        enable: true
+        argument: argument # 额外的参数
+    - type: apigw
+      parameters:
+        name: serverless
+        protocols:
+          - https
+          - http
+        # id: service-xxx # 如果不配置，会自动创建
+        apis:
+          - path: /
+            method: GET
+            # api 的 function 配置优先级高于外层 function
+            function: index
+          - path: /hello/{name}
+            method: POST
+            # api 的 function 配置优先级高于外层 function
+            function: hello
+            param:
+              - name: name
+                position: PATH
+                required: false
+                type: string
+                desc: name
