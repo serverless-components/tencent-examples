@@ -1,0 +1,8 @@
+component: vpc
+name: sls-vpc
+
+inputs:
+  region: ap-guangzhou
+  zone: ap-guangzhou-2
+  vpcName: ${name} # 实例名称
+  subnetName: ${name}-subnet # 子网的名称

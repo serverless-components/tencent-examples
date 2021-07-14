@@ -1,0 +1,22 @@
+{
+  "name": "multi-scf-with-db",
+  "version": "1.0.0",
+  "description": "Multiple SCF with Serverless DB",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ole3021/sls-demo-msn-todo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ole3021/sls-demo-msn-todo/issues"
+  },
+  "homepage": "https://github.com/ole3021/sls-demo-msn-todo#readme",
+  "dependencies": {
+    "pg": "^8.6.0"
+  }
+}

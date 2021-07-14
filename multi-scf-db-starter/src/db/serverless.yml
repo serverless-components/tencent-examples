@@ -1,0 +1,12 @@
+component: postgresql
+name: sls-db
+
+inputs:
+  region: ap-guangzhou
+  zone: ap-guangzhou-2
+  dBInstanceName: ${name}
+  extranetAccess: true
+  vpcConfig:
+    vpcId: ${output:${stage}:${app}:sls-vpc.vpcId}
+    subnetId: ${output:${stage}:${app}:sls-vpc.subnetId}
+
