@@ -1,10 +1,10 @@
-# Quickly create and deploy fullstack application
+# Quickly create and deploy fullstack-sequelize application
 
 [中文](./README.md) | **English**
 
 ## Introduction
 
-Easily deploy fullstack applications to Tencent Cloud's serverless infrastructure using this Serverless Framework Component.
+Easily deploy fullstack-sequelize applications to Tencent Cloud's serverless infrastructure using this Serverless Framework Component.
 Your application will auto-scale, never charge you for idle time, and require little-to-zero administration.
 
 ## Quick Start
@@ -18,20 +18,11 @@ npm install -g serverless
 
 ### 2. Initialize
 
-Initializing the fullstack template by running this following command:
+Initializing the fullstack-sequelize template by running this following command:
 
 ```bash
-serverless init fullstack-mysql --name example
+serverless init fullstack-sequelize --name example
 cd example
-```
-
-### 2.1 Config .env
-
-Nowadays, because Serverless Mysql only support `ap-shanghai-2` and `ap-nanjing-1`, so we need config it in `.env` file, just add two environment variables, `REGION` and `ZONE`:
-
-```
-REGION=ap-shanghai
-ZONE=ap-shanghai-2
 ```
 
 ### 3. Deploy
@@ -39,7 +30,7 @@ ZONE=ap-shanghai-2
 You can use following command to deploy the APP.
 
 ```bash
-cd fullstack
+cd fullstack-sequelize
 serverless deploy
 ```
 
@@ -47,11 +38,11 @@ This command will walk you through signing up a Tencent Cloud Account to deploy 
 
 ### 4. Monitor
 
-Anytime you need to know more about your running express instance, you can run `serverless info` to view the most critical info.
-This is especially helpful when you want to know the outputs of your instances so that you can reference them in another instance.
+Anytime you need to know more about your running express instance, you can run `serverless info` to view the most critical info. 
+This is especially helpful when you want to know the outputs of your instances so that you can reference them in another instance. 
 You will also see a url where you'll be able to view more info about your instance on the Serverless Dashboard.
 
-It also shows you the status of your instance, when it was last deployed, and how many times it was deployed.
+It also shows you the status of your instance, when it was last deployed, and how many times it was deployed. 
 To dig even deeper, you can pass the --debug flag to view the state of your component instance in case the deployment failed for any reason.
 
 ```bash
@@ -60,7 +51,7 @@ serverless info
 
 ### 5. Remove
 
-If you wanna tear down your entire infrastructure that was created during deployment,
+If you wanna tear down your entire infrastructure that was created during deployment, 
 just run `serverless remove` and serverless will remove all the data it needs from the built-in state storage system to delete only the relevant cloud resources that it created.
 
 ```bash
@@ -71,7 +62,7 @@ serverless remove
 
 By default, you are able to login your Tencent Cloud account by scanning QR code and an `.env` file with credentials is auto generated.
 The credentials will be expired after 2 hours.
-If you would like to use persistent credentials,
+If you would like to use persistent credentials, 
 you can [create an API Key here](https://console.cloud.tencent.com/cam/capi) and add the `SecretId` and `SecretKey` into the `.env` file
 
 > If you don's have a Tencent Cloud Account, you can register [here](https://cloud.tencent.com/register)
@@ -80,6 +71,7 @@ you can [create an API Key here](https://console.cloud.tencent.com/cam/capi) and
 # Add your Tencent credentials here
 touch .env
 ```
+
 
 ```
 # .env file
