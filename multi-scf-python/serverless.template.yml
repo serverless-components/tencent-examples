@@ -12,7 +12,7 @@ readme: https://github.com/serverless-components/tencent-examples/tree/master/mu
 license: MIT # 版权声明
 src: # 描述项目中的哪些文件需要作为模板发布
   src: ./src # 指定具体的相对目录，此目录下的文件将作为模板发布
-  exclude:#描述在指定的目录内哪些文件应该被排除
+  exclude: # 描述在指定的目录内哪些文件应该被排除
     # 通常你希望排除
     # 1. 包含secrets的文件
     # 2. .git git源代码管理的相关文件
