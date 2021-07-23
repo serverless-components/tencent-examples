@@ -23,7 +23,10 @@ jobs:
       - name: Install serverless cli
         run: sudo npm i serverless -g
       - name: Publish template
-        run: cd nextjs-starter && sls publish
+        run: |
+          cd nextjs-starter
+          SERVERLESS_PLATFORM_STAGE=dev sls publish
+          sls publish
       - name: Test template
         run: |
           sls init nextjs-starter --name test-nextjs-starter

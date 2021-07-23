@@ -23,7 +23,10 @@ jobs:
       - name: Install serverless cli
         run: sudo npm i serverless -g
       - name: Publish template
-        run: cd scf-python && sls publish
+        run: |
+          cd scf-python
+          SERVERLESS_PLATFORM_STAGE=dev sls publish
+          sls publish
       - name: Test template
         run: |
           sls init scf-python --name test-scf-python

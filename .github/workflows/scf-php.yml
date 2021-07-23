@@ -23,7 +23,10 @@ jobs:
       - name: Install serverless cli
         run: sudo npm i serverless -g
       - name: Publish template
-        run: cd scf-php && sls publish
+        run: |
+          cd scf-php
+          SERVERLESS_PLATFORM_STAGE=dev sls publish
+          sls publish
       - name: Test template
         run: |
           sls init scf-php --name test-scf-php

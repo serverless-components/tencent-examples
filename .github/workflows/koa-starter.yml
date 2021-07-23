@@ -23,7 +23,10 @@ jobs:
       - name: Install serverless cli
         run: sudo npm i serverless -g
       - name: Publish template
-        run: cd koa-starter && sls publish
+        run: |
+          cd koa-starter
+          SERVERLESS_PLATFORM_STAGE=dev sls publish
+          sls publish
       - name: Test template
         run: |
           sls init koa-starter --name test-koa-starter
