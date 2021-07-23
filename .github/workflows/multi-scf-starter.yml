@@ -26,7 +26,6 @@ jobs:
         run: |
           cd multi-scf-starter
           SERVERLESS_PLATFORM_STAGE=dev sls publish
-          sls publish
       - name: Test template
         run: |
           sls init multi-scf-starter --name test-multi-scf-starter
