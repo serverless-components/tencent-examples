@@ -23,7 +23,10 @@ jobs:
       - name: Install serverless cli
         run: sudo npm i serverless -g
       - name: Publish template
-        run: cd nuxtjs-starter && sls publish
+        run: |
+          cd nuxtjs-starter
+          SERVERLESS_PLATFORM_STAGE=dev sls publish
+          sls publish
       - name: Test template
         run: |
           sls init nuxtjs-starter --name test-nuxtjs-starter

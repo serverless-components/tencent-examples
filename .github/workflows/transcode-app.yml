@@ -23,4 +23,7 @@ jobs:
       - name: Install serverless cli
         run: sudo npm i serverless -g
       - name: Publish template
-        run: cd transcode-app && sls publish
+        run: |
+          cd transcode-app
+          SERVERLESS_PLATFORM_STAGE=dev sls publish
+          sls publish

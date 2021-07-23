@@ -23,7 +23,10 @@ jobs:
       - name: Install serverless cli
         run: sudo npm i serverless -g
       - name: Publish template
-        run: cd multi-scf-nodejs && sls publish
+        run: |
+          cd multi-scf-nodejs
+          SERVERLESS_PLATFORM_STAGE=dev sls publish
+          sls publish
       - name: Test template
         run: |
           sls init multi-scf-nodejs --name test-multi-scf-nodejs
