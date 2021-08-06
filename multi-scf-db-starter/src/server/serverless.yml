@@ -1,0 +1,57 @@
+component: multi-scf
+name: event_demo
+
+inputs:
+  src:
+    src: ./
+    exclude:
+      - .env
+      - 'node_modules/**'
+  environments:
+    - key: PG_CONNECT_STRING
+      value: ${output:${stage}:${app}:sls-db.public.connectionString}
+  region: ap-guangzhou
+  runtime: Nodejs12.16
+  memorySize: 128
+  vpc:
+    vpcId: ${output:${stage}:${app}:sls-vpc.vpcId} # 私有网络Id
+    subnetId: ${output:${stage}:${app}:sls-vpc.subnetId} # 子网Id
+  installDependency: true # 是否在线安装依赖
+  timeout: 30
+  functions:
+    index:
+      handler: index.index
+    hello:
+      handler: index.hello
+      memorySize: 256
+      timeout: 10
+  triggers:
+    - type: timer
+      function: index
+      parameters:
+        name: timer1
+        cronExpression: '* */10 * * * * *' # 每 10 分钟触发一次
+        enable: true
+        argument: argument # 额外的参数
+    - type: apigw
+      parameters:
+        name: serverless
+        protocols:
+          - https
+          - http
+        # id: service-xxx # 如果不配置，会自动创建
+        apis:
+          - path: /
+            method: GET
+            # api 的 function 配置优先级高于外层 function
+            function: index
+          - path: /hello/{name}
+            method: POST
+            # api 的 function 配置优先级高于外层 function
+            function: hello
+            param:
+              - name: name
+                position: PATH
+                required: false
+                type: string
+                desc: name

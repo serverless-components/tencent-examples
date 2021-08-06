@@ -1,0 +1,22 @@
+{
+  "name": "multi-scf-db-starter",
+  "version": "1.0.0",
+  "description": "Multiple SCF with Serverless DB",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/serverless-components/tencent-examples.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/serverless-components/tencent-examples/issues"
+  },
+  "homepage": "https://github.com/serverless-components/tencent-examples/tree/master/multi-scf-db-starter",
+  "dependencies": {
+    "pg": "^8.6.0"
+  }
+}
