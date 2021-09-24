@@ -7,8 +7,8 @@ description-i18n:
   zh-cn: 快速部署一个 Laravel 基础应用
 type: template 
 keywords: tencent, Laravel, php, SCF, APIGateway
-repo: https://github.com/serverless-components/tencent-examples/tree/master/lavel-starter
-readme:  https://github.com/serverless-components/tencent-examples/blob/master/lavel-starter/README.md
+repo: https://github.com/serverless-components/tencent-examples/tree/master/laravel-starter
+readme:  https://github.com/serverless-components/tencent-examples/blob/master/laravel-starter/README.md
 license: MIT 
 src: 
   src: ./src
