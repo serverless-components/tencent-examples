@@ -1,18 +1,21 @@
-component: flask # (required) name of the component. In that case, it's flask.
-name: flask-starter # (required) name of your flask component instance.
-app: appDemo # (optional) serverless dashboard app. default is the same as the name property.
+component: http
+name: flaskDemo
 
 inputs:
   src:
     # TODO: 安装python项目依赖到项目当前目录
     hook: 'pip3 install -r requirements.txt -t ./'
-    dist: ./ # (optional) path to the source folder. default is a hello world app.
+    dist: ./
     exclude:
       - .env
+      - 'requirements/**'
+      - '__pycache__/**'
   region: ap-guangzhou
-  runtime: Python3.6
-  apigatewayConf:
+  faas:
+    framework: flask
+    name: ${name}
+    runtime: Python3.6
+  apigw:
     protocols:
       - http
       - https
-    environment: release

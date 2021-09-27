@@ -1,5 +1,17 @@
 export default {
-  mode: 'universal',
+  env: {
+    STATIC_URL: process.env.STATIC_URL || ''
+  },
+  /*
+   ** Build configuration
+   */
+  build: {
+    extend(config, { isDev, isClient }) {
+      if (!isDev && process.env.STATIC_URL) {
+        config.output.publicPath = process.env.STATIC_URL
+      }
+    }
+  },
   /*
    ** Headers of the page
    */
@@ -14,7 +26,28 @@ export default {
         content: 'Serverless Nuxt.js Application Created By Serverless Framework'
       }
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: `/favicon.ico` }]
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: `${process.env.STATIC_URL || ''}/favicon.ico` }
+    ]
   },
-
+  /*
+   ** Customize the progress-bar color
+   */
+  loading: { color: '#fff' },
+  /*
+   ** Global CSS
+   */
+  css: [],
+  /*
+   ** Plugins to load before mounting the App
+   */
+  plugins: [],
+  /*
+   ** Nuxt.js dev-modules
+   */
+  buildModules: [],
+  /*
+   ** Nuxt.js modules
+   */
+  modules: []
 }
