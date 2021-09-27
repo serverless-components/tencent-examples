@@ -1,0 +1,32 @@
+name: Publish and test laravel-starter
+
+on:
+  push:
+    branches: [ master ]
+    paths: [ 'laravel-starter/**' ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  publishAndTest:
+    runs-on: ubuntu-latest
+    env:
+      TENCENT_SECRET_ID: ${{ secrets.TENCENT_SECRET_ID }}
+      TENCENT_SECRET_KEY: ${{ secrets.TENCENT_SECRET_KEY }}
+      SERVERLESS_PLATFORM_VENDOR: tencent
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '14.x'
+      - name: Install serverless cli
+        run: sudo npm i serverless -g
+      - name: Publish template
+        run: |
+          cd laravel-starter
+          SERVERLESS_PLATFORM_STAGE=dev sls publish
+          sls publish
+      - name: Test template
+        run: |
+          sls init laravel-starter --name test-laravel-starter
