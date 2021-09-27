@@ -1,30 +1,16 @@
-# 欢迎使用 ⚡️serverless⚡️ 组件
-#
-# serverless组件是基于具体使用场景(Express, 静态网站等)提供的定制云资源编排和组织的解决方案。
-# 这是serverless的主要配置文件，包含了一些使用示例以及注释说明。
-# 您只需几行配置描述，即可进行云函数、API 网关、COS、DB 等
-# Serverless 资源进行快速创建、部署和修改。
-#
-# 有关完整的配置选项，请检查文档：
-# https://cloud.tencent.com/document/product/1154/51080
-#
-# 👩‍💻 Happy Coding 👨‍💻
+component: http
+name: eggDemo
 
-# ##应用信息##
-app: appDemo # app名称(app唯一识别标识)。同账号下需唯一，留空则继承组件实例名称
-component: egg # [必选]要使用组件，更多组件请查看 https://github.com/serverless-components
-name: egg # [必选]组件实例名称
-
-
-# ##egg 组件配置##
-# 更多配置请查看：https://github.com/serverless-components/tencent-egg/blob/master/docs/configure.md
 inputs:
-  src: ./ # 执行目录 更多配置请参考配置文档
-  region: ap-guangzhou # 部署目标地区。 更多参考 https://cloud.tencent.com/document/api/583/17238#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8
-  runtime: Nodejs10.15 # 运行环境。[Nodejs10.15, Nodejs12.16]
-  role: SCF_QcsRole # 角色权限
-  apigatewayConf: # API 网关
+  src:
+    src: ./
+    exclude:
+      - .env
+  faas:
+    runtime: Nodejs12.16
+    framework: egg
+    name: ${name}
+  apigw:
     protocols:
       - http
       - https
-    environment: release # 发布环境。[test, prepub，release]
